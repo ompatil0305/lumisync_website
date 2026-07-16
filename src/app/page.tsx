@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/sections/Hero";
+import Problem from "@/components/sections/Problem";
 import Features from "@/components/sections/Features";
 import LumiDemo from "@/components/sections/LumiDemo";
 import AppShowcase from "@/components/sections/AppShowcase";
@@ -14,6 +15,7 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
+        <Problem />
         <Features />
         <LumiDemo />
         <AppShowcase />
