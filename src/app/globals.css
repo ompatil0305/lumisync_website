@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+/* ============================================
+   LUMISYNC WEBSITE — DESIGN TOKENS
+   Light-first, university-agnostic, premium.
+   ============================================ */
+
+:root {
+  /* Brand */
+  --lumi-primary:       79 70 229;    /* Indigo-600 */
+  --lumi-primary-hover: 67 56 202;
+  --lumi-accent:        14 165 233;   /* Sky-500 */
+  --lumi-accent-hover:  2 132 199;
+
+  /* Surface */
+  --background: #FAFAFC;
+  --surface:    #FFFFFF;
+  --surface-2:  #F1F5F9;
+  --border:     #E2E8F0;
+
+  /* Text */
+  --text-primary:   #0F172A;
+  --text-secondary: #475569;
+  --text-muted:     #94A3B8;
+
+  /* Status */
+  --success: #10B981;
+  --warning: #F59E0B;
+
+  /* Layout */
+  --nav-height: 72px;
+  --section-max: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--text-primary);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Outfit', -apple-system, sans-serif;
+}
+
+/* ============================================
+   BASE RESET
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', -apple-system, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(79,70,229,0.25);
+  border-radius: 99px;
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.lumi-gradient {
+  background: linear-gradient(135deg, rgb(79,70,229) 0%, rgb(14,165,233) 100%);
+}
+.lumi-gradient-text {
+  background: linear-gradient(135deg, rgb(79,70,229) 0%, rgb(14,165,233) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.lumi-gradient-subtle {
+  background: linear-gradient(135deg, rgba(79,70,229,0.06) 0%, rgba(14,165,233,0.06) 100%);
+}
+.glass {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+.section-max {
+  max-width: var(--section-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(79,70,229,0.3); }
+  50%       { box-shadow: 0 0 0 16px rgba(79,70,229,0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+/* ============================================
+   NAV BLUR ON SCROLL (handled via JS)
+   ============================================ */
+.nav-scrolled {
+  background: rgba(250,250,252,0.9) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+
+/* ============================================
+   PHONE MOCKUP
+   ============================================ */
+.phone-mockup {
+  width: 260px;
+  height: 540px;
+  background: #0F172A;
+  border-radius: 44px;
+  border: 8px solid #1E293B;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 40px 80px rgba(0,0,0,0.4),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+  overflow: hidden;
+  position: relative;
+}
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 24px;
+  background: #1E293B;
+  border-radius: 99px;
+  z-index: 10;
+}
+
+/* Feature card hover */
+.feature-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(79,70,229,0.12);
+}
+
+/* Stat counter card */
+.stat-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(79,70,229,0.08);
+}
