@@ -26,10 +26,10 @@ export default function PricingPage() {
           <div className="section-max px-6 flex flex-col items-center">
             <span className="section-label mb-4">Pricing</span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight max-w-3xl text-balance animate-fade-in">
-              Pricing is coming soon.
+              Simple, transparent pricing.
             </h1>
             <p className="mt-4 text-lg text-[--text-secondary] max-w-xl">
-              Lumisync is free for students. We are building transparent pricing tiers for university administrative partnerships.
+              Lumisync is free and live for students. Sustainable institutional partnerships for universities are coming soon.
             </p>
           </div>
         </section>

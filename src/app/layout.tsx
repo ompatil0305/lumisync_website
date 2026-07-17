@@ -7,6 +7,7 @@ const outfit = Outfit({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
+  adjustFontFallback: false,
 });
 
 const inter = Inter({
@@ -14,10 +15,17 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
+  adjustFontFallback: false,
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL
+  ? process.env.NEXT_PUBLIC_APP_URL
+  : process.env.NEXT_PUBLIC_VERCEL_URL
+    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+    : "https://lumisync.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lumisync.app"),
+  metadataBase: new URL(baseUrl),
   title: {
     default: "Lumisync — The AI Campus Operating System",
     template: "%s | Lumisync",
@@ -38,12 +46,12 @@ export const metadata: Metadata = {
     "university platform",
     "higher education technology",
   ],
-  authors: [{ name: "Lumisync", url: "https://lumisync.app" }],
+  authors: [{ name: "Lumisync", url: baseUrl }],
   creator: "Lumisync",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://lumisync.app",
+    url: baseUrl,
     siteName: "Lumisync",
     title: "Lumisync — The AI Campus Operating System",
     description:

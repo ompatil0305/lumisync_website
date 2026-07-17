@@ -104,7 +104,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-stone-900 text-xs text-stone-500">
-          <p>© {new Date().getFullYear()} Lumisync Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Lumisync. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/about" className="hover:text-stone-400">About</Link>
             <Link href="/contact" className="hover:text-stone-400">Contact</Link>
