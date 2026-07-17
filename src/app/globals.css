@@ -29,8 +29,8 @@
     /* Brand - Brighter for Dark Mode */
     --lumi-primary:       255 51 51;  /* Bright Red */
     --lumi-primary-hover: 204 0 0;
-    --lumi-accent:        253 185 39; /* Gold for dark mode contrast */
-    --lumi-accent-hover:  204 153 0;
+    --lumi-accent:        255 255 255; /* White for dark mode contrast */
+    --lumi-accent-hover:  204 204 204;
 
     /* Surface */
     --background: #0A0A12;
