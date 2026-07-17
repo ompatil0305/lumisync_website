@@ -48,7 +48,7 @@ export default function About() {
             className="mt-6 text-base leading-relaxed"
             style={{ color: "var(--text-secondary)" }}
           >
-            As a Texas Tech student, I watched classmates struggle daily with
+            As a <span className="text-[#CC0000] dark:text-[#FF453A] font-semibold">Texas Tech</span> student, I watched classmates struggle daily with
             fragmented campus information — missing events because they weren't
             on the right mailing list, wasting 20 minutes hunting for parking,
             or showing up to a professor's office during the wrong hours.
@@ -85,7 +85,7 @@ export default function About() {
               Om Patil
             </p>
             <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-              Founder, Lumisync · Texas Tech University
+              Founder, Lumisync · <span className="text-[#CC0000] dark:text-[#FF453A] font-medium">Texas Tech University</span>
             </p>
           </div>
         </motion.div>

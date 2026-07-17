@@ -27,9 +27,21 @@ const bullets = [
 
 export default function LumiDemo() {
   const [visibleCount, setVisibleCount] = useState(1);
+  const [isTyping, setIsTyping] = useState(false);
 
   const advance = () => {
-    if (visibleCount < messages.length) setVisibleCount((v) => v + 1);
+    if (visibleCount >= messages.length || isTyping) return;
+
+    const nextMsg = messages[visibleCount];
+    if (nextMsg.role === "lumi") {
+      setIsTyping(true);
+      setTimeout(() => {
+        setIsTyping(false);
+        setVisibleCount((v) => v + 1);
+      }, 1000);
+    } else {
+      setVisibleCount((v) => v + 1);
+    }
   };
 
   return (
@@ -202,13 +214,36 @@ export default function LumiDemo() {
                   ))}
                 </AnimatePresence>
 
+                {isTyping && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    style={{ display: "flex", justifyContent: "flex-start" }}
+                  >
+                    <div style={{
+                      padding: "10px 16px",
+                      borderRadius: "18px 18px 18px 4px",
+                      background: "#fff",
+                      border: "1px solid var(--border)",
+                      display: "flex",
+                      gap: 5,
+                      alignItems: "center"
+                    }}>
+                      <span className="w-1.5 h-1.5 rounded-full bg-stone-400 animate-bounce" style={{ animationDelay: "0ms" }} />
+                      <span className="w-1.5 h-1.5 rounded-full bg-stone-400 animate-bounce" style={{ animationDelay: "150ms" }} />
+                      <span className="w-1.5 h-1.5 rounded-full bg-stone-400 animate-bounce" style={{ animationDelay: "300ms" }} />
+                    </div>
+                  </motion.div>
+                )}
+
                 {visibleCount < messages.length && (
                   <button
                     onClick={advance}
-                    className="text-xs self-center mt-2"
-                    style={{ color: "var(--text-muted)", cursor: "pointer" }}
+                    disabled={isTyping}
+                    className="text-xs self-center mt-2 disabled:opacity-50"
+                    style={{ color: "var(--text-muted)", cursor: isTyping ? "not-allowed" : "pointer" }}
                   >
-                    Click to continue conversation ↓
+                    {isTyping ? "Lumi is typing..." : "Click to continue conversation ↓"}
                   </button>
                 )}
               </div>
