@@ -7,11 +7,11 @@
 
 :root {
   /* ── Core Palette ── */
-  --lumi-blue:         29 78 216;    /* Deep Blue #1D4ED8 */
-  --lumi-blue-light:   59 130 246;   /* Blue-500 */
-  --lumi-blue-hover:   30 64 175;    /* Blue-800 */
+  --lumi-blue:         204 0 0;      /* Texas Tech Red #CC0000 */
+  --lumi-blue-light:   239 68 68;     /* Red-500 */
+  --lumi-blue-hover:   153 0 0;      /* Red-800 */
   --lumi-gold:         180 143 42;   /* Muted Gold */
-  --lumi-red:          185 28 28;    /* Soft Red (alerts only) */
+  --lumi-red:          204 0 0;      /* TTU Red */
   --lumi-green:        21 128 61;    /* Muted Green */
 
   /* ── Surfaces ── */
@@ -28,10 +28,10 @@
   --text-muted:        #A8A29E;      /* Stone-400 */
   --text-inverse:      #FAFAF9;
 
-  /* ── Brand (Primary Action = Deep Blue) ── */
-  --lumi-primary:      29 78 216;
-  --lumi-primary-hex:  #1D4ED8;
-  --lumi-primary-hover:30 64 175;
+  /* ── Brand (Primary Action = Texas Tech Red) ── */
+  --lumi-primary:      204 0 0;
+  --lumi-primary-hex:  #CC0000;
+  --lumi-primary-hover:153 0 0;
 
   /* ── Layout ── */
   --nav-height:        68px;
@@ -55,9 +55,9 @@
 /* ── DARK MODE ── */
 @media (prefers-color-scheme: dark) {
   :root {
-    --lumi-blue:       96 165 250;   /* Blue-400 for dark */
-    --lumi-blue-light: 147 197 253;
-    --lumi-blue-hover: 147 197 253;
+    --lumi-blue:       255 69 58;    /* Vibrant Red #FF453A for dark */
+    --lumi-blue-light: 255 105 97;
+    --lumi-blue-hover: 255 105 97;
 
     --background:      #141413;      /* Warm near-black */
     --surface:         #1C1B1A;
@@ -71,9 +71,9 @@
     --text-muted:      #78716C;
     --text-inverse:    #1C1917;
 
-    --lumi-primary:      96 165 250;
-    --lumi-primary-hex:  #60A5FA;
-    --lumi-primary-hover:147 197 253;
+    --lumi-primary:      255 69 58;
+    --lumi-primary-hex:  #FF453A;
+    --lumi-primary-hover:255 105 97;
 
     --shadow-sm:  0 1px 2px 0 rgb(0 0 0 / 0.20);
     --shadow-md:  0 4px 16px 0 rgb(0 0 0 / 0.30);
@@ -87,7 +87,7 @@
   --success:   #15803D;
   --warning:   #D97706;
   --error:     #B91C1C;
-  --info:      #1D4ED8;
+  --info:      #CC0000;
 }
 
 /* ── Tailwind theme mapping ── */

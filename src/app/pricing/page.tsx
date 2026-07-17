@@ -41,7 +41,7 @@ export default function PricingPage() {
               {/* Free Tier */}
               <div className="card p-8 flex flex-col justify-between min-h-[400px]">
                 <div>
-                  <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-2">For Students</span>
+                  <span className="text-xs font-bold text-red-600 dark:text-red-500 uppercase tracking-widest block mb-2">For Students</span>
                   <h3 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mb-1">Student Access</h3>
                   <div className="flex items-baseline gap-1 mt-4 mb-6">
                     <span className="text-4xl font-bold font-display text-stone-900 dark:text-stone-50">$0</span>
@@ -72,14 +72,14 @@ export default function PricingPage() {
               </div>
 
               {/* University Tier */}
-              <div className="card p-8 flex flex-col justify-between min-h-[400px] border-2 border-blue-600 relative">
-                <span className="absolute -top-3.5 left-6 bg-blue-600 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full flex items-center gap-1">
+              <div className="card p-8 flex flex-col justify-between min-h-[400px] border-2 border-red-600 dark:border-red-500 relative">
+                <span className="absolute -top-3.5 left-6 bg-red-600 dark:bg-red-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full flex items-center gap-1">
                   <Sparkles size={10} />
                   Coming Soon
                 </span>
 
                 <div>
-                  <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-2">For Administrators</span>
+                  <span className="text-xs font-bold text-red-600 dark:text-red-500 uppercase tracking-widest block mb-2">For Administrators</span>
                   <h3 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mb-1">University Partner</h3>
                   <div className="flex items-baseline gap-1 mt-4 mb-6">
                     <span className="text-3xl font-bold font-display text-stone-900 dark:text-stone-50">Custom Quote</span>
@@ -91,15 +91,15 @@ export default function PricingPage() {
 
                 <div className="border-t border-[--border] pt-6 flex flex-col gap-4">
                   <div className="flex gap-2.5 items-center text-xs text-[--text-secondary]">
-                    <Check className="text-blue-600 w-4 h-4 flex-shrink-0" />
+                    <Check className="text-red-600 dark:text-red-500 w-4 h-4 flex-shrink-0" />
                     Custom subdomain & branding layer
                   </div>
                   <div className="flex gap-2.5 items-center text-xs text-[--text-secondary]">
-                    <Check className="text-blue-600 w-4 h-4 flex-shrink-0" />
+                    <Check className="text-red-600 dark:text-red-500 w-4 h-4 flex-shrink-0" />
                     Banner / Ellucian HR integrations
                   </div>
                   <div className="flex gap-2.5 items-center text-xs text-[--text-secondary]">
-                    <Check className="text-blue-600 w-4 h-4 flex-shrink-0" />
+                    <Check className="text-red-600 dark:text-red-500 w-4 h-4 flex-shrink-0" />
                     SSO Auth (SAML 2.0 / OpenID Connect)
                   </div>
                   <Link href="/contact?role=it" className="btn btn-primary w-full text-center mt-4 rounded-full">
