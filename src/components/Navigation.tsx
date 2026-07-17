@@ -2,20 +2,54 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X, ChevronDown, Sparkles, Map, Compass, Calendar, Users, Building, Shield, FileText, HelpCircle, Mail, BookOpen, Clock, Briefcase, GraduationCap } from "lucide-react";
 import Logo from "./Logo";
 
-const navLinks = [
-  { href: "#features", label: "Features" },
-  { href: "#lumi", label: "Meet Lumi" },
-  { href: "#showcase", label: "App" },
-  { href: "#roadmap", label: "Roadmap" },
-  { href: "#about", label: "About" },
+const navGroups = [
+  {
+    label: "Product",
+    items: [
+      { href: "/features", label: "Features", desc: "Explore the campus companion suite", icon: Compass },
+      { href: "/map", label: "Campus Map", desc: "Interactive indoor/outdoor finder", icon: Map },
+      { href: "/lumi", label: "Lumi AI", desc: "Campus assistant powered by Gemini", icon: Sparkles },
+      { href: "/roadmap", label: "Roadmap", desc: "See what features are coming next", icon: Clock },
+    ],
+  },
+  {
+    label: "For",
+    items: [
+      { href: "/students", label: "Students", desc: "Supercharge your daily campus life", icon: GraduationCap },
+      { href: "/faculty-staff", label: "Faculty & Staff", desc: "Help students locate your office", icon: Users },
+      { href: "/universities", label: "Universities", desc: "Provider architecture onboarding", icon: Building },
+      { href: "/enterprise", label: "Enterprise", desc: "Scale to thousands of students", icon: Building },
+    ],
+  },
+  {
+    label: "Company",
+    items: [
+      { href: "/about", label: "About Us", desc: "Why we are building Lumisync", icon: Users },
+      { href: "/blog", label: "Blog", desc: "Product news and campus technology", icon: BookOpen },
+      { href: "/careers", label: "Careers", desc: "Join our student-first team", icon: Briefcase },
+      { href: "/press", label: "Press", desc: "Media kit and brand assets", icon: FileText },
+    ],
+  },
+  {
+    label: "Resources",
+    items: [
+      { href: "/docs", label: "Docs", desc: "API integrations and setup guides", icon: FileText },
+      { href: "/faq", label: "FAQ", desc: "Common questions answered", icon: HelpCircle },
+      { href: "/contact", label: "Contact", desc: "Send us a message directly", icon: Mail },
+      { href: "/security", label: "Security", desc: "Privacy-first & FERPA-aware", icon: Shield },
+    ],
+  },
 ];
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -23,49 +57,96 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close mobile drawer on route change
+  useEffect(() => {
+    setOpen(false);
+    setActiveDropdown(null);
+  }, [pathname]);
+
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white/90 backdrop-blur-lg shadow-[0_1px_0_rgba(0,0,0,0.06)]"
-            : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-250 ${
+          scrolled ? "nav-scrolled" : "bg-transparent"
         }`}
-        style={{ height: "var(--nav-height, 72px)" }}
+        style={{ height: "var(--nav-height, 68px)" }}
       >
         <div className="section-max h-full flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" aria-label="Lumisync home">
-            <Logo size={34} variant="full" />
+          <Link href="/" aria-label="Lumisync home" className="flex items-center">
+            <Logo size={32} variant="full" />
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-[--text-secondary] hover:text-[--text-primary] transition-colors"
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-1.5" aria-label="Main navigation">
+            {navGroups.map((group) => (
+              <div
+                key={group.label}
+                className="relative"
+                onMouseEnter={() => setActiveDropdown(group.label)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                {link.label}
-              </a>
+                <button
+                  className={`flex items-center gap-1 px-3.5 py-2 text-[14px] font-medium rounded-full transition-colors ${
+                    activeDropdown === group.label
+                      ? "bg-stone-200/50 dark:bg-stone-800/50 text-stone-900 dark:text-stone-50"
+                      : "text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-50"
+                  }`}
+                >
+                  {group.label}
+                  <ChevronDown
+                    size={14}
+                    className={`transition-transform duration-200 ${
+                      activeDropdown === group.label ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {/* Dropdown Menu */}
+                {activeDropdown === group.label && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-80 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl shadow-xl p-3 grid gap-1.5 animate-scale-in">
+                    {group.items.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-stone-100/70 dark:hover:bg-stone-800/70 transition-colors group"
+                        >
+                          <div className="p-2 rounded-lg bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 group-hover:bg-blue-50 dark:group-hover:bg-blue-950/30 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            <Icon size={16} />
+                          </div>
+                          <div>
+                            <div className="text-[13px] font-semibold text-stone-900 dark:text-stone-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                              {item.label}
+                            </div>
+                            <div className="text-[11px] text-stone-500 dark:text-stone-400 mt-0.5 leading-normal">
+                              {item.desc}
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <a
-              href="#join"
-              className="text-sm font-semibold px-5 py-2.5 rounded-xl lumi-gradient text-white shadow-lg shadow-indigo-500/25 hover:opacity-90 transition-all active:scale-95"
+          {/* Right actions */}
+          <div className="hidden md:flex items-center gap-4">
+            <Link
+              href="/join"
+              className="btn btn-primary btn-sm rounded-full text-[13px]"
               id="nav-cta"
             >
               Get Early Access
-            </a>
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 rounded-xl hover:bg-black/5 transition-colors"
+            className="md:hidden p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300 transition-colors"
             onClick={() => setOpen(!open)}
             aria-label={open ? "Close menu" : "Open menu"}
             id="mobile-menu-toggle"
@@ -75,29 +156,52 @@ export default function Navigation() {
         </div>
       </header>
 
-      {/* Mobile drawer */}
+      {/* Mobile Drawer */}
       {open && (
-        <div className="fixed inset-0 z-40 md:hidden">
-          <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setOpen(false)} />
-          <nav className="absolute top-[72px] left-4 right-4 bg-white rounded-2xl shadow-2xl p-6 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="text-base font-semibold text-[--text-primary] py-2 border-b border-[--border] last:border-0"
+        <div className="fixed inset-0 z-40 md:hidden bg-background">
+          <div className="flex flex-col h-full pt-[68px] overflow-y-auto px-6 pb-8">
+            <div className="grid gap-6 mt-6">
+              {navGroups.map((group) => (
+                <div key={group.label} className="grid gap-2.5">
+                  <div className="text-[11px] font-bold text-stone-400 dark:text-stone-500 uppercase tracking-widest px-2">
+                    {group.label}
+                  </div>
+                  <div className="grid gap-1">
+                    {group.items.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="flex items-center gap-3 py-2.5 px-2.5 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-800 text-[14px] font-medium text-stone-700 dark:text-stone-300"
+                        >
+                          <Icon size={16} className="text-stone-400" />
+                          {item.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-auto pt-8 border-t border-stone-200 dark:border-stone-800 grid gap-3">
+              <Link
+                href="/join"
+                className="btn btn-primary w-full text-center py-3 rounded-full"
               >
-                {link.label}
+                Get Early Access
+              </Link>
+              <a
+                href="https://lumisync.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary w-full text-center py-3 rounded-full"
+              >
+                Open Application
               </a>
-            ))}
-            <a
-              href="#join"
-              onClick={() => setOpen(false)}
-              className="mt-2 text-center text-sm font-semibold px-5 py-3 rounded-xl lumi-gradient text-white"
-            >
-              Get Early Access
-            </a>
-          </nav>
+            </div>
+          </div>
         </div>
       )}
     </>

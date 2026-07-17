@@ -1,136 +1,252 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Sparkles, Send } from "lucide-react";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Sparkles, Send, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
-const DEMO_MESSAGES = [
-  { role: "user", text: "What's open for lunch right now?" },
-  { role: "lumi", text: "Right now, the Main Dining Hall, Commons Café, and Einstein's Bagels are all open. The dining hall closes at 2:30 PM — you have 45 minutes. Want me to show you the menu?" },
-  { role: "user", text: "Yes! What's the best option today?" },
-  { role: "lumi", text: "Based on today's menu, I'd recommend the Grilled Salmon Bowl at the Main Dining Hall — it's highly rated. Commons Café also has a great Caprese Panini if you prefer something lighter. 🍽️" },
+const messages = [
+  { role: "user" as const, text: "Where can I get lunch right now?" },
+  {
+    role: "lumi" as const,
+    text: "The Main Dining Hall and Commons Café are both open until 2:30 PM. There's also Einstein's Bagels on the south end. Would you like directions?",
+  },
+  { role: "user" as const, text: "Directions to Main Dining Hall please" },
+  {
+    role: "lumi" as const,
+    text: "Head north from the Student Union, past the library. Main Dining Hall is the brick building on your left — about a 3-minute walk. 🗺️",
+  },
+];
+
+const bullets = [
+  "Real-time dining hours and menus",
+  "Campus map and turn-by-turn directions",
+  "Professor schedules and office locations",
+  "Upcoming events, deadlines, and more",
 ];
 
 export default function LumiDemo() {
-  const [step, setStep] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(1);
 
-  const visible = DEMO_MESSAGES.slice(0, step + 1);
+  const advance = () => {
+    if (visibleCount < messages.length) setVisibleCount((v) => v + 1);
+  };
 
   return (
-    <section id="lumi" className="py-24 lg:py-32 bg-[--surface-2]">
-      <div className="section-max">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: copy */}
+    <section className="section-py" style={{ background: "var(--surface)" }}>
+      <div className="section-max px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left: Copy */}
           <motion.div
-            initial={{ opacity: 0, x: -32 }}
+            initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, ease: "easeOut" as const }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[--surface-2] border border-[--border] text-[--text-secondary] text-xs font-semibold mb-5 shadow-sm tracking-widest uppercase">
-              <Sparkles size={12} className="text-[--lumi-accent]" />
-              Meet Lumi
-            </span>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-5 tracking-tight text-[--text-primary]">
-              Your campus
-              <br />
-              <span className="text-[--text-muted]">AI assistant.</span>
+            <span className="section-label mb-4 block">Meet Lumi</span>
+            <h2
+              style={{
+                fontFamily: "var(--font-display)",
+                letterSpacing: "-0.025em",
+                color: "var(--text-primary)",
+                lineHeight: 1.1,
+              }}
+              className="text-4xl sm:text-5xl font-bold mb-5"
+            >
+              Ask anything about your campus.
             </h2>
-            <p className="text-lg text-[--text-secondary] leading-relaxed mb-8">
-              Lumi knows your campus inside out. Ask it anything — dining hours,
-              shuttle ETAs, event details, or where to find your professor.
-              Powered by Gemini, with real-time campus data.
+            <p
+              className="text-lg leading-relaxed mb-8"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              Lumi is your AI campus assistant powered by Google Gemini. It
+              knows your dining hours, campus map, professor schedules, events,
+              and more — all in natural language.
             </p>
 
-            <ul className="space-y-4 mb-8">
-              {[
-                "Answers in natural language, not search results",
-                "Connected to live dining, events, and map data",
-                "Gets smarter the more your campus uses it",
-                "Available 24/7 — even during finals week",
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-[--text-secondary]">
-                  <span className="w-5 h-5 rounded-full bg-[--lumi-primary] flex-shrink-0 flex items-center justify-center">
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                      <path d="M2 5.5L4 7.5L8 3" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                  {item}
+            <ul className="flex flex-col gap-3 mb-10">
+              {bullets.map((b, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <CheckCircle2
+                    size={18}
+                    style={{ color: "#15803D", marginTop: 2, flexShrink: 0 }}
+                  />
+                  <span style={{ color: "var(--text-secondary)" }}>{b}</span>
                 </li>
               ))}
             </ul>
 
-            <a
-              href="#join"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[--lumi-primary] text-white font-medium hover:bg-[--lumi-primary-hover] transition-all"
-            >
-              Get Early Access
-            </a>
+            <Link href="/lumi" className="btn btn-primary">
+              Try Lumi Now
+            </Link>
           </motion.div>
 
-          {/* Right: chat demo */}
+          {/* Right: Chat Window */}
           <motion.div
-            initial={{ opacity: 0, x: 32 }}
+            initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, ease: "easeOut" as const }}
-            className="relative"
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, delay: 0.1 }}
           >
-            {/* Chat card */}
-            <div className="bg-[--surface] rounded-3xl border border-[--border] shadow-2xl overflow-hidden">
-              {/* Header */}
-              <div className="px-5 py-4 border-b border-[--border] flex items-center gap-3 bg-[--background]">
-                <div className="w-9 h-9 rounded-xl bg-[--lumi-primary] flex items-center justify-center">
-                  <Sparkles size={18} className="text-white" />
+            <div
+              className="card overflow-hidden"
+              style={{
+                boxShadow: "0 8px 40px rgba(0,0,0,0.08)",
+                maxWidth: 480,
+                marginLeft: "auto",
+              }}
+            >
+              {/* Chat Header */}
+              <div
+                style={{
+                  padding: "16px 20px",
+                  borderBottom: "1px solid var(--border)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                }}
+              >
+                <div
+                  style={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: "50%",
+                    background: "#1D4ED8",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                  }}
+                >
+                  <Sparkles size={16} color="#fff" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-[--text-primary]">Lumi</div>
-                  <div className="text-xs text-[--text-muted] flex items-center gap-1.5 mt-0.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
-                    Online • Knows your campus
+                  <p
+                    className="font-semibold text-sm"
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      color: "var(--text-primary)",
+                    }}
+                  >
+                    Lumi
+                  </p>
+                  <div className="flex items-center gap-1.5">
+                    <div
+                      style={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: "50%",
+                        background: "#15803D",
+                      }}
+                    />
+                    <span
+                      className="text-xs"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      Online
+                    </span>
                   </div>
                 </div>
               </div>
 
               {/* Messages */}
-              <div className="p-5 space-y-4 min-h-[280px]">
-                {visible.map((msg, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
-                  >
-                    <div
-                      className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
-                        msg.role === "user"
-                          ? "bg-[--lumi-primary] text-white rounded-br-sm shadow-sm"
-                          : "bg-[--surface-2] text-[--text-primary] rounded-bl-sm border border-[--border]"
-                      }`}
+              <div
+                style={{
+                  padding: "20px",
+                  minHeight: 260,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 12,
+                  background: "#FAFAF9",
+                }}
+              >
+                <AnimatePresence>
+                  {messages.slice(0, visibleCount).map((msg, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                      style={{
+                        display: "flex",
+                        justifyContent:
+                          msg.role === "user" ? "flex-end" : "flex-start",
+                      }}
                     >
-                      {msg.text}
-                    </div>
-                  </motion.div>
-                ))}
+                      <div
+                        style={{
+                          maxWidth: "78%",
+                          padding: "10px 14px",
+                          borderRadius:
+                            msg.role === "user"
+                              ? "18px 18px 4px 18px"
+                              : "18px 18px 18px 4px",
+                          background:
+                            msg.role === "user" ? "#1D4ED8" : "#fff",
+                          color: msg.role === "user" ? "#fff" : "var(--text-primary)",
+                          fontSize: "0.875rem",
+                          lineHeight: 1.5,
+                          border:
+                            msg.role === "lumi"
+                              ? "1px solid var(--border)"
+                              : "none",
+                          boxShadow:
+                            msg.role === "lumi"
+                              ? "0 1px 4px rgba(0,0,0,0.05)"
+                              : "none",
+                        }}
+                      >
+                        {msg.text}
+                      </div>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+
+                {visibleCount < messages.length && (
+                  <button
+                    onClick={advance}
+                    className="text-xs self-center mt-2"
+                    style={{ color: "var(--text-muted)", cursor: "pointer" }}
+                  >
+                    Click to continue conversation ↓
+                  </button>
+                )}
               </div>
 
-              {/* Input bar */}
-              <div className="px-5 pb-5">
-                <div className="flex items-center gap-3 bg-[--surface-2] border border-[--border] rounded-2xl px-4 py-3">
-                  <span className="text-sm text-[--text-muted] flex-1">Ask Lumi anything…</span>
-                  <button
-                    id="lumi-demo-btn"
-                    onClick={() => setStep((s) => Math.min(s + 1, DEMO_MESSAGES.length - 1))}
-                    disabled={step >= DEMO_MESSAGES.length - 1}
-                    className="w-9 h-9 rounded-full bg-[--lumi-primary] flex items-center justify-center disabled:opacity-40 transition-opacity"
-                    aria-label="Send demo message"
-                  >
-                    <Send size={14} className="text-white -ml-0.5" />
-                  </button>
-                </div>
-                <p className="text-center text-xs text-[--text-muted] mt-3">
-                  Click send ↑ to play the demo
-                </p>
+              {/* Input Bar */}
+              <div
+                style={{
+                  padding: "12px 16px",
+                  borderTop: "1px solid var(--border)",
+                  display: "flex",
+                  gap: 10,
+                  alignItems: "center",
+                  background: "#fff",
+                }}
+              >
+                <input
+                  readOnly
+                  placeholder="Ask Lumi anything…"
+                  className="input flex-1 text-sm"
+                  style={{ padding: "10px 14px", fontSize: "0.875rem" }}
+                />
+                <button
+                  onClick={advance}
+                  style={{
+                    width: 38,
+                    height: 38,
+                    borderRadius: "50%",
+                    background: "#1D4ED8",
+                    border: "none",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    flexShrink: 0,
+                  }}
+                >
+                  <Send size={14} color="#fff" />
+                </button>
               </div>
             </div>
           </motion.div>

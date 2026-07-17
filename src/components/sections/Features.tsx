@@ -1,136 +1,187 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Map, Utensils, CalendarDays, BriefcaseBusiness, Building2, Sparkles, Bus, Users } from "lucide-react";
+import {
+  Map,
+  Sparkles,
+  Utensils,
+  Car,
+  Calendar,
+  Users,
+  Briefcase,
+  Building2,
+  Bus,
+} from "lucide-react";
 
 const features = [
   {
     icon: Sparkles,
-    title: "Lumi AI Assistant",
-    desc: "Ask Lumi anything about your campus — dining hours, event details, shuttle schedules, or career advice. Powered by Gemini.",
-    gradient: "from-indigo-500 to-purple-500",
-    badge: "AI-Powered",
+    name: "Lumi AI",
+    desc: "Natural language campus assistant powered by Gemini",
+    wide: true,
+    tall: false,
+    accent: "#1D4ED8",
   },
   {
     icon: Map,
-    title: "Live Campus Map",
-    desc: "Navigate your campus with an interactive map featuring real-time building info, walking routes, and points of interest.",
-    gradient: "from-sky-500 to-cyan-400",
-    badge: "Real-Time",
+    name: "Campus Map",
+    desc: "Interactive indoor/outdoor navigation",
+    wide: false,
+    tall: true,
+    accent: "#15803D",
   },
   {
     icon: Utensils,
-    title: "Dining & Menus",
-    desc: "Check what's open right now, browse today's menu, see hours, and get alerts when your favorite spot closes soon.",
-    gradient: "from-orange-400 to-amber-500",
-    badge: "Live Updates",
+    name: "Dining",
+    desc: "Real-time dining hours, menus, and availability",
+    wide: false,
+    tall: false,
+    accent: "#B48F2A",
   },
   {
-    icon: CalendarDays,
-    title: "Campus Events",
-    desc: "Discover lectures, club meetups, career fairs, and social events — personalized to your interests and schedule.",
-    gradient: "from-rose-500 to-pink-400",
-    badge: "Personalized",
+    icon: Car,
+    name: "Parking",
+    desc: "Find available lots and navigate to them",
+    wide: false,
+    tall: false,
+    accent: "#57534E",
   },
   {
-    icon: BriefcaseBusiness,
-    title: "Jobs & Internships",
-    desc: "Find on-campus jobs, local internships, and research positions — curated for your university.",
-    gradient: "from-emerald-500 to-teal-400",
-    badge: "Career",
-  },
-  {
-    icon: Building2,
-    title: "Building Directory",
-    desc: "Find any building, room, or department instantly. Includes accessibility info, hours, and faculty offices.",
-    gradient: "from-violet-500 to-indigo-400",
-    badge: "Directory",
-  },
-  {
-    icon: Bus,
-    title: "Shuttle Tracker",
-    desc: "See real-time shuttle positions, estimated arrivals, and route maps — never miss your ride again.",
-    gradient: "from-blue-500 to-sky-400",
-    badge: "Live Tracking",
+    icon: Calendar,
+    name: "Events",
+    desc: "Never miss a campus event or deadline",
+    wide: false,
+    tall: false,
+    accent: "#15803D",
   },
   {
     icon: Users,
-    title: "Faculty Directory",
-    desc: "Search professors and staff by name, department, or research area. Find office hours and contact info instantly.",
-    gradient: "from-fuchsia-500 to-pink-500",
-    badge: "Directory",
+    name: "Faculty",
+    desc: "Find any professor's office, hours, and contact",
+    wide: true,
+    tall: false,
+    accent: "#57534E",
+  },
+  {
+    icon: Briefcase,
+    name: "Jobs",
+    desc: "On-campus jobs and work-study opportunities",
+    wide: false,
+    tall: false,
+    accent: "#B48F2A",
+  },
+  {
+    icon: Building2,
+    name: "Organizations",
+    desc: "Discover student clubs and organizations",
+    wide: false,
+    tall: false,
+    accent: "#1D4ED8",
+  },
+  {
+    icon: Bus,
+    name: "Shuttle",
+    desc: "Real-time shuttle tracking and schedules",
+    wide: false,
+    tall: false,
+    accent: "#15803D",
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" as const } },
-};
-
 export default function Features() {
   return (
-    <section id="features" className="py-24 lg:py-32">
-      <div className="section-max">
+    <section className="section-py" style={{ background: "var(--background)" }}>
+      <div className="section-max px-6">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-14"
         >
-          <span className="inline-block px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-sm font-semibold mb-4 border border-indigo-100">
-            Everything You Need
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-black mb-4">
-            One app. Every campus need.
+          <span className="section-label mb-4 block">Features</span>
+          <h2
+            style={{
+              fontFamily: "var(--font-display)",
+              letterSpacing: "-0.025em",
+              color: "var(--text-primary)",
+            }}
+            className="text-4xl sm:text-5xl font-bold"
+          >
+            Everything campus, unified.
           </h2>
-          <p className="text-lg text-[--text-secondary] max-w-xl mx-auto">
-            Lumisync replaces a dozen different apps and websites with one
-            beautiful, intelligent campus companion.
+          <p
+            className="mt-4 text-lg max-w-lg mx-auto"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            Nine powerful modules. One seamless experience.
           </p>
         </motion.div>
 
-        {/* Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={{ show: { transition: { staggerChildren: 0.07 } } }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+        {/* Bento Grid */}
+        <div
+          className="grid gap-4"
+          style={{
+            gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+            gridAutoRows: "160px",
+          }}
         >
-          {features.map((f) => {
+          {features.map((f, i) => {
             const Icon = f.icon;
             return (
               <motion.div
-                key={f.title}
-                variants={fadeUp}
-                className="feature-card group relative bg-white rounded-2xl border border-[--border] p-6 overflow-hidden cursor-default"
+                key={f.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.06 }}
+                className="card p-6 flex flex-col justify-between group cursor-default"
+                style={{
+                  gridColumn: f.wide ? "span 2" : "span 1",
+                  gridRow: f.tall ? "span 2" : "span 1",
+                  minHeight: f.tall ? 332 : 160,
+                }}
               >
-                {/* Subtle gradient bg on hover */}
-                <div className="absolute inset-0 lumi-gradient-subtle opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Icon */}
+                <div
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: 10,
+                    background: "#F5F5F4",
+                    border: "1px solid var(--border)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition: "background 0.2s",
+                  }}
+                >
+                  <Icon size={18} style={{ color: f.accent }} />
+                </div>
 
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className={`inline-flex w-11 h-11 items-center justify-center rounded-xl bg-gradient-to-br ${f.gradient} mb-4 shadow-lg`}>
-                    <Icon size={20} className="text-white" strokeWidth={1.8} />
-                  </div>
-
-                  {/* Badge */}
-                  <span className="block text-[10px] font-bold text-[--text-muted] uppercase tracking-widest mb-2">
-                    {f.badge}
-                  </span>
-
-                  {/* Title */}
-                  <h3 className="text-base font-bold mb-2 text-[--text-primary]">{f.title}</h3>
-
-                  {/* Desc */}
-                  <p className="text-sm text-[--text-secondary] leading-relaxed">{f.desc}</p>
+                {/* Text */}
+                <div>
+                  <p
+                    className="font-semibold text-base mb-1"
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      color: "var(--text-primary)",
+                    }}
+                  >
+                    {f.name}
+                  </p>
+                  <p
+                    className="text-sm leading-snug"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    {f.desc}
+                  </p>
                 </div>
               </motion.div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

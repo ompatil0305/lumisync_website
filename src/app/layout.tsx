@@ -19,21 +19,24 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://lumisync.app"),
   title: {
-    default: "Lumisync — Your AI-Powered Campus Companion",
+    default: "Lumisync — The AI Campus Operating System",
     template: "%s | Lumisync",
   },
   description:
-    "Lumisync supercharges your university experience. Explore dining, events, campus maps, parking, jobs, and get instant answers from Lumi — your AI campus assistant. Built for universities worldwide.",
+    "Lumisync is the AI-powered operating system for university campuses. Dining, events, maps, parking, faculty, jobs, and Lumi AI — all in one seamless experience. Built for universities worldwide.",
   keywords: [
-    "campus app",
+    "campus operating system",
     "university app",
     "AI campus assistant",
+    "campus navigation",
     "student productivity",
     "campus map",
     "dining finder",
     "campus events",
     "Lumisync",
     "Lumi AI",
+    "university platform",
+    "higher education technology",
   ],
   authors: [{ name: "Lumisync", url: "https://lumisync.app" }],
   creator: "Lumisync",
@@ -42,23 +45,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://lumisync.app",
     siteName: "Lumisync",
-    title: "Lumisync — Your AI-Powered Campus Companion",
+    title: "Lumisync — The AI Campus Operating System",
     description:
-      "Supercharge your campus experience with AI-powered dining, events, maps, and more. Built for universities worldwide.",
+      "One platform for every campus need. Powered by AI. Built for universities worldwide.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Lumisync — AI Campus Companion",
+        alt: "Lumisync — AI Campus Operating System",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lumisync — AI Campus Companion",
+    title: "Lumisync — The AI Campus Operating System",
     description:
-      "Supercharge your campus experience with Lumi AI. Dining, events, maps, jobs — all in one app.",
+      "Dining, events, maps, parking, faculty, jobs, and Lumi AI — all in one app. Built for universities worldwide.",
     images: ["/og-image.png"],
   },
   robots: {

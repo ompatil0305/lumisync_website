@@ -1,89 +1,211 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useState } from "react";
-import { Home, Map, Compass, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
+import { Home, Map, Sparkles, Compass, Users } from "lucide-react";
 
 const tabs = [
-  { id: "home", title: "Home", path: "/", icon: Home, desc: "Your daily brief, tailored to you." },
-  { id: "explore", title: "Explore", path: "/explore", icon: Compass, desc: "Discover dining, events, and parking." },
-  { id: "map", title: "Campus Map", path: "/map", icon: Map, desc: "Never get lost on campus again." },
-  { id: "lumi", title: "Lumi AI", path: "/lumi", icon: Sparkles, desc: "Your personal campus assistant." },
+  {
+    id: "home",
+    label: "Home Dashboard",
+    icon: Home,
+    path: "/",
+    desc: "Your personalized campus hub at a glance",
+  },
+  {
+    id: "map",
+    label: "Campus Map",
+    icon: Map,
+    path: "/map",
+    desc: "Interactive indoor & outdoor navigation",
+  },
+  {
+    id: "lumi",
+    label: "Lumi AI",
+    icon: Sparkles,
+    path: "/lumi",
+    desc: "Natural language campus assistant",
+  },
+  {
+    id: "explore",
+    label: "Explore",
+    icon: Compass,
+    path: "/explore",
+    desc: "Discover dining, events, jobs and more",
+  },
+  {
+    id: "faculty",
+    label: "Faculty",
+    icon: Users,
+    path: "/faculty",
+    desc: "Find professors, offices and office hours",
+  },
 ];
 
 export default function AppShowcase() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <section id="showcase" className="py-24 lg:py-32 overflow-hidden bg-[--surface-2]">
-      <div className="section-max">
+    <section className="section-py" style={{ background: "var(--background)" }}>
+      <div className="section-max px-6">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-14"
         >
-          <span className="inline-block px-3 py-1.5 rounded-full bg-[--surface] text-[--text-secondary] text-xs font-semibold mb-4 border border-[--border] shadow-sm tracking-widest uppercase">
-            Live Preview
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-[--text-primary] tracking-tight">
-            Beautifully designed.
-            <br className="hidden sm:block" />
-            <span className="text-[--text-muted]"> Functional by nature.</span>
+          <span className="section-label mb-4 block">Live Preview</span>
+          <h2
+            style={{
+              fontFamily: "var(--font-display)",
+              letterSpacing: "-0.025em",
+              color: "var(--text-primary)",
+            }}
+            className="text-4xl sm:text-5xl font-bold"
+          >
+            Every screen. Crafted with care.
           </h2>
-          <p className="text-lg text-[--text-secondary] max-w-xl mx-auto mt-4">
-            Experience the real Lumisync application below. No mockups, no fictional interfaces. Just the tools you need, beautifully executed.
+          <p
+            className="mt-4 text-lg max-w-md mx-auto"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            Explore every part of Lumisync — live, in real-time.
           </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+        <div className="flex flex-col lg:flex-row items-start gap-10 justify-center">
           {/* Tabs */}
-          <div className="flex-1 flex flex-col gap-4 w-full max-w-md">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col gap-2 w-full lg:w-72 shrink-0"
+          >
             {tabs.map((tab) => {
-              const isActive = activeTab.id === tab.id;
               const Icon = tab.icon;
+              const active = activeTab.id === tab.id;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab)}
-                  className={`flex items-center gap-5 p-5 rounded-2xl transition-all text-left w-full border ${
-                    isActive
-                      ? "bg-[--surface] border-[--border] shadow-lg scale-[1.02]"
-                      : "bg-transparent border-transparent hover:bg-[--surface]/50 opacity-70 hover:opacity-100"
-                  }`}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 14,
+                    padding: "14px 18px",
+                    borderRadius: 12,
+                    border: active
+                      ? "1px solid var(--border)"
+                      : "1px solid transparent",
+                    background: active ? "#fff" : "transparent",
+                    boxShadow: active
+                      ? "0 2px 12px rgba(0,0,0,0.06)"
+                      : "none",
+                    borderLeft: active
+                      ? "3px solid #1D4ED8"
+                      : "3px solid transparent",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    transition: "all 0.2s",
+                    width: "100%",
+                  }}
                 >
-                  <div className={`p-3 rounded-xl transition-colors ${isActive ? "bg-[--lumi-primary] text-white" : "bg-[--border] text-[--text-secondary]"}`}>
-                    <Icon size={24} />
+                  <div
+                    style={{
+                      width: 36,
+                      height: 36,
+                      borderRadius: 8,
+                      background: active ? "#EFF6FF" : "#F5F5F4",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Icon
+                      size={16}
+                      style={{ color: active ? "#1D4ED8" : "#A8A29E" }}
+                    />
                   </div>
                   <div>
-                    <h3 className={`text-lg font-semibold transition-colors ${isActive ? "text-[--text-primary]" : "text-[--text-secondary]"}`}>
-                      {tab.title}
-                    </h3>
-                    <p className="text-sm text-[--text-muted] mt-1">{tab.desc}</p>
+                    <p
+                      className="font-semibold text-sm"
+                      style={{
+                        fontFamily: "var(--font-display)",
+                        color: active
+                          ? "var(--text-primary)"
+                          : "var(--text-muted)",
+                      }}
+                    >
+                      {tab.label}
+                    </p>
+                    <p
+                      className="text-xs mt-0.5"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      {tab.desc}
+                    </p>
                   </div>
                 </button>
               );
             })}
-          </div>
+          </motion.div>
 
-          {/* Phone Iframe */}
-          <div className="flex-1 flex justify-center lg:justify-end w-full">
-            <motion.div
-              key={activeTab.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4 }}
-              className="relative w-full max-w-[320px] h-[640px] rounded-[3rem] border-[12px] border-[--lumi-primary] bg-[--surface] shadow-2xl overflow-hidden"
+          {/* Phone Frame */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, delay: 0.1 }}
+            style={{ flexShrink: 0 }}
+          >
+            <div
+              style={{
+                width: 320,
+                height: 640,
+                borderRadius: "2.5rem",
+                border: "10px solid #1C1917",
+                background: "#1C1917",
+                boxShadow: "0 24px 80px rgba(0,0,0,0.20)",
+                overflow: "hidden",
+                position: "relative",
+              }}
             >
-              <div className="absolute top-0 inset-x-0 h-6 bg-[--lumi-primary] z-20 rounded-b-2xl mx-16" /> {/* Notch */}
-              <iframe
-                src={`https://lumisync.vercel.app${activeTab.path}`}
-                className="w-full h-full border-none relative z-10"
-                title={`${activeTab.title} Preview`}
+              {/* Notch */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  width: 100,
+                  height: 24,
+                  background: "#1C1917",
+                  borderBottomLeftRadius: 14,
+                  borderBottomRightRadius: 14,
+                  zIndex: 10,
+                }}
               />
-            </motion.div>
-          </div>
+              <motion.iframe
+                key={activeTab.id}
+                src={`https://lumisync.vercel.app${activeTab.path}`}
+                title={`Lumisync ${activeTab.label}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  border: "none",
+                  display: "block",
+                }}
+                loading="lazy"
+              />
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
