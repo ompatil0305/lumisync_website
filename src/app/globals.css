@@ -7,10 +7,10 @@
 
 :root {
   /* Brand */
-  --lumi-primary:       204 0 0;    /* TTU Red */
-  --lumi-primary-hover: 153 0 0;    /* TTU Dark Red */
-  --lumi-accent:        0 0 0;      /* TTU Black */
-  --lumi-accent-hover:  51 51 51;
+  --lumi-primary:       15 23 42;    /* Slate-900 / Charcoal */
+  --lumi-primary-hover: 0 0 0;       /* Black */
+  --lumi-accent:        153 0 0;     /* Deep Red */
+  --lumi-accent-hover:  102 0 0;
 
   /* Surface */
   --background: #FAFAFC;
@@ -27,16 +27,16 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Brand - Brighter for Dark Mode */
-    --lumi-primary:       255 51 51;  /* Bright Red */
-    --lumi-primary-hover: 204 0 0;
-    --lumi-accent:        255 255 255; /* White for dark mode contrast */
-    --lumi-accent-hover:  204 204 204;
+    --lumi-primary:       248 250 252;  /* White */
+    --lumi-primary-hover: 226 232 240;
+    --lumi-accent:        255 51 51;    /* Bright Red */
+    --lumi-accent-hover:  204 0 0;
 
     /* Surface */
-    --background: #0A0A12;
-    --surface:    #11111E;
-    --surface-2:  #1E1B2E;
-    --border:     #1E1B2E;
+    --background: #0A0A0A;
+    --surface:    #0F0F0F;
+    --surface-2:  #171717;
+    --border:     #262626;
 
     /* Text */
     --text-primary:   #F8FAFC;
