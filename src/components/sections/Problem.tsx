@@ -37,7 +37,7 @@ export default function Problem() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-3 py-1 rounded-full bg-rose-50 text-rose-600 text-sm font-semibold mb-4 border border-rose-100">
+          <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4 border border-primary/20">
             The Problem
           </span>
           <h2 className="text-4xl sm:text-5xl font-black mb-4">
@@ -58,9 +58,9 @@ export default function Problem() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
-                className="bg-[--surface-2] rounded-3xl p-6 border border-[--border] hover:border-rose-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                className="bg-[--surface-2] rounded-3xl p-6 border border-[--border] hover:border-primary/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-rose-500 mb-5 border border-[--border]">
+                <div className="w-12 h-12 rounded-2xl bg-[--surface] shadow-sm flex items-center justify-center text-primary mb-5 border border-[--border]">
                   <Icon size={24} strokeWidth={1.5} />
                 </div>
                 <h3 className="text-lg font-bold mb-2">{item.title}</h3>

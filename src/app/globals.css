@@ -7,10 +7,10 @@
 
 :root {
   /* Brand */
-  --lumi-primary:       79 70 229;    /* Indigo-600 */
-  --lumi-primary-hover: 67 56 202;
-  --lumi-accent:        14 165 233;   /* Sky-500 */
-  --lumi-accent-hover:  2 132 199;
+  --lumi-primary:       204 0 0;    /* TTU Red */
+  --lumi-primary-hover: 153 0 0;    /* TTU Dark Red */
+  --lumi-accent:        0 0 0;      /* TTU Black */
+  --lumi-accent-hover:  51 51 51;
 
   /* Surface */
   --background: #FAFAFC;
@@ -22,7 +22,30 @@
   --text-primary:   #0F172A;
   --text-secondary: #475569;
   --text-muted:     #94A3B8;
+}
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Brand - Brighter for Dark Mode */
+    --lumi-primary:       255 51 51;  /* Bright Red */
+    --lumi-primary-hover: 204 0 0;
+    --lumi-accent:        253 185 39; /* Gold for dark mode contrast */
+    --lumi-accent-hover:  204 153 0;
+
+    /* Surface */
+    --background: #0A0A12;
+    --surface:    #11111E;
+    --surface-2:  #1E1B2E;
+    --border:     #1E1B2E;
+
+    /* Text */
+    --text-primary:   #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted:     #64748B;
+  }
+}
+
+:root {
   /* Status */
   --success: #10B981;
   --warning: #F59E0B;
