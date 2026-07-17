@@ -46,7 +46,7 @@ export default function Hero() {
           animate="show"
           variants={fadeUp}
         >
-          <span className="section-label">AI Campus Operating System</span>
+          <span className="section-label">AI-Powered Campus Operating System</span>
         </motion.div>
 
         {/* Headline */}
