@@ -24,7 +24,7 @@ export default function JoinBeta() {
               width: 48,
               height: 3,
               borderRadius: 999,
-              background: "#1D4ED8",
+              background: "#CC0000",
             }}
           />
 

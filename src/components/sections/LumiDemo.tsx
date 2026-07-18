@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Sparkles, Send, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
@@ -26,8 +26,27 @@ const bullets = [
 ];
 
 export default function LumiDemo() {
+  const prefersReducedMotion = useReducedMotion();
   const [visibleCount, setVisibleCount] = useState(1);
   const [isTyping, setIsTyping] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+
+  const handleCardMouseMove = (e: React.MouseEvent) => {
+    if (prefersReducedMotion || !cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left - width / 2;
+    const mouseY = e.clientY - rect.top - height / 2;
+    const rX = -(mouseY / (height / 2)) * 6;
+    const rY = (mouseX / (width / 2)) * 6;
+    setTilt({ x: rX, y: rY });
+  };
+
+  const handleCardMouseLeave = () => {
+    setTilt({ x: 0, y: 0 });
+  };
 
   const advance = () => {
     if (visibleCount >= messages.length || isTyping) return;
@@ -68,13 +87,26 @@ export default function LumiDemo() {
               Ask anything about your campus.
             </h2>
             <p
-              className="text-lg leading-relaxed mb-8"
+              className="text-lg leading-relaxed mb-6"
               style={{ color: "var(--text-secondary)" }}
             >
               Lumi is your AI campus assistant powered by Google Gemini. It
               knows your dining hours, campus map, professor schedules, events,
               and more — all in natural language.
             </p>
+
+            <div className="flex items-center gap-2 mb-8 bg-[#FAFAF9] dark:bg-stone-900 border border-border/60 rounded-xl px-3 py-2 w-max">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C12 2 12.5 7.5 14.5 9.5C16.5 11.5 22 12 22 12C22 12 16.5 12.5 14.5 14.5C12.5 16.5 12 22 12 22C12 22 11.5 16.5 9.5 14.5C7.5 12.5 2 12 2 12C2 12 7.5 11.5 9.5 9.5C11.5 7.5 12 2 12 2Z" fill="url(#gemini-gradient)"/>
+                <defs>
+                  <linearGradient id="gemini-gradient" x1="2" y1="12" x2="22" y2="12" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#CC0000"/>
+                    <stop offset="1" stopColor="#FF453A"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span className="text-xs font-bold text-stone-700 dark:text-stone-300">Powered by Google Gemini</span>
+            </div>
 
             <ul className="flex flex-col gap-3 mb-10">
               {bullets.map((b, i) => (
@@ -100,14 +132,27 @@ export default function LumiDemo() {
             viewport={{ once: true }}
             transition={{ duration: 0.55, delay: 0.1 }}
           >
-            <div
-              className="card overflow-hidden"
+            <motion.div
+              ref={cardRef}
+              onMouseMove={handleCardMouseMove}
+              onMouseLeave={handleCardMouseLeave}
+              animate={{
+                rotateX: prefersReducedMotion ? 0 : tilt.x,
+                rotateY: prefersReducedMotion ? 0 : tilt.y,
+              }}
               style={{
-                boxShadow: "0 8px 40px rgba(0,0,0,0.08)",
-                maxWidth: 480,
-                marginLeft: "auto",
+                perspective: 1000,
+                transformStyle: "preserve-3d",
               }}
             >
+              <div
+                className="card overflow-hidden transition-shadow duration-300 hover:shadow-xl"
+                style={{
+                  boxShadow: "0 8px 40px rgba(0,0,0,0.08)",
+                  maxWidth: 480,
+                  marginLeft: "auto",
+                }}
+              >
               {/* Chat Header */}
               <div
                 style={{
@@ -123,7 +168,7 @@ export default function LumiDemo() {
                     width: 36,
                     height: 36,
                     borderRadius: "50%",
-                    background: "#1D4ED8",
+                    background: "#CC0000",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -194,7 +239,7 @@ export default function LumiDemo() {
                               ? "18px 18px 4px 18px"
                               : "18px 18px 18px 4px",
                           background:
-                            msg.role === "user" ? "#1D4ED8" : "#fff",
+                            msg.role === "user" ? "#CC0000" : "#fff",
                           color: msg.role === "user" ? "#fff" : "var(--text-primary)",
                           fontSize: "0.875rem",
                           lineHeight: 1.5,
@@ -271,7 +316,7 @@ export default function LumiDemo() {
                     width: 38,
                     height: 38,
                     borderRadius: "50%",
-                    background: "#1D4ED8",
+                    background: "#CC0000",
                     border: "none",
                     display: "flex",
                     alignItems: "center",
@@ -284,6 +329,7 @@ export default function LumiDemo() {
                 </button>
               </div>
             </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

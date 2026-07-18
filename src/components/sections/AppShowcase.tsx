@@ -46,7 +46,7 @@ export default function AppShowcase() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
   return (
-    <section className="section-py" style={{ background: "var(--background)" }}>
+    <section id="app-preview" className="section-py" style={{ background: "var(--background)" }}>
       <div className="section-max px-6">
         {/* Header */}
         <motion.div
@@ -105,7 +105,7 @@ export default function AppShowcase() {
                       ? "0 2px 12px rgba(0,0,0,0.06)"
                       : "none",
                     borderLeft: active
-                      ? "3px solid #1D4ED8"
+                      ? "3px solid #CC0000"
                       : "3px solid transparent",
                     cursor: "pointer",
                     textAlign: "left",
@@ -118,7 +118,7 @@ export default function AppShowcase() {
                       width: 36,
                       height: 36,
                       borderRadius: 8,
-                      background: active ? "#EFF6FF" : "#F5F5F4",
+                      background: active ? "#FEF2F2" : "#F5F5F4",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -127,7 +127,7 @@ export default function AppShowcase() {
                   >
                     <Icon
                       size={16}
-                      style={{ color: active ? "#1D4ED8" : "#A8A29E" }}
+                      style={{ color: active ? "#CC0000" : "#A8A29E" }}
                     />
                   </div>
                   <div>

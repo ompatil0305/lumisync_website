@@ -15,49 +15,50 @@ const phases: Phase[] = [
   {
     status: "launched",
     label: "Launched",
-    date: "2025",
+    date: "2025 - Mid 2026",
     icon: CheckCircle2,
     items: [
-      "Campus Map (indoor + outdoor)",
-      "Lumi AI (Gemini-powered assistant)",
-      "Dining halls — hours & menus",
-      "Events calendar",
-      "On-campus Jobs board",
-      "Faculty directory",
+      "Campus Map (interactive footprints & labels)",
+      "Lumi AI (Gemini-powered assistant & RAG)",
+      "Dining halls — hours, locations & menus",
+      "Events directory & campus jobs",
+      "Student organizations directory",
+      "Favorite locations tracking",
+      "Faculty directory info"
     ],
   },
   {
     status: "in-progress",
     label: "In Progress",
-    date: "Q2–Q3 2025",
+    date: "Q3 2026",
     icon: Loader2,
     items: [
-      "Advanced Lumi AI (memory + context)",
-      "Campus shuttle real-time tracking",
-      "Mobile app — Android & iOS",
+      "Advanced Lumi AI (memory + session context)",
+      "Campus shuttle real-time tracking integration",
+      "Mobile app client — Android & iOS wrappers",
     ],
   },
   {
     status: "planned",
     label: "Planned",
-    date: "Q3 2025",
+    date: "Q4 2026",
     icon: ListTodo,
     items: [
-      "Student organizations directory",
-      "SSO login (university accounts)",
-      "Multi-university support",
+      "SSO login & university authentication portals",
+      "Multi-university provider integrations",
+      "Indoor navigation mapping",
     ],
   },
   {
     status: "future",
     label: "Future",
-    date: "2026+",
+    date: "2027+",
     icon: Lightbulb,
     items: [
-      "Research discovery engine",
-      "Alumni network integration",
-      "Enterprise dashboard for universities",
-      "Global expansion",
+      "Research discovery & academic engines",
+      "Alumni network & mentoring integrations",
+      "Enterprise dashboards for university admins",
+      "Global platform expansion",
     ],
   },
 ];
@@ -69,9 +70,9 @@ const statusStyles: Record<Phase["status"], { dot: string; badge: string; text: 
     text: "#15803D",
   },
   "in-progress": {
-    dot: "#1D4ED8",
-    badge: "rgba(29,78,216,0.1)",
-    text: "#1D4ED8",
+    dot: "#CC0000",
+    badge: "rgba(204,0,0,0.1)",
+    text: "#CC0000",
   },
   planned: {
     dot: "#B48F2A",
@@ -108,6 +109,9 @@ export default function Roadmap() {
           >
             Built in the open. Growing fast.
           </h2>
+          <p className="text-xs text-muted-foreground mt-3 font-medium uppercase tracking-wider">
+            Last updated: July 2026
+          </p>
         </motion.div>
 
         {/* Timeline */}

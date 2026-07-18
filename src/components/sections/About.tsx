@@ -65,18 +65,21 @@ export default function About() {
             For every student, at every university.
           </p>
 
-          {/* Divider + Byline */}
-          <div className="mt-10 flex flex-col items-center gap-2">
-            <div
+          {/* Byline + Avatar */}
+          <div className="mt-10 flex flex-col items-center gap-3">
+            <img
+              src="/founder_avatar.jpg"
+              alt="Om Patil"
               style={{
-                width: 40,
-                height: 2,
-                background: "#1D4ED8",
-                borderRadius: 999,
+                width: 56,
+                height: 56,
+                borderRadius: "50%",
+                border: "2px solid #CC0000",
+                objectFit: "cover",
               }}
             />
             <p
-              className="text-sm font-semibold mt-2"
+              className="text-sm font-bold mt-1"
               style={{
                 fontFamily: "var(--font-display)",
                 color: "var(--text-primary)",

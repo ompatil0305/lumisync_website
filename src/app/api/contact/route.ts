@@ -90,7 +90,7 @@ export async function POST(req: Request) {
     // Email 1: Notification to Admin
     const adminEmailHtml = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #E7E5E4; border-radius: 12px; overflow: hidden;">
-        <div style="background-color: #1D4ED8; color: #ffffff; padding: 24px; text-align: center;">
+        <div style="background-color: #CC0000; color: #ffffff; padding: 24px; text-align: center;">
           <h1 style="margin: 0; font-size: 24px; letter-spacing: -0.02em;">Lumisync Contact</h1>
           <p style="margin: 4px 0 0 0; font-size: 14px; opacity: 0.8;">New Form Submission</p>
         </div>
@@ -102,7 +102,7 @@ export async function POST(req: Request) {
             </tr>
             <tr>
               <td style="padding: 8px 0; font-size: 13px; font-weight: bold; color: #57534E;">Email:</td>
-              <td style="padding: 8px 0; font-size: 13px; color: #1C1917;"><a href="mailto:${email}" style="color: #1D4ED8; text-decoration: none;">${email}</a></td>
+              <td style="padding: 8px 0; font-size: 13px; color: #1C1917;"><a href="mailto:${email}" style="color: #CC0000; text-decoration: none;">${email}</a></td>
             </tr>
             <tr>
               <td style="padding: 8px 0; font-size: 13px; font-weight: bold; color: #57534E;">University:</td>
@@ -139,7 +139,7 @@ export async function POST(req: Request) {
           <p>Hi ${name},</p>
           <p>Thanks for reaching out to the Lumisync team! We have received your message regarding: <strong>"${subject}"</strong>.</p>
           <p>Lumisync is built to simplify campus life for students, faculty, and IT departments. Our team is reviewing your message, and we will get back to you within 2 to 3 business days.</p>
-          <p>In the meantime, feel free to explore our live client application at <a href="https://lumisync.vercel.app" style="color: #1D4ED8; text-decoration: none;">lumisync.vercel.app</a> or check out our roadmap at <a href="https://lumisync.app/roadmap" style="color: #1D4ED8; text-decoration: none;">lumisync.app/roadmap</a>.</p>
+          <p>In the meantime, feel free to explore our live client application at <a href="https://lumisync.vercel.app" style="color: #CC0000; text-decoration: none;">lumisync.vercel.app</a> or check out our roadmap at <a href="https://lumisync.app/roadmap" style="color: #CC0000; text-decoration: none;">lumisync.app/roadmap</a>.</p>
           <p>Best regards,<br/>The Lumisync Team</p>
         </div>
         <div style="background-color: #F5F5F4; text-align: center; padding: 12px; font-size: 11px; color: #A8A29E; border-t: 1px solid #E7E5E4;">

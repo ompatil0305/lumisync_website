@@ -53,7 +53,7 @@ export default function PressKitPage() {
 
               <h2 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mt-10 mb-4">Brand Guidelines</h2>
               <p className="text-sm leading-relaxed mb-4">
-                The Lumisync logo uses our standard Deep Blue (<code>#1D4ED8</code>) accent paired with Charcoal (<code>#1C1917</code>) text. When writing or referencing the brand name, format it as <strong>Lumisync</strong> (with a capital L, no space).
+                The Lumisync logo uses our standard Texas Tech Red (<code>#CC0000</code>) accent paired with Charcoal (<code>#1C1917</code>) text. When writing or referencing the brand name, format it as <strong>Lumisync</strong> (with a capital L, no space).
               </p>
               <p className="text-sm leading-relaxed mb-6">
                 Avoid applying heavy gradients, rotating the symbol, or altering brand spacing. The Outfit display font is preferred for headlines, paired with Inter for body text.
@@ -62,7 +62,7 @@ export default function PressKitPage() {
               <h2 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mt-10 mb-4">Media Contact</h2>
               <p className="text-sm leading-relaxed">
                 For interviews, custom asset requests, or media inquiries, reach out to our team at{" "}
-                <a href="mailto:press@lumisync.app" className="text-blue-600 hover:text-blue-700 font-semibold underline">
+                <a href="mailto:press@lumisync.app" className="text-[#CC0000] hover:text-[#990000] font-semibold underline">
                   press@lumisync.app
                 </a>
               </p>

@@ -65,7 +65,7 @@ export default function CampusMapPage() {
                 const Icon = feat.icon;
                 return (
                   <div key={i} className="card p-8 flex gap-6 items-start">
-                    <div className="p-3 rounded-xl bg-stone-100 dark:bg-stone-850 text-blue-600 flex-shrink-0">
+                    <div className="p-3 rounded-xl bg-stone-100 dark:bg-stone-850 text-[#CC0000] flex-shrink-0">
                       <Icon size={20} />
                     </div>
                     <div>
@@ -101,6 +101,9 @@ export default function CampusMapPage() {
                 />
               </div>
             </div>
+            <p className="text-center text-[10px] text-stone-500 dark:text-stone-400 mt-3 font-medium">
+              Map rendering and routing powered by Leaflet, OpenStreetMap, and OSRM project. © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-700 dark:hover:text-stone-300">OpenStreetMap contributors</a>.
+            </p>
           </div>
         </section>
 

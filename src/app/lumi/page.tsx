@@ -93,8 +93,8 @@ export default function LumiAIPage() {
                   desc: "Lumi compiles the response into a concise text block with links. Need directions? It generates navigation routes immediately.",
                 },
               ].map((s, i) => (
-                <div key={i} className="card p-8 border-t-4 border-t-blue-600">
-                  <div className="text-xs font-bold text-blue-600 mb-2">{s.step}</div>
+                <div key={i} className="card p-8 border-t-4 border-t-[#CC0000]">
+                  <div className="text-xs font-bold text-[#CC0000] mb-2">{s.step}</div>
                   <h3 className="text-lg font-bold mb-2 font-display">{s.title}</h3>
                   <p className="text-sm text-[--text-secondary] leading-relaxed">{s.desc}</p>
                 </div>
@@ -116,14 +116,14 @@ export default function LumiAIPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {capabilities.map((c, i) => (
                 <div key={i} className="card p-8 flex gap-6 items-start">
-                  <div className="p-3 rounded-xl bg-stone-100 dark:bg-stone-850 text-blue-600 flex-shrink-0">
+                  <div className="p-3 rounded-xl bg-stone-100 dark:bg-stone-850 text-[#CC0000] flex-shrink-0">
                     <MessageSquare size={20} />
                   </div>
                   <div>
                     <h3 className="text-lg font-bold mb-1 font-display text-stone-900 dark:text-stone-50">
                       {c.title}
                     </h3>
-                    <p className="text-xs font-semibold text-blue-600 mb-3 italic font-mono">
+                    <p className="text-xs font-semibold text-[#CC0000] mb-3 italic font-mono">
                       {c.example}
                     </p>
                     <p className="text-sm text-[--text-secondary] leading-relaxed">
@@ -141,7 +141,7 @@ export default function LumiAIPage() {
           <div className="section-max px-6 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
               <div className="col-span-2">
-                <div className="flex items-center gap-2 text-blue-600 mb-4">
+                <div className="flex items-center gap-2 text-[#CC0000] mb-4">
                   <Shield size={20} />
                   <span className="text-xs font-bold uppercase tracking-wider">Privacy First</span>
                 </div>
