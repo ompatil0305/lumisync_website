@@ -71,7 +71,7 @@ export default function AppShowcase() {
             className="mt-4 text-lg max-w-md mx-auto"
             style={{ color: "var(--text-secondary)" }}
           >
-            Explore every part of Lumisync — live, in real-time.
+            Explore every part of Lumisync live, in real-time.
           </p>
         </motion.div>
 

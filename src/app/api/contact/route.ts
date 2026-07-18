@@ -152,7 +152,7 @@ export async function POST(req: Request) {
     await resend.emails.send({
       from: "Lumisync Contact <onboarding@resend.dev>",
       to: recipientEmail,
-      subject: `[Lumisync Contact] ${subject} — from ${name}`,
+      subject: `[Lumisync Contact] ${subject} - from ${name}`,
       html: adminEmailHtml,
     });
 

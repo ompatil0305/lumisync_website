@@ -5,13 +5,13 @@ import { CheckCircle2, Clock, Calendar, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Roadmap | Lumisync",
+  title: "Roadmap",
   description: "Explore the development progress, active items, and future roadmap of Lumisync.",
 };
 
 const items = [
   {
-    phase: "Q2 2025",
+    phase: "2025 - Mid 2026",
     status: "launched",
     title: "Core Release (Launched)",
     desc: "Established the foundations of the campus operating system shell.",
@@ -26,7 +26,7 @@ const items = [
     dot: "bg-green-600",
   },
   {
-    phase: "Q3 2025",
+    phase: "Q3 2026",
     status: "active",
     title: "Advanced Lumi & Transit (Active)",
     desc: "Enhancing AI intelligence and rolling out transport trackers.",
@@ -36,11 +36,11 @@ const items = [
       "PWA offline loading and caching updates",
       "Saved favorites (menus, events, buildings)",
     ],
-    color: "border-l-blue-600",
-    dot: "bg-blue-600",
+    color: "border-l-[#CC0000]",
+    dot: "bg-[#CC0000]",
   },
   {
-    phase: "Q4 2025",
+    phase: "Q4 2026",
     status: "planned",
     title: "Organizations & Login (Planned)",
     desc: "Adding administrative tools and community spaces.",
@@ -54,7 +54,7 @@ const items = [
     dot: "bg-amber-600",
   },
   {
-    phase: "2026",
+    phase: "2027+",
     status: "future",
     title: "Analytics & Enterprise (Future)",
     desc: "Long term scaling for institutional partners.",

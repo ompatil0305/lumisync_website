@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Shield, Lock, Eye, CheckCircle2, AlertCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Security & Trust | Lumisync",
+  title: "Security & Trust",
   description: "Learn about Lumisync's security practices, FERPA awareness, data handling, and privacy-first architecture.",
 };
 
@@ -57,7 +57,7 @@ export default function SecurityPage() {
                 const Icon = item.icon;
                 return (
                   <div key={i} className="card p-8 flex flex-col gap-5">
-                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-850 text-blue-600 flex items-center justify-center border border-stone-250/20 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex items-center justify-center border border-stone-200/20 flex-shrink-0">
                       <Icon size={18} />
                     </div>
                     <h3 className="font-bold text-lg font-display text-stone-900 dark:text-stone-50">{item.title}</h3>

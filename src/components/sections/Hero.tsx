@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import Link from "next/link";
 
 const fadeUp = {
@@ -18,6 +18,49 @@ const stats = [
   { label: "First Campus", value: "Texas Tech" },
   { label: "AI Engine", value: "Gemini 2.5" },
 ];
+
+function CountUpNumber({ value }: { value: string }) {
+  const prefersReducedMotion = useReducedMotion();
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-20px" });
+  
+  const numMatch = value.match(/[\d.]+/);
+  const numVal = numMatch ? parseFloat(numMatch[0]) : 0;
+  const isDecimal = numMatch && numMatch[0].includes(".");
+  
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => {
+    if (isDecimal) {
+      return latest.toFixed(1);
+    }
+    return Math.floor(latest).toString();
+  });
+  
+  useEffect(() => {
+    if (inView && !prefersReducedMotion && numVal > 0) {
+      const controls = animate(count, numVal, {
+        duration: 1.5,
+        ease: "easeOut"
+      });
+      return controls.stop;
+    }
+  }, [inView, count, numVal, prefersReducedMotion]);
+
+  if (prefersReducedMotion || numVal === 0) {
+    return <span ref={ref}>{value}</span>;
+  }
+
+  const numStr = numMatch ? numMatch[0] : "";
+  const parts = value.split(numStr);
+  
+  return (
+    <span ref={ref}>
+      {parts[0]}
+      <motion.span>{rounded}</motion.span>
+      {parts[1]}
+    </span>
+  );
+}
 
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion();
@@ -150,8 +193,8 @@ export default function Hero() {
               className="text-lg max-w-xl mb-8"
               style={{ color: "var(--text-secondary)", lineHeight: 1.7 }}
             >
-              Lumisync unifies campus data — dining, events, maps, parking, faculty,
-              and more — into one AI-powered experience built for universities
+              Lumisync unifies campus data, including dining, events, maps, parking, faculty,
+              and more, into one AI-powered experience built for universities
               worldwide.
             </motion.p>
 
@@ -161,21 +204,27 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10 w-full"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-14 w-full"
             >
               <motion.div
                 onMouseMove={handleMagMouseMove}
                 onMouseLeave={handleMagMouseLeave}
                 animate={prefersReducedMotion ? {} : { x: magOffset.x, y: magOffset.y }}
-                transition={{ type: "spring", stiffness: 150, damping: 15 }}
+                whileHover={prefersReducedMotion ? {} : { y: -4, scale: 1.03, boxShadow: "0 12px 30px -5px rgba(204, 0, 0, 0.3)" }}
+                transition={{ type: "spring", stiffness: 200, damping: 15 }}
               >
-                <Link href="/join" className="btn btn-primary btn-lg shadow-lg shadow-[#CC0000]/15">
+                <Link href="/join" className="btn btn-primary btn-lg w-full text-center">
                   Get Early Access
                 </Link>
               </motion.div>
-              <a href="#app-preview" className="btn btn-secondary btn-lg">
+              <motion.a
+                href="#app-preview"
+                whileHover={prefersReducedMotion ? {} : { y: -4, scale: 1.03, boxShadow: "0 12px 30px -5px rgba(0, 0, 0, 0.15)" }}
+                transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                className="btn btn-secondary btn-lg"
+              >
                 See It Live
-              </a>
+              </motion.a>
             </motion.div>
 
             {/* Stats */}
@@ -184,7 +233,7 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-8 lg:gap-12 w-full pt-4 border-t border-border/40"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-8 lg:gap-12 w-full pt-8 border-t border-border/40"
             >
               {stats.map((s, i) => (
                 <div key={i} className="flex flex-col items-center lg:items-start gap-0.5">
@@ -192,7 +241,7 @@ export default function Hero() {
                     className="text-2xl font-bold font-display text-foreground"
                     style={{ color: "var(--text-primary)" }}
                   >
-                    {s.value}
+                    <CountUpNumber value={s.value} />
                   </span>
                   <span
                     className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground"

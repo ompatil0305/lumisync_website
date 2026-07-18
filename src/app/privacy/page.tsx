@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Lumisync",
+  title: "Privacy Policy",
   description: "Read Lumisync's policy details on data collection, student privacy, and AI queries handling.",
 };
 
@@ -14,13 +14,13 @@ export default function PrivacyPolicyPage() {
       <main className="flex-1 bg-[--background] pt-28 pb-20">
         <div className="section-max px-6 max-w-3xl">
           <div className="prose mx-auto">
-            <span className="text-xs font-bold text-blue-650 uppercase tracking-widest block mb-3">Legal</span>
+            <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-3">Legal</span>
             <h1 className="text-4xl font-bold font-display text-stone-900 dark:text-stone-50 mb-2">Privacy Policy</h1>
             <p className="text-xs text-stone-400 font-medium mb-10">Last Updated: July 2025</p>
 
             <h2 className="text-xl font-bold font-display text-stone-900 dark:text-stone-50 mb-4">1. Overview</h2>
             <p className="text-sm leading-relaxed mb-6">
-              Lumisync Inc. (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) builds products designed to remove daily friction from campus life. We believe privacy is a fundamental student right. We build Lumisync so that students can access maps, dining halls, schedules, and AI helpers without compromising personal information.
+              Lumisync (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) builds products designed to remove daily friction from campus life. We believe privacy is a fundamental student right. We build Lumisync so that students can access maps, dining halls, schedules, and AI helpers without compromising personal information.
             </p>
 
             <h2 className="text-xl font-bold font-display text-stone-900 dark:text-stone-50 mt-8 mb-4">2. What We Collect</h2>
@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-xl font-bold font-display text-stone-900 dark:text-stone-50 mt-8 mb-4">5. Contact Info</h2>
             <p className="text-sm leading-relaxed">
               If you have any questions or concerns regarding our privacy practices, please contact us at{" "}
-              <a href="mailto:privacy@lumisync.app" className="text-blue-650 hover:underline">
+              <a href="mailto:privacy@lumisync.app" className="text-blue-600 hover:underline">
                 privacy@lumisync.app
               </a>.
             </p>

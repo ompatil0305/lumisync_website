@@ -6,7 +6,7 @@ import { Globe, Clock, Bell } from "lucide-react";
 const problems = [
   {
     icon: Globe,
-    title: "Information is everywhere — and nowhere",
+    title: "Information is everywhere, yet nowhere",
     desc: "Students bounce between 10+ websites and apps just to answer basic questions about campus life.",
   },
   {

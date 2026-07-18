@@ -5,7 +5,7 @@ import { Map, Compass, Navigation as NavIcon, Accessibility, Search, ArrowRight 
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Campus Map | Lumisync",
+  title: "Campus Map",
   description: "Navigate indoor and outdoor university spaces with Lumisync's high-accuracy campus map and route locator.",
 };
 
@@ -65,7 +65,7 @@ export default function CampusMapPage() {
                 const Icon = feat.icon;
                 return (
                   <div key={i} className="card p-8 flex gap-6 items-start">
-                    <div className="p-3 rounded-xl bg-stone-100 dark:bg-stone-850 text-[#CC0000] flex-shrink-0">
+                    <div className="p-3 rounded-xl bg-stone-100 dark:bg-stone-800 text-[#CC0000] flex-shrink-0">
                       <Icon size={20} />
                     </div>
                     <div>

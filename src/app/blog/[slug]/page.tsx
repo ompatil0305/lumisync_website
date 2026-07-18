@@ -17,7 +17,7 @@ const fullPostContents: Record<string, { contentHtml: string; author: string; au
       <h3>The Fragmented Campus Experience</h3>
       <p>Modern university campuses are small cities. On any given day, a student needs to find where to park their car, check if a dining hall is open (and what is on the menu), look up a professor's office room, locate resources for career support, and find club meeting details. However, to accomplish these simple tasks, they must navigate a fragmented landscape of dozens of outdated websites, PDF schedules, and separate portal systems.</p>
       
-      <p>This fragmentation doesn't just waste time—it creates a cognitive barrier to student engagement. Important opportunities, support resources, and events go completely unnoticed simply because they are buried in mailing lists or clunky portals that students rarely open. We built Lumisync to solve this exact problem: to consolidate these separate data streams into one single, unified interface.</p>
+      <p>This fragmentation doesn't just waste time; it creates a cognitive barrier to student engagement. Important opportunities, support resources, and events go completely unnoticed simply because they are buried in mailing lists or clunky portals that students rarely open. We built Lumisync to solve this exact problem: to consolidate these separate data streams into one single, unified interface.</p>
       
       <h3>One Platform, Nine Core Modules</h3>
       <p>Lumisync organizes campus resources into a clean system of nine dedicated modules. The client provides instant access to:</p>
@@ -31,13 +31,13 @@ const fullPostContents: Record<string, { contentHtml: string; author: string; au
       </ul>
       
       <h3>The Intelligence Layer: Meet Lumi AI</h3>
-      <p>At the center of Lumisync is Lumi, a custom AI campus assistant powered by Google Gemini. Instead of digging through multiple directories, students can simply ask: <em>"Is the main dining hall open right now and are there vegan options?"</em> or <em>"Directions to Dr. Smith's office hours."</em> Lumi checks the verified local database provider, parses the request, and responds instantly with direct natural language answers and maps—saving precious minutes of searching.</p>
+      <p>At the center of Lumisync is Lumi, a custom AI campus assistant powered by Google Gemini. Instead of digging through multiple directories, students can simply ask: <em>"Is the main dining hall open right now and are there vegan options?"</em> or <em>"Directions to Dr. Smith's office hours."</em> Lumi checks the verified local database provider, parses the request, and responds instantly with direct natural language answers and maps, saving precious minutes of searching.</p>
       
       <h3>Built to Scale Globally</h3>
       <p>Lumisync is not a single-university application. We designed it from day one to scale to hundreds of campuses worldwide. Our modular <strong>Provider Architecture</strong> separates the application front-end shell from the underlying data parsing layer. Adding a new university is as simple as creating a new local provider file that binds to the campus data endpoints. This allows us to scale Lumisync globally with zero modifications to the core UI codebase.</p>
       
       <h3>Join the Journey</h3>
-      <p>Lumisync is currently running in an early access phase, starting at Texas Tech University. Our vision is to build the definitive digital infrastructure for higher education—making college campuses open, accessible, and intuitive for students everywhere. We're just getting started.</p>
+      <p>Lumisync is currently running in an early access phase, starting at Texas Tech University. Our vision is to build the definitive digital infrastructure for higher education, making college campuses open, accessible, and intuitive for students everywhere. We're just getting started.</p>
     `,
   },
   "ai-transforming-campus-navigation": {
@@ -76,7 +76,7 @@ const fullPostContents: Record<string, { contentHtml: string; author: string; au
       <p>This administrative friction has real consequences. Event engagement drops because students can't find club directories. Career opportunities go unfilled because the student job board is hidden behind three logins. Campus resources like health centers or tutoring offices are underutilized simply because students don't know they exist or where they are located.</p>
       
       <h3>Centralizing Information Without Re-platforming</h3>
-      <p>The standard administrative solution to software fragmentation is large-scale re-platforming—an expensive, multi-year IT project that often fails to deliver a modern user experience. Lumisync takes a different approach: centralizing the user interface layer without replacing the underlying databases.</p>
+      <p>The standard administrative solution to software fragmentation is large-scale re-platforming, an expensive, multi-year IT project that often fails to deliver a modern user experience. Lumisync takes a different approach: centralizing the user interface layer without replacing the underlying databases.</p>
       
       <p>Our <strong>Provider Architecture</strong> acts as an ingestion shell. We integrate with your existing systems (like Ellucian Banner or local RSS feeds) to pull dining, parking, map, and event data into a single client. IT departments retain full control over their legacy systems, while students get a beautiful, unified digital companion app.</p>
       

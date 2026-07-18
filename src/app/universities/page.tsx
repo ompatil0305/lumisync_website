@@ -5,7 +5,7 @@ import { Building2, Globe, Database, Cpu, CheckCircle, ArrowRight } from "lucide
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Universities | Lumisync",
+  title: "Universities",
   description: "Learn about Lumisync's dynamic provider architecture that allows fast onboarding of any university worldwide.",
 };
 
@@ -94,7 +94,7 @@ export default function UniversitiesPage() {
                   Each university integration is defined by a modular <strong>University Data Provider</strong>. This provider structure implements standard TypeScript interfaces for dining, maps, events, parking, and faculty lists.
                 </p>
                 <p className="text-sm text-[--text-secondary] leading-relaxed">
-                  By isolating the campus data parsing layer from the core UI shell, we can easily onboard other campuses by simply implementing a new data provider file—leaving the application core unchanged and completely bug-free.
+                  By isolating the campus data parsing layer from the core UI shell, we can easily onboard other campuses by simply implementing a new data provider file, leaving the application core unchanged and completely bug-free.
                 </p>
               </div>
 
@@ -119,7 +119,7 @@ export default function UniversitiesPage() {
                   const Icon = item.icon;
                   return (
                     <div key={j} className="card p-6 flex gap-4 items-start">
-                      <div className="p-2.5 rounded-lg bg-stone-100 dark:bg-stone-850 text-blue-600 flex-shrink-0">
+                      <div className="p-2.5 rounded-lg bg-stone-100 dark:bg-stone-800 text-blue-600 flex-shrink-0">
                         <Icon size={18} />
                       </div>
                       <div>

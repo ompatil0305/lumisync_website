@@ -49,7 +49,7 @@ export default function About() {
             style={{ color: "var(--text-secondary)" }}
           >
             As a <span className="text-[#CC0000] dark:text-[#FF453A] font-semibold">Texas Tech</span> student, I watched classmates struggle daily with
-            fragmented campus information — missing events because they weren't
+            fragmented campus information, such as missing events because they weren't
             on the right mailing list, wasting 20 minutes hunting for parking,
             or showing up to a professor's office during the wrong hours.
           </p>

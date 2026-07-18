@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BookOpen, Calendar, Clock, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Blog | Lumisync",
+  title: "Blog",
   description: "Read the latest product news, campus technology insights, and articles from the Lumisync team.",
 };
 

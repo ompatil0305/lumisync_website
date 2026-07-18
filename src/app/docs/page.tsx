@@ -5,7 +5,7 @@ import { BookOpen, Code2, Database, ShieldAlert, Cpu } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Documentation | Lumisync",
+  title: "Documentation",
   description: "Read details on integrating datasets, configuring university providers, and scaling Lumisync at your campus.",
 };
 
@@ -73,7 +73,7 @@ export default function DocsPage() {
                 return (
                   <div key={i} className="card p-8 flex flex-col justify-between min-h-[300px]">
                     <div>
-                      <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-850 text-blue-600 flex items-center justify-center border border-stone-250/20 mb-5 flex-shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex items-center justify-center border border-stone-200/20 mb-5 flex-shrink-0">
                         <Icon size={18} />
                       </div>
                       <h3 className="font-bold text-lg font-display text-stone-900 dark:text-stone-50 mb-2">{sec.title}</h3>
@@ -103,7 +103,7 @@ export default function DocsPage() {
                 Lumisync is built to serve as the single interface shell for university students. Rather than replacing existing student records, LMS tools, or dining software, we simply overlay a unified client on top of them.
               </p>
               <p className="text-sm leading-relaxed mb-6">
-                Students access all resources—real-time menus, map wayfinding, calendar schedules—from a single client screen, reducing cognitive friction and IT support tickets.
+                Students access all resources, including real-time menus, map wayfinding, and calendar schedules, from a single client screen, reducing cognitive friction and IT support tickets.
               </p>
 
               <h2 id="architecture" className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mt-10 mb-4">Provider Architecture</h2>

@@ -5,7 +5,7 @@ import { Building, ShieldCheck, Database, BarChart3, Users, Zap, Landmark, Arrow
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Enterprise Solutions | Lumisync",
+  title: "Enterprise Solutions",
   description: "Secure, scalable, and dynamic digital campus platform for universities, student affairs, and operations.",
 };
 
@@ -65,7 +65,7 @@ export default function EnterprisePage() {
                 const Icon = b.icon;
                 return (
                   <div key={i} className="card p-8 flex gap-6 items-start">
-                    <div className="p-3 rounded-xl bg-stone-100 dark:bg-stone-850 text-blue-600 flex-shrink-0">
+                    <div className="p-3 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex-shrink-0">
                       <Icon size={20} />
                     </div>
                     <div>

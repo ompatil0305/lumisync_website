@@ -14,7 +14,7 @@ const messages = [
   { role: "user" as const, text: "Directions to Main Dining Hall please" },
   {
     role: "lumi" as const,
-    text: "Head north from the Student Union, past the library. Main Dining Hall is the brick building on your left — about a 3-minute walk. 🗺️",
+    text: "Head north from the Student Union, past the library. Main Dining Hall is the brick building on your left, about a 3-minute walk. 🗺️",
   },
 ];
 
@@ -92,7 +92,7 @@ export default function LumiDemo() {
             >
               Lumi is your AI campus assistant powered by Google Gemini. It
               knows your dining hours, campus map, professor schedules, events,
-              and more — all in natural language.
+              and more, all in natural language.
             </p>
 
             <div className="flex items-center gap-2 mb-8 bg-[#FAFAF9] dark:bg-stone-900 border border-border/60 rounded-xl px-3 py-2 w-max">

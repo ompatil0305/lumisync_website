@@ -20,7 +20,7 @@ const phases: Phase[] = [
     items: [
       "Campus Map (interactive footprints & labels)",
       "Lumi AI (Gemini-powered assistant & RAG)",
-      "Dining halls — hours, locations & menus",
+      "Dining halls (hours, locations & menus)",
       "Events directory & campus jobs",
       "Student organizations directory",
       "Favorite locations tracking",
@@ -35,7 +35,7 @@ const phases: Phase[] = [
     items: [
       "Advanced Lumi AI (memory + session context)",
       "Campus shuttle real-time tracking integration",
-      "Mobile app client — Android & iOS wrappers",
+      "Mobile app client (Android & iOS wrappers)",
     ],
   },
   {

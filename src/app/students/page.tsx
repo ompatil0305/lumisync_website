@@ -5,7 +5,7 @@ import { Check, Compass, Sparkles, MapPin, Calendar, Clock, Smile } from "lucide
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Students | Lumisync",
+  title: "Students",
   description: "Learn how Lumisync unifies student life, dining, parking, and campus events in one modern operating system.",
 };
 
@@ -60,7 +60,7 @@ export default function StudentsPage() {
                 const Icon = item.icon;
                 return (
                   <div key={i} className="card p-8 flex flex-col gap-5">
-                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-850 text-blue-600 flex items-center justify-center border border-stone-250/20 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex items-center justify-center border border-stone-200/20 flex-shrink-0">
                       <Icon size={18} />
                     </div>
                     <div>
@@ -106,7 +106,7 @@ export default function StudentsPage() {
                 <div>
                   <h3 className="text-xl font-bold font-display text-stone-900 dark:text-stone-50">Free for all students</h3>
                   <p className="text-xs text-[--text-secondary] leading-relaxed mt-2">
-                    Lumisync core features—maps, dining, events, jobs, and Lumi AI—will always be 100% free for students with no subscription required.
+                    Lumisync core features, including maps, dining, events, jobs, and Lumi AI, will always be 100% free for students with no subscription required.
                   </p>
                 </div>
                 <Link href="/join" className="btn btn-primary rounded-full w-full py-3">

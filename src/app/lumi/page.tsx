@@ -5,7 +5,7 @@ import { Sparkles, MessageSquare, Shield, HelpCircle, Check, ArrowRight } from "
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Meet Lumi AI | Lumisync",
+  title: "Meet Lumi AI",
   description: "Lumi is your conversational campus assistant powered by Google Gemini, helping you navigate university life in natural language.",
 };
 
@@ -52,7 +52,7 @@ export default function LumiAIPage() {
               Meet Lumi. Your AI campus assistant.
             </h1>
             <p className="mt-4 text-lg text-[--text-secondary] max-w-xl">
-              Lumi unifies your campus's databases into a single, intuitive conversation. No links, no searches — just immediate answers.
+              Lumi unifies your campus's databases into a single, intuitive conversation. No links, no searches, just immediate answers.
             </p>
             <div className="mt-8 flex gap-4">
               <Link href="/join" className="btn btn-primary rounded-full px-8">
@@ -85,7 +85,7 @@ export default function LumiAIPage() {
                 {
                   step: "02",
                   title: "Live Database Check",
-                  desc: "Instead of searching the web, Lumi queries our verified university databases—dining menus, building map coords, schedules, and active feeds.",
+                  desc: "Instead of searching the web, Lumi queries our verified university databases, including dining menus, building map coords, schedules, and active feeds.",
                 },
                 {
                   step: "03",
@@ -116,7 +116,7 @@ export default function LumiAIPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {capabilities.map((c, i) => (
                 <div key={i} className="card p-8 flex gap-6 items-start">
-                  <div className="p-3 rounded-xl bg-stone-100 dark:bg-stone-850 text-[#CC0000] flex-shrink-0">
+                  <div className="p-3 rounded-xl bg-stone-100 dark:bg-stone-800 text-[#CC0000] flex-shrink-0">
                     <MessageSquare size={20} />
                   </div>
                   <div>
@@ -150,7 +150,7 @@ export default function LumiAIPage() {
                   Lumi is designed with strict student privacy guidelines. We do not store personal student IDs or sell conversation histories. Information requested from Gemini is processed securely.
                 </p>
               </div>
-              <div className="bg-white dark:bg-stone-850 p-6 rounded-2xl border border-[--border] flex flex-col gap-3">
+              <div className="bg-white dark:bg-stone-800 p-6 rounded-2xl border border-[--border] flex flex-col gap-3">
                 <div className="flex gap-2.5 items-center text-xs text-stone-700 dark:text-stone-300 font-semibold">
                   <Check className="text-green-600 w-4 h-4" />
                   Encrypted data transfer

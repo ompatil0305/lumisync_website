@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Download, FileText, Image, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Press Kit | Lumisync",
+  title: "Press Kit",
   description: "Access Lumisync media resources, brand assets, standard descriptions, and contact coordinates.",
 };
 
@@ -39,7 +39,7 @@ export default function PressKitPage() {
             <div className="prose mx-auto">
               <h2 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mb-4">About Lumisync</h2>
               <p className="text-sm leading-relaxed mb-6">
-                Lumisync is a digital campus operating system that consolidates scattered college resources—dining menus, campus maps, parking lot directories, events calendars, and faculty office coordinates—into a single web client and conversational helper (Lumi). By unifying directories and services under a clean interface layer, we remove friction from campus navigation and increase student engagement.
+                Lumisync is a digital campus operating system that consolidates scattered college resources, including dining menus, campus maps, parking lot directories, events calendars, and faculty office coordinates, into a single web client and conversational helper (Lumi). By unifying directories and services under a clean interface layer, we remove friction from campus navigation and increase student engagement.
               </p>
 
               <h2 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mt-10 mb-4">Key Facts</h2>

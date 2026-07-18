@@ -12,7 +12,7 @@ const faqGroups = [
     items: [
       {
         q: "What is Lumisync?",
-        a: "Lumisync is an AI-powered Digital Campus Operating System. We unify scattered college data streams—dining hours, menus, parking lots coordinates, events directories, and faculty offices—into a single seamless client dashboard and conversational assistant.",
+        a: "Lumisync is an AI-powered Digital Campus Operating System. We unify scattered college data streams, including dining hours, menus, parking lots coordinates, events directories, and faculty offices, into a single seamless client dashboard and conversational assistant.",
       },
       {
         q: "Is Lumisync free for students?",
@@ -41,7 +41,7 @@ const faqGroups = [
       },
       {
         q: "How accurate is Lumi's information?",
-        a: "Highly accurate. Unlike generic AI search engines that crawl the public web, Lumi pulls context details straight from our verified local database providers—dining databases, campus mapping coordinate sets, and academic records feeds.",
+        a: "Highly accurate. Unlike generic AI search engines that crawl the public web, Lumi pulls context details straight from our verified local database providers, such as dining databases, campus mapping coordinate sets, and academic records feeds.",
       },
     ],
   },
@@ -54,7 +54,7 @@ const faqGroups = [
       },
       {
         q: "Is Lumisync FERPA compliant?",
-        a: "Yes. Lumisync operates entirely using public university listings—directories, menus, calendar items, and maps. Because we do not store, process, or transmit private student educational records (PII), our software is fully compliant with FERPA regulations.",
+        a: "Yes. Lumisync operates entirely using public university listings, such as directories, menus, calendar items, and maps. Because we do not store, process, or transmit private student educational records (PII), our software is fully compliant with FERPA regulations.",
       },
     ],
   },
@@ -130,7 +130,7 @@ export default function FAQPage() {
                             className="w-full text-left p-6 flex items-center justify-between gap-4 font-semibold text-sm text-stone-900 dark:text-stone-100 font-display transition-colors"
                           >
                             <span className="flex items-center gap-3">
-                              <HelpCircle size={16} className="text-blue-650 flex-shrink-0" />
+                              <HelpCircle size={16} className="text-blue-600 flex-shrink-0" />
                               {item.q}
                             </span>
                             <ChevronDown
@@ -142,7 +142,10 @@ export default function FAQPage() {
                           </button>
 
                           {isOpen && (
-                            <div className="px-6 pb-6 text-xs text-[--text-secondary] leading-relaxed border-t border-[--border] pt-4 bg-white dark:bg-stone-850 animate-fade-in">
+                            <div
+                              className="px-6 pb-6 text-xs leading-relaxed border-t border-[--border] pt-4 animate-fade-in"
+                              style={{ backgroundColor: "var(--surface-2)", color: "var(--text-secondary)" }}
+                            >
                               {item.a}
                             </div>
                           )}

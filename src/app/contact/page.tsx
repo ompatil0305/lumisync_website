@@ -102,7 +102,7 @@ export default function ContactPage() {
             {/* Contact details */}
             <div className="flex flex-col gap-6">
               <div className="card p-6 flex gap-4 items-start">
-                <div className="p-2.5 rounded-xl bg-stone-100 dark:bg-stone-850 text-blue-600 flex-shrink-0">
+                <div className="p-2.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex-shrink-0">
                   <Mail size={18} />
                 </div>
                 <div>
@@ -114,7 +114,7 @@ export default function ContactPage() {
               </div>
 
               <div className="card p-6 flex gap-4 items-start">
-                <div className="p-2.5 rounded-xl bg-stone-100 dark:bg-stone-850 text-blue-600 flex-shrink-0">
+                <div className="p-2.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex-shrink-0">
                   <MapPin size={18} />
                 </div>
                 <div>
@@ -126,7 +126,7 @@ export default function ContactPage() {
               </div>
 
               <div className="card p-6 flex gap-4 items-start">
-                <div className="p-2.5 rounded-xl bg-stone-100 dark:bg-stone-850 text-blue-600 flex-shrink-0">
+                <div className="p-2.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex-shrink-0">
                   <Globe size={18} />
                 </div>
                 <div>

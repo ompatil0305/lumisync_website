@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Compass, Users, Sparkles, Building, Code2, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us | Lumisync",
+  title: "About Us",
   description: "Learn about the mission, values, and story behind Lumisync, the campus operating system built by students.",
 };
 
@@ -57,7 +57,7 @@ export default function AboutPage() {
             <div className="prose mx-auto">
               <h2 className="text-3xl font-bold font-display text-stone-900 dark:text-stone-50 mb-6">Why Lumisync Exists</h2>
               <p className="text-sm leading-relaxed mb-6">
-                Universities have massive, fragmented technology footprints. To answer simple daily questions—like finding what dining halls are open, where a professor's office is, how to get parking permit zones, or where club meetings are held—students must bounce between 10+ different outdated sites and portals.
+                Universities have massive, fragmented technology footprints. To answer simple daily questions, like finding what dining halls are open, where a professor's office is, how to get parking permit zones, or where club meetings are held, students must bounce between 10+ different outdated sites and portals.
               </p>
               <p className="text-sm leading-relaxed mb-6">
                 Lumisync changes that. We unify all campus data streams into a single, clean user interface and conversational assistant (Lumi) so you can get immediate, verified updates in a fraction of a second.
@@ -89,7 +89,7 @@ export default function AboutPage() {
                 const Icon = v.icon;
                 return (
                   <div key={i} className="card p-8 flex flex-col gap-5">
-                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-850 text-blue-600 flex items-center justify-center border border-stone-250/20 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex items-center justify-center border border-stone-200/20 flex-shrink-0">
                       <Icon size={18} />
                     </div>
                     <h3 className="font-bold text-lg font-display text-stone-900 dark:text-stone-50">{v.title}</h3>

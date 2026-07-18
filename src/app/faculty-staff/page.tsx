@@ -5,7 +5,7 @@ import { Users, Search, MapPin, Calendar, Clock, BookOpen, Shield, ArrowRight } 
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Faculty & Staff | Lumisync",
+  title: "Faculty & Staff",
   description: "Help students locate your office, view office hours, and discover resources with Lumisync for Faculty & Staff.",
 };
 
@@ -58,7 +58,7 @@ export default function FacultyStaffPage() {
                 const Icon = item.icon;
                 return (
                   <div key={i} className="card p-8 flex flex-col gap-5">
-                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-850 text-blue-600 flex items-center justify-center border border-stone-250/20 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex items-center justify-center border border-stone-200/20 flex-shrink-0">
                       <Icon size={18} />
                     </div>
                     <div>

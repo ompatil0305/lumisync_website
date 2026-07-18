@@ -19,20 +19,16 @@ const inter = Inter({
   adjustFontFallback: false,
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_APP_URL
-  ? process.env.NEXT_PUBLIC_APP_URL
-  : process.env.NEXT_PUBLIC_VERCEL_URL
-    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-    : "https://lumisync.app";
+const baseUrl = "https://lumisync-website.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Lumisync — AI-Powered Campus Operating System",
+    default: "Lumisync - AI-Powered Campus Operating System",
     template: "%s | Lumisync",
   },
   description:
-    "Lumisync is the AI-powered campus operating system for university campuses. Dining, events, maps, parking, faculty, jobs, and Lumi AI — all in one seamless experience. Built for universities worldwide.",
+    "Lumisync is the AI-powered campus operating system for university campuses. Dining, events, maps, parking, faculty, jobs, and Lumi AI, all in one seamless experience. Built for universities worldwide.",
   keywords: [
     "campus operating system",
     "university app",
@@ -54,7 +50,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: baseUrl,
     siteName: "Lumisync",
-    title: "Lumisync — AI-Powered Campus Operating System",
+    title: "Lumisync - AI-Powered Campus Operating System",
     description:
       "One platform for every campus need. Powered by AI. Built for universities worldwide.",
     images: [
@@ -62,15 +58,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Lumisync — AI-Powered Campus Operating System",
+        alt: "Lumisync - AI-Powered Campus Operating System",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lumisync — AI-Powered Campus Operating System",
+    title: "Lumisync - AI-Powered Campus Operating System",
     description:
-      "Dining, events, maps, parking, faculty, jobs, and Lumi AI — all in one app. Built for universities worldwide.",
+      "Dining, events, maps, parking, faculty, jobs, and Lumi AI, all in one app. Built for universities worldwide.",
     images: ["/og-image.png"],
   },
   robots: {

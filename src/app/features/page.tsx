@@ -5,7 +5,7 @@ import { Compass, Map, Sparkles, Utensils, Car, Calendar, Users, Briefcase, Buil
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Features | Lumisync",
+  title: "Features",
   description: "Explore the nine powerful modules that make up the Lumisync AI campus operating system.",
 };
 
@@ -119,7 +119,7 @@ export default function FeaturesPage() {
                   <div key={i} className="card p-8 flex flex-col justify-between min-h-[380px]">
                     <div>
                       {/* Icon */}
-                      <div className="w-12 h-12 rounded-xl bg-stone-100 dark:bg-stone-850 flex items-center justify-center border border-stone-250/20 mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center border border-stone-200/20 mb-6">
                         <Icon className={`w-6 h-6 ${f.color}`} />
                       </div>
                       

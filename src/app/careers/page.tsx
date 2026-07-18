@@ -5,7 +5,7 @@ import { Briefcase, Compass, Users, Sparkles, Building, Code } from "lucide-reac
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Careers | Lumisync",
+  title: "Careers",
   description: "Join the team building the digital infrastructure and AI campus operating system for colleges worldwide.",
 };
 
@@ -89,7 +89,7 @@ export default function CareersPage() {
                 const Icon = item.icon;
                 return (
                   <div key={i} className="card p-8 flex flex-col gap-5">
-                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-850 text-blue-600 flex items-center justify-center border border-stone-250/20 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex items-center justify-center border border-stone-200/20 flex-shrink-0">
                       <Icon size={18} />
                     </div>
                     <h3 className="font-bold text-lg font-display text-stone-900 dark:text-stone-50">{item.title}</h3>
@@ -124,7 +124,7 @@ export default function CareersPage() {
                     <p className="text-xs text-[--text-secondary] mt-2 leading-relaxed max-w-xl">{pos.desc}</p>
                   </div>
 
-                  <span className="px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest bg-stone-150 text-stone-600 dark:bg-stone-800 dark:text-stone-350 rounded-full border border-stone-250/20">
+                  <span className="px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest bg-stone-150 text-stone-600 dark:bg-stone-800 dark:text-stone-350 rounded-full border border-stone-200/20">
                     Coming Soon
                   </span>
                 </div>

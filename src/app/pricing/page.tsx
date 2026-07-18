@@ -5,7 +5,7 @@ import { CreditCard, Check, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Pricing | Lumisync",
+  title: "Pricing",
   description: "Lumisync is free for students. Learn about our future plans for university partnerships.",
 };
 

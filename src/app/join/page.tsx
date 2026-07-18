@@ -43,7 +43,7 @@ export default function JoinBetaPage() {
         email: formData.email,
         university: formData.university,
         role: "student",
-        subject: `Waitlist Signup — ${formData.year}`,
+        subject: `Waitlist Signup - ${formData.year}`,
         message: `Student waitlist signup.\nYear: ${formData.year}\nUniversity: ${formData.university}`,
         website: formData.website,
       };
