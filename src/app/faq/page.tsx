@@ -16,7 +16,7 @@ const faqGroups = [
       },
       {
         q: "Is Lumisync free for students?",
-        a: "Yes. All core student features, including mapping, dining status, events calendars, and the Lumi AI conversational assistant, will always be 100% free with no ads or user tracking.",
+        a: "Yes. All core student features, including mapping, dining status, events calendars, and the Lumi AI conversational assistant, will always be 100% free.",
       },
       {
         q: "Which universities are currently supported?",

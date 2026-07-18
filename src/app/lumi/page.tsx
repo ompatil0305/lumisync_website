@@ -147,17 +147,17 @@ export default function LumiAIPage() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 font-display">Your conversations are yours alone.</h3>
                 <p className="text-sm text-[--text-secondary] leading-relaxed">
-                  Lumi is designed with strict student privacy guidelines. We do not store personal student IDs, track your location when the app is closed, or sell conversation histories. Information requested from Gemini is anonymized.
+                  Lumi is designed with strict student privacy guidelines. We do not store personal student IDs or sell conversation histories. Information requested from Gemini is processed securely.
                 </p>
               </div>
               <div className="bg-white dark:bg-stone-850 p-6 rounded-2xl border border-[--border] flex flex-col gap-3">
                 <div className="flex gap-2.5 items-center text-xs text-stone-700 dark:text-stone-300 font-semibold">
                   <Check className="text-green-600 w-4 h-4" />
-                  No tracking when idle
+                  Encrypted data transfer
                 </div>
                 <div className="flex gap-2.5 items-center text-xs text-stone-700 dark:text-stone-300 font-semibold">
                   <Check className="text-green-600 w-4 h-4" />
-                  No student ads, ever
+                  Secure API processing
                 </div>
                 <div className="flex gap-2.5 items-center text-xs text-stone-700 dark:text-stone-300 font-semibold">
                   <Check className="text-green-600 w-4 h-4" />

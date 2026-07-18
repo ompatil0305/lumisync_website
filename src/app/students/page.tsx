@@ -90,7 +90,7 @@ export default function StudentsPage() {
                     "PWA-ready: install on your phone directly",
                   ].map((text, j) => (
                     <div key={j} className="flex gap-3 items-start text-sm text-[--text-secondary]">
-                      <span className="w-5 h-5 rounded-full bg-blue-50 dark:bg-blue-950/30 text-blue-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="w-5 h-5 rounded-full bg-red-50 dark:bg-red-950/30 text-[#CC0000] flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Check size={12} className="stroke-[3]" />
                       </span>
                       <span>{text}</span>
@@ -100,13 +100,13 @@ export default function StudentsPage() {
               </div>
 
               <div className="bg-stone-50 dark:bg-stone-900 p-8 rounded-3xl border border-[--border] flex flex-col gap-6 text-center">
-                <div className="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-950 text-blue-650 flex items-center justify-center mx-auto">
+                <div className="w-12 h-12 rounded-2xl bg-red-100 dark:bg-red-950 text-[#CC0000] flex items-center justify-center mx-auto">
                   <Smile size={24} />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold font-display text-stone-900 dark:text-stone-50">Free for all students</h3>
                   <p className="text-xs text-[--text-secondary] leading-relaxed mt-2">
-                    Lumisync core features—maps, dining, events, jobs, and Lumi AI—will always be 100% free for students. No subscription, no ads, no trackers.
+                    Lumisync core features—maps, dining, events, jobs, and Lumi AI—will always be 100% free for students with no subscription required.
                   </p>
                 </div>
                 <Link href="/join" className="btn btn-primary rounded-full w-full py-3">

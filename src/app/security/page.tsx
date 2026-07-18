@@ -41,7 +41,7 @@ export default function SecurityPage() {
                 {
                   icon: Shield,
                   title: "Privacy-First Design",
-                  desc: "We do not store student IDs, track real-time locations when idle, or require invasive personal profiles. Campus data is cached locally or queried on the fly.",
+                  desc: "We do not store student IDs or require invasive personal profiles. Campus data is cached locally or queried on the fly.",
                 },
                 {
                   icon: Lock,
