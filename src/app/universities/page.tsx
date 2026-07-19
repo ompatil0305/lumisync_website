@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 const plannedUniversities = [
   { name: "Texas Tech University", state: "Lubbock, TX", status: "Active Now", active: true },
-  { name: "Texas A&M University", state: "College Station, TX", status: "Planned Q3 25", active: false },
-  { name: "UT Austin", state: "Austin, TX", status: "Planned Q3 25", active: false },
-  { name: "Arizona State University", state: "Tempe, AZ", status: "Planned Q4 25", active: false },
-  { name: "University of Florida", state: "Gainesville, FL", status: "Planned Q4 25", active: false },
-  { name: "Stanford University", state: "Stanford, CA", status: "Planned 2026", active: false },
+  { name: "Texas A&M University", state: "College Station, TX", status: "Planned Q3 26", active: false },
+  { name: "UT Austin", state: "Austin, TX", status: "Planned Q3 26", active: false },
+  { name: "Arizona State University", state: "Tempe, AZ", status: "Planned Q4 26", active: false },
+  { name: "University of Florida", state: "Gainesville, FL", status: "Planned Q4 26", active: false },
+  { name: "Stanford University", state: "Stanford, CA", status: "Planned 2027", active: false },
 ];
 
 export default function UniversitiesPage() {
