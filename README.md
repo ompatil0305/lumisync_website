@@ -53,3 +53,10 @@ Open [http://localhost:3000](http://localhost:3000) to view the site in your bro
 npm run build
 npm run start
 ```
+
+---
+
+## 📄 License
+
+This project is licensed under the GNU General Public License v3 (GPLv3) - a strong copyleft license. See the [LICENSE](LICENSE) file for details.
+
