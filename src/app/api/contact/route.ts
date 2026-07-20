@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+const APP_DOMAIN = process.env.NEXT_PUBLIC_APP_DOMAIN || "lumisync.vercel.app";
+
 // Simple in-memory rate limiting (3 submissions per IP per hour)
 const ipCache = new Map<string, number[]>();
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour
@@ -65,6 +67,44 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Message must be between 20 and 5000 characters" }, { status: 400 });
     }
 
+    // 3.5 Store waitlist signup in Supabase (if subject includes Waitlist)
+    const isWaitlist = subject.toLowerCase().includes("waitlist");
+    if (isWaitlist) {
+      const supabaseUrl = process.env.SUPABASE_URL || "https://mfvybvvfmuenmshatrkj.supabase.co";
+      const supabaseKey = process.env.SUPABASE_ANON_KEY;
+      if (supabaseUrl && supabaseKey) {
+        try {
+          // Parse year from subject or default
+          const year = subject.split(" - ")[1] || "freshman";
+          const dbResponse = await fetch(`${supabaseUrl}/rest/v1/waitlist_signups`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "apikey": supabaseKey,
+              "Authorization": `Bearer ${supabaseKey}`,
+              "Prefer": "return=minimal"
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              university: university || "Texas Tech University",
+              year: year.toLowerCase()
+            })
+          });
+          if (!dbResponse.ok) {
+            const dbErrText = await dbResponse.text();
+            console.error("Supabase write failed status:", dbResponse.status, dbErrText);
+          } else {
+            console.log("Successfully recorded waitlist signup in Supabase.");
+          }
+        } catch (dbErr) {
+          console.error("Error storing waitlist signup in Supabase:", dbErr);
+        }
+      } else {
+        console.warn("SUPABASE_URL or SUPABASE_ANON_KEY is missing. Waitlist database logging skipped.");
+      }
+    }
+
     // 4. Send Emails via Resend
     const resendApiKey = process.env.RESEND_API_KEY;
     const recipientEmail = process.env.CONTACT_EMAIL_TO;
@@ -123,11 +163,11 @@ export async function POST(req: Request) {
           </div>
         </div>
         <div style="background-color: #F5F5F4; text-align: center; padding: 12px; font-size: 11px; color: #A8A29E; border-t: 1px solid #E7E5E4;">
-          This message was submitted via lumisync.app/contact
+          This message was submitted via ${APP_DOMAIN}/contact
         </div>
       </div>
     `;
-
+ 
     // Email 2: Confirmation to User
     const userEmailHtml = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #E7E5E4; border-radius: 12px; overflow: hidden;">
@@ -139,7 +179,7 @@ export async function POST(req: Request) {
           <p>Hi ${name},</p>
           <p>Thanks for reaching out to the Lumisync team! We have received your message regarding: <strong>"${subject}"</strong>.</p>
           <p>Lumisync is built to simplify campus life for students, faculty, and IT departments. Our team is reviewing your message, and we will get back to you within 2 to 3 business days.</p>
-          <p>In the meantime, feel free to explore our live client application at <a href="https://lumisync.vercel.app" style="color: #CC0000; text-decoration: none;">lumisync.vercel.app</a> or check out our roadmap at <a href="https://lumisync.app/roadmap" style="color: #CC0000; text-decoration: none;">lumisync.app/roadmap</a>.</p>
+          <p>In the meantime, feel free to explore our live client application at <a href="https://${APP_DOMAIN}" style="color: #CC0000; text-decoration: none;">${APP_DOMAIN}</a> or check out our roadmap at <a href="https://${APP_DOMAIN}/roadmap" style="color: #CC0000; text-decoration: none;">${APP_DOMAIN}/roadmap</a>.</p>
           <p>Best regards,<br/>The Lumisync Team</p>
         </div>
         <div style="background-color: #F5F5F4; text-align: center; padding: 12px; font-size: 11px; color: #A8A29E; border-t: 1px solid #E7E5E4;">
@@ -147,6 +187,7 @@ export async function POST(req: Request) {
         </div>
       </div>
     `;
+
 
     // Trigger Admin Notification
     await resend.emails.send({
