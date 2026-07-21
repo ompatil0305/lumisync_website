@@ -4,6 +4,7 @@ import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import GlobalCursorGlow from "@/components/GlobalCursorGlow";
 import { SITE_TAGLINE, SITE_DESCRIPTION } from "@/config/site";
+import { Analytics } from "@vercel/analytics/next";
 
 const outfit = Outfit({
   variable: "--font-display",
@@ -101,6 +102,7 @@ export default function RootLayout({
         <GlobalCursorGlow />
         <CustomCursor />
         {children}
+        <Analytics />
       </body>
     </html>
   );
