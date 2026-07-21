@@ -259,40 +259,102 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Column: Angled Product Card (Asymmetric visual element) */}
-          <div className="lg:col-span-5 flex items-center justify-center w-full relative">
+          {/* Right Column: Multi-Layered Interactive 3D Phone & Parallax Floating Glass Badges */}
+          <div className="lg:col-span-5 flex items-center justify-center w-full relative py-8">
             <motion.div
               ref={cardRef}
               onMouseMove={handleCardMouseMove}
               onMouseLeave={handleCardMouseLeave}
-              initial={{ opacity: 0, scale: 0.95, rotate: 2 }}
+              initial={{ opacity: 0, scale: 0.92, rotate: 2 }}
               animate={{ 
                 opacity: 1, 
                 scale: 1,
-                rotate: prefersReducedMotion ? 0 : 3,
+                rotate: prefersReducedMotion ? 0 : 2,
                 rotateX: prefersReducedMotion ? 0 : tilt.x,
                 rotateY: prefersReducedMotion ? 0 : tilt.y
               }}
-              transition={{ duration: 0.65, delay: 0.4 }}
+              transition={{ duration: 0.65, delay: 0.3 }}
               style={{
-                perspective: 1000,
+                perspective: 1200,
                 transformStyle: "preserve-3d",
               }}
-              className="w-full max-w-[400px] relative group cursor-pointer"
+              className="w-full max-w-[360px] relative group cursor-pointer"
             >
-              {/* Bold glowing shape backdrop */}
+              {/* Vibrant Ambient Glow Backdrop */}
               <div 
-                className="absolute inset-0 bg-gradient-to-tr from-[#CC0000]/20 to-transparent rounded-[2.5rem] blur-2xl -z-10 group-hover:scale-105 transition-transform duration-500"
+                className="absolute inset-0 bg-gradient-to-tr from-[#CC0000]/30 via-red-500/10 to-transparent rounded-[3.5rem] blur-3xl -z-10 group-hover:scale-110 transition-transform duration-500"
               />
 
-              <img
-                src="/app_hero_interactive.png"
-                alt="Lumisync Interactive App Preview"
-                className="w-full h-auto object-contain"
+              {/* Main Sleek Mobile Device Container */}
+              <div
+                className="relative overflow-hidden bg-[#09090b] border-[9px] border-[#18181b] shadow-2xl"
                 style={{
-                  filter: "drop-shadow(0 24px 40px rgba(0,0,0,0.3))"
+                  borderRadius: "3rem",
+                  boxShadow: "0 32px 80px -16px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,255,255,0.1)",
+                  aspectRatio: "9/18",
                 }}
-              />
+              >
+                {/* Dynamic Island / Camera Bar */}
+                <div className="absolute top-0 inset-x-0 h-6 z-30 flex justify-center items-center pointer-events-none">
+                  <div className="w-24 h-4 bg-[#18181b] rounded-b-xl flex justify-center items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#09090b]" />
+                    <div className="w-8 h-1.5 rounded-full bg-[#09090b]" />
+                  </div>
+                </div>
+
+                {/* Real App Screen Screenshot */}
+                <img
+                  src="/app_home_screenshot.jpg"
+                  alt="Lumisync Home Dashboard"
+                  className="w-full h-full object-cover object-top"
+                />
+
+                {/* Bottom Home Indicator */}
+                <div className="absolute bottom-2 inset-x-0 h-4 flex justify-center items-center z-30 pointer-events-none">
+                  <div className="w-32 h-1 bg-white/40 rounded-full" />
+                </div>
+              </div>
+
+              {/* Floating Parallax Glass Badge 1: Top-Left Live Status */}
+              <motion.div
+                animate={prefersReducedMotion ? {} : {
+                  y: [0, -6, 0],
+                  rotateX: prefersReducedMotion ? 0 : -tilt.x * 0.8,
+                  rotateY: prefersReducedMotion ? 0 : -tilt.y * 0.8,
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                style={{ transformStyle: "preserve-3d", translateZ: 40 }}
+                className="absolute -top-4 -left-6 bg-black/80 backdrop-blur-md border border-white/15 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 z-30"
+              >
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#CC0000]" />
+                </span>
+                <div>
+                  <p className="text-[10px] font-bold text-white uppercase tracking-wider">Live Campus Engine</p>
+                  <p className="text-[9px] text-stone-400">Indoor & Outdoor GIS</p>
+                </div>
+              </motion.div>
+
+              {/* Floating Parallax Glass Badge 2: Bottom-Right Faculty Status */}
+              <motion.div
+                animate={prefersReducedMotion ? {} : {
+                  y: [0, 6, 0],
+                  rotateX: prefersReducedMotion ? 0 : tilt.x * 0.8,
+                  rotateY: prefersReducedMotion ? 0 : tilt.y * 0.8,
+                }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                style={{ transformStyle: "preserve-3d", translateZ: 50 }}
+                className="absolute -bottom-4 -right-6 bg-black/85 backdrop-blur-md border border-white/15 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 z-30"
+              >
+                <div className="w-7 h-7 rounded-xl bg-red-500/20 text-[#CC0000] flex items-center justify-center font-bold text-xs">
+                  ⚡
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold text-white uppercase tracking-wider">Gemini 3.1 Flash-Lite</p>
+                  <p className="text-[9px] text-stone-400">66 Faculty Loaded</p>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
 
