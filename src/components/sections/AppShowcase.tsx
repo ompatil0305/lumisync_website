@@ -59,8 +59,8 @@ export default function AppShowcase() {
         >
           <SectionHeader
             title="Every screen. Crafted with care."
-            subtext="Explore every part of Lumisync live, in real-time."
-            label="Live Preview"
+            subtext="Explore every corner of Lumisync — from your daily dashboard to AI-powered campus search."
+            label="App Preview"
             align="center"
           />
         </motion.div>
