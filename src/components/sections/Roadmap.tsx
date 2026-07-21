@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionHeader from "../SectionHeader";
 import { CheckCircle2, Loader2, ListTodo, Lightbulb } from "lucide-react";
 
 type Phase = {
@@ -96,22 +97,14 @@ export default function Roadmap() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <span className="section-label mb-4 block">Roadmap</span>
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              letterSpacing: "-0.025em",
-              color: "var(--text-primary)",
-            }}
-            className="text-4xl sm:text-5xl font-bold"
-          >
-            Built in the open. Growing fast.
-          </h2>
-          <p className="text-xs text-muted-foreground mt-3 font-medium uppercase tracking-wider">
-            Last updated: July 2026
-          </p>
+          <SectionHeader
+            title="Built in the open. Growing fast."
+            subtext="Last updated: July 2026"
+            label="Roadmap"
+            align="center"
+          />
         </motion.div>
 
         {/* Timeline */}

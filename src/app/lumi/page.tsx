@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Sparkles, MessageSquare, Shield, HelpCircle, Check, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import SectionHeader from "@/components/SectionHeader";
 
 export const metadata: Metadata = {
   title: "Meet Lumi AI",
@@ -68,12 +69,12 @@ export default function LumiAIPage() {
         {/* How It Works */}
         <section id="how-it-works" className="section-py border-b border-[--border]">
           <div className="section-max px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold font-display">Intelligence with speed.</h2>
-              <p className="text-stone-500 dark:text-stone-400 mt-2 text-sm max-w-sm mx-auto">
-                How Lumi processes and answers your questions in real-time.
-              </p>
-            </div>
+            <SectionHeader
+              title="Intelligence with speed."
+              subtext="How Lumi processes and answers your questions in real-time."
+              align="center"
+              className="mb-16"
+            />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
@@ -106,12 +107,12 @@ export default function LumiAIPage() {
         {/* Capabilities Grid */}
         <section className="section-py">
           <div className="section-max px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold font-display">What Lumi knows</h2>
-              <p className="text-stone-500 dark:text-stone-400 mt-2 text-sm max-w-sm mx-auto">
-                Directly connected to verified university data feeds.
-              </p>
-            </div>
+            <SectionHeader
+              title="What Lumi knows"
+              subtext="Directly connected to verified university data feeds."
+              align="center"
+              className="mb-16"
+            />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {capabilities.map((c, i) => (

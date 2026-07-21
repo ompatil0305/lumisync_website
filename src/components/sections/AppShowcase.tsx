@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Home, Map, Sparkles, Compass, Users } from "lucide-react";
+import SectionHeader from "../SectionHeader";
 
 const tabs = [
   {
@@ -54,25 +55,14 @@ export default function AppShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-14"
+          className="mb-14"
         >
-          <span className="section-label mb-4 block">Live Preview</span>
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              letterSpacing: "-0.025em",
-              color: "var(--text-primary)",
-            }}
-            className="text-4xl sm:text-5xl font-bold"
-          >
-            Every screen. Crafted with care.
-          </h2>
-          <p
-            className="mt-4 text-lg max-w-md mx-auto"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            Explore every part of Lumisync live, in real-time.
-          </p>
+          <SectionHeader
+            title="Every screen. Crafted with care."
+            subtext="Explore every part of Lumisync live, in real-time."
+            label="Live Preview"
+            align="center"
+          />
         </motion.div>
 
         <div className="flex flex-col lg:flex-row items-start gap-10 justify-center">

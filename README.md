@@ -1,6 +1,6 @@
 # Lumisync Landing Page & Marketing Site
 
-This repository contains the source code for the official public-facing marketing and landing website for **Lumisync** — the AI-Powered Campus Operating System.
+This repository contains the source code for the official public-facing marketing and landing website for **Lumisync** — Campus life, in motion.
 
 - 🌐 **Live Website:** [https://lumisync-website.vercel.app](https://lumisync-website.vercel.app)
 - 📱 **Main Client Application Repo:** [https://github.com/ompatil0305/lumisync](https://github.com/ompatil0305/lumisync)

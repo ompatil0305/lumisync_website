@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SectionHeader from "@/components/SectionHeader";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Compass, Users, Sparkles, Building, Code2, Globe } from "lucide-react";
@@ -77,12 +78,12 @@ export default function AboutPage() {
         {/* Values Grid */}
         <section className="section-py">
           <div className="section-max px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold font-display">Our Core Values</h2>
-              <p className="text-stone-500 dark:text-stone-400 mt-2 text-sm max-w-sm mx-auto">
-                The principles directing our design and technology choices.
-              </p>
-            </div>
+            <SectionHeader
+              title="Our Core Values"
+              subtext="The principles directing our design and technology choices."
+              align="center"
+              className="mb-16"
+            />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {values.map((v, i) => {

@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Briefcase, Compass, Users, Sparkles, Building, Code } from "lucide-react";
 import Link from "next/link";
+import SectionHeader from "@/components/SectionHeader";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -61,12 +62,12 @@ export default function CareersPage() {
         {/* Culture / Why Join */}
         <section className="section-py border-b border-[--border]">
           <div className="section-max px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold font-display">Why work at Lumisync?</h2>
-              <p className="text-stone-500 dark:text-stone-400 mt-2 text-sm max-w-sm mx-auto">
-                We value autonomy, transparency, and building tools that make a real difference.
-              </p>
-            </div>
+            <SectionHeader
+              title="Why work at Lumisync?"
+              subtext="We value autonomy, transparency, and building tools that make a real difference."
+              align="center"
+              className="mb-16"
+            />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
@@ -104,12 +105,12 @@ export default function CareersPage() {
         {/* Open Roles list */}
         <section className="section-py">
           <div className="section-max px-6 max-w-3xl">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl font-bold font-display">Active Positions</h2>
-              <p className="text-stone-500 dark:text-stone-400 mt-2 text-sm max-w-sm mx-auto">
-                All roles are remote-first. Applications are reviewed on a rolling basis.
-              </p>
-            </div>
+            <SectionHeader
+              title="Active Positions"
+              subtext="All roles are remote-first. Applications are reviewed on a rolling basis."
+              align="center"
+              className="mb-14"
+            />
 
             <div className="flex flex-col gap-6">
               {openPositions.map((pos, i) => (

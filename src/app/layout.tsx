@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
+import GlobalCursorGlow from "@/components/GlobalCursorGlow";
+import { SITE_TAGLINE, SITE_DESCRIPTION } from "@/config/site";
 
 const outfit = Outfit({
   variable: "--font-display",
@@ -24,11 +26,10 @@ const baseUrl = "https://lumisync-website.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Lumisync - AI-Powered Campus Operating System",
+    default: `Lumisync — ${SITE_TAGLINE}`,
     template: "%s | Lumisync",
   },
-  description:
-    "Lumisync is the AI-powered campus operating system for university campuses. Dining, events, maps, parking, faculty, jobs, and Lumi AI, all in one seamless experience. Built for universities worldwide.",
+  description: SITE_DESCRIPTION,
   keywords: [
     "campus operating system",
     "university app",
@@ -50,23 +51,21 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: baseUrl,
     siteName: "Lumisync",
-    title: "Lumisync - AI-Powered Campus Operating System",
-    description:
-      "One platform for every campus need. Powered by AI. Built for universities worldwide.",
+    title: `Lumisync — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Lumisync - AI-Powered Campus Operating System",
+        alt: `Lumisync — ${SITE_TAGLINE}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lumisync - AI-Powered Campus Operating System",
-    description:
-      "Dining, events, maps, parking, faculty, jobs, and Lumi AI, all in one app. Built for universities worldwide.",
+    title: `Lumisync — ${SITE_TAGLINE}`,
+    description: SITE_DESCRIPTION,
     images: ["/og-image.png"],
   },
   robots: {
@@ -99,6 +98,7 @@ export default function RootLayout({
       className={`${outfit.variable} ${inter.variable} h-full scroll-smooth`}
     >
       <body className="min-h-full flex flex-col antialiased bg-[--background] text-[--text-primary]">
+        <GlobalCursorGlow />
         <CustomCursor />
         {children}
       </body>

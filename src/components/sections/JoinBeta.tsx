@@ -41,7 +41,7 @@ export default function JoinBeta() {
           </h2>
 
           <p
-            className="text-lg max-w-md"
+            className="text-lg max-w-md text-center mx-auto"
             style={{ color: "#A8A29E", lineHeight: 1.7 }}
           >
             Be among the first students to experience Lumisync. Early access is

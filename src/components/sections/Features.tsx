@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionHeader from "../SectionHeader";
 
 const LumiAIIcon = () => (
   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,25 +161,14 @@ export default function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-14"
+          className="mb-14"
         >
-          <span className="section-label mb-4 block">Features</span>
-          <h2
-            style={{
-              fontFamily: "var(--font-display)",
-              letterSpacing: "-0.025em",
-              color: "var(--text-primary)",
-            }}
-            className="text-4xl sm:text-5xl font-bold"
-          >
-            Everything campus, unified.
-          </h2>
-          <p
-            className="mt-4 text-lg max-w-lg mx-auto"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            Nine powerful modules. One seamless experience.
-          </p>
+          <SectionHeader
+            title="Everything campus, unified."
+            subtext="Nine powerful modules. One seamless experience."
+            label="Features"
+            align="center"
+          />
         </motion.div>
 
         {/* Bento Grid */}

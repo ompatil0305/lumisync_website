@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Building2, Globe, Database, Cpu, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import SectionHeader from "@/components/SectionHeader";
 
 export const metadata: Metadata = {
   title: "Universities",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const plannedUniversities = [
-  { name: "Texas Tech University", state: "Lubbock, TX", status: "Active Now", active: true },
+  { name: "Texas Tech University", state: "Lubbock, TX", status: "Planned", active: false },
   { name: "Texas A&M University", state: "College Station, TX", status: "Planned Q3 26", active: false },
   { name: "UT Austin", state: "Austin, TX", status: "Planned Q3 26", active: false },
   { name: "Arizona State University", state: "Tempe, AZ", status: "Planned Q4 26", active: false },
@@ -46,12 +47,12 @@ export default function UniversitiesPage() {
         {/* Current & Planned list */}
         <section className="section-py border-b border-[--border]">
           <div className="section-max px-6">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl font-bold font-display">Supported Campuses</h2>
-              <p className="text-stone-500 dark:text-stone-400 mt-2 text-sm max-w-sm mx-auto">
-                Explore active university integrations and our current deployment schedule.
-              </p>
-            </div>
+            <SectionHeader
+              title="Supported Campuses"
+              subtext="Explore active university integrations and our current deployment schedule."
+              align="center"
+              className="mb-14"
+            />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {plannedUniversities.map((uni, i) => (

@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, useReducedMotion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import Link from "next/link";
+import { SITE_TAGLINE } from "@/config/site";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -16,7 +17,7 @@ const fadeUp = {
 const stats = [
   { label: "Modules Shipped", value: "9" },
   { label: "First Campus", value: "Texas Tech" },
-  { label: "AI Engine", value: "Gemini 2.5" },
+  { label: "AI Engine", value: "Gemini 3.1 Flash-Lite" },
 ];
 
 function CountUpNumber({ value }: { value: string }) {
@@ -134,12 +135,12 @@ export default function Hero() {
         <div
           className="pointer-events-none absolute inset-0 hidden md:block"
           style={{
-            background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(204, 0, 0, 0.05) 0%, transparent 80%)`,
+            background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(204, 0, 0, 0.15) 0%, transparent 80%)`,
             zIndex: 1,
           }}
         />
       )}
-
+ 
       {/* Global subtle radial fallback */}
       <div
         aria-hidden
@@ -150,7 +151,7 @@ export default function Hero() {
           zIndex: 0,
         }}
       />
-
+ 
       <div className="section-max relative z-10 w-full px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
@@ -164,7 +165,7 @@ export default function Hero() {
               variants={fadeUp}
               className="mb-4"
             >
-              <span className="section-label">AI-Powered Campus Operating System</span>
+              <span className="section-label">{SITE_TAGLINE}</span>
             </motion.div>
 
             {/* Headline */}
@@ -204,7 +205,7 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-14 w-full"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-20 w-full"
             >
               <motion.div
                 onMouseMove={handleMagMouseMove}
@@ -233,7 +234,7 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-8 lg:gap-12 w-full pt-8 border-t border-border/40"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-8 lg:gap-12 w-full pt-10 border-t border-border/40"
             >
               {stats.map((s, i) => (
                 <div key={i} className="flex flex-col items-center lg:items-start gap-0.5">
