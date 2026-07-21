@@ -65,119 +65,16 @@ export default function AppShowcase() {
           />
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row items-start gap-10 justify-center">
-          {/* Tabs */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-col gap-2 w-full lg:w-72 shrink-0"
-          >
-            {tabs.map((tab) => {
-              const Icon = tab.icon;
-              const active = activeTab.id === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab)}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 14,
-                    padding: "14px 18px",
-                    borderRadius: 12,
-                    border: active
-                      ? "1px solid var(--border)"
-                      : "1px solid transparent",
-                    background: active ? "#fff" : "transparent",
-                    boxShadow: active
-                      ? "0 2px 12px rgba(0,0,0,0.06)"
-                      : "none",
-                    borderLeft: active
-                      ? "3px solid #CC0000"
-                      : "3px solid transparent",
-                    cursor: "pointer",
-                    textAlign: "left",
-                    transition: "all 0.2s",
-                    width: "100%",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 8,
-                      background: active ? "#FEF2F2" : "#F5F5F4",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <Icon
-                      size={16}
-                      style={{ color: active ? "#CC0000" : "#A8A29E" }}
-                    />
-                  </div>
-                  <div>
-                    <p
-                      className="font-semibold text-sm"
-                      style={{
-                        fontFamily: "var(--font-display)",
-                        color: active
-                          ? "var(--text-primary)"
-                          : "var(--text-muted)",
-                      }}
-                    >
-                      {tab.label}
-                    </p>
-                    <p
-                      className="text-xs mt-0.5"
-                      style={{ color: "var(--text-muted)" }}
-                    >
-                      {tab.desc}
-                    </p>
-                  </div>
-                </button>
-              );
-            })}
-          </motion.div>
-
-          {/* App Screenshot */}
-          <motion.div
+        <div className="w-full max-w-5xl mx-auto flex justify-center mt-10">
+          <motion.img
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: 0.1 }}
-            style={{ flexShrink: 0 }}
-          >
-            <div
-              style={{
-                width: 320,
-                height: 693, /* Approx aspect ratio for screenshots */
-                borderRadius: "2rem",
-                boxShadow: "0 24px 80px rgba(0,0,0,0.15)",
-                overflow: "hidden",
-                position: "relative",
-              }}
-            >
-              <motion.img
-                key={activeTab.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-                src={activeTab.image}
-                alt={activeTab.label}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  display: "block",
-                }}
-              />
-            </div>
-          </motion.div>
+            transition={{ duration: 0.55 }}
+            src="/app_showcase_new.png"
+            alt="App Showcase Screens"
+            className="w-full h-auto object-contain rounded-3xl"
+          />
         </div>
       </div>
     </section>

@@ -82,38 +82,12 @@ export default function CampusMapPage() {
             </div>
 
             {/* Map Preview Screenshots */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-              {/* Outdoor Navigation */}
-              <div className="card overflow-hidden bg-[var(--surface-3)] border border-[--border] rounded-3xl shadow-xl flex flex-col">
-                <div className="bg-[var(--surface-3)] text-[var(--text-inverse)] px-5 py-3 rounded-t-2xl flex items-center justify-between border-b border-[var(--border)]">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
-                  </div>
-                  <span className="text-[10px] font-bold tracking-wider opacity-85 uppercase">Outdoor Navigation</span>
-                </div>
-                <div 
-                  className="w-full aspect-[9/16] max-h-[480px] bg-cover bg-center rounded-b-2xl"
-                  style={{ backgroundImage: "url('/app_map_screenshot.jpg')" }}
-                />
-              </div>
-
-              {/* Indoor Navigation */}
-              <div className="card overflow-hidden bg-[var(--surface-3)] border border-[--border] rounded-3xl shadow-xl flex flex-col">
-                <div className="bg-[var(--surface-3)] text-[var(--text-inverse)] px-5 py-3 rounded-t-2xl flex items-center justify-between border-b border-[var(--border)]">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
-                  </div>
-                  <span className="text-[10px] font-bold tracking-wider opacity-85 uppercase">Indoor Floor Plans</span>
-                </div>
-                <div 
-                  className="w-full aspect-[9/16] max-h-[480px] bg-cover bg-center rounded-b-2xl"
-                  style={{ backgroundImage: "url('/app_map_indoor.jpg')" }}
-                />
-              </div>
+            <div className="w-full max-w-4xl mx-auto mb-12">
+              <img 
+                src="/map_preview_new.png" 
+                alt="Campus Map Preview" 
+                className="w-full h-auto rounded-3xl shadow-2xl border border-[--border]"
+              />
             </div>
           </div>
         </section>

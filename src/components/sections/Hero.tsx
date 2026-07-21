@@ -229,7 +229,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Part 1 Fix: Clear 40px margin before divider */}
-            <div className="w-full mt-10 mb-0 border-t border-border/40" />
+            <div className="w-full mt-16 mb-0 border-t border-border/40" />
 
             {/* Stats */}
             <motion.div
@@ -278,36 +278,21 @@ export default function Hero() {
                 perspective: 1000,
                 transformStyle: "preserve-3d",
               }}
-              className="w-full max-w-[340px] aspect-[3/4] relative group cursor-pointer"
+              className="w-full max-w-[400px] relative group cursor-pointer"
             >
               {/* Bold glowing shape backdrop */}
               <div 
-                className="absolute inset-0 bg-gradient-to-tr from-[#CC0000]/10 to-transparent rounded-[2.5rem] blur-2xl -z-10 group-hover:scale-105 transition-transform duration-500"
+                className="absolute inset-0 bg-gradient-to-tr from-[#CC0000]/20 to-transparent rounded-[2.5rem] blur-2xl -z-10 group-hover:scale-105 transition-transform duration-500"
               />
 
-              <div
+              <img
+                src="/app_hero_interactive.png"
+                alt="Lumisync Interactive App Preview"
+                className="w-full h-auto object-contain"
                 style={{
-                  borderRadius: "2.5rem",
-                  border: "10px solid var(--text-primary)",
-                  boxShadow:
-                    "0 32px 80px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.08)",
-                  background: "var(--text-primary)",
-                  overflow: "hidden",
-                  width: "100%",
-                  height: "100%",
-                  position: "relative",
-                  backgroundImage: "url('/app_hero_mockup.jpg')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
+                  filter: "drop-shadow(0 24px 40px rgba(0,0,0,0.3))"
                 }}
-              >
-                {/* Visual Glass Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none flex flex-col justify-end p-6">
-                  <span className="text-[10px] font-bold text-[#CC0000] uppercase tracking-widest mb-1.5">Lumisync App</span>
-                  <h3 className="text-[var(--text-inverse)] text-lg font-bold font-display leading-snug">Synced to Texas Tech University</h3>
-                  <p className="text-[var(--text-muted)] text-xs mt-1">Live routing, Gemini Chat threads, and menus.</p>
-                </div>
-              </div>
+              />
             </motion.div>
           </div>
 
