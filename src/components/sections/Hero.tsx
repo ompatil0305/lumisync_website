@@ -259,7 +259,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Multi-Layered Interactive 3D Phone & Red Geometric Crystal Wireframe */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center w-full relative py-6">
+          <div className="lg:col-span-5 flex items-center justify-center w-full relative py-2">
             <motion.div
               ref={cardRef}
               onMouseMove={handleCardMouseMove}
@@ -277,18 +277,18 @@ export default function Hero() {
                 perspective: 1200,
                 transformStyle: "preserve-3d",
               }}
-              className="w-full max-w-[370px] relative group cursor-pointer flex flex-col items-center"
+              className="w-full max-w-[290px] relative group cursor-pointer flex flex-col items-center"
             >
               {/* Glowing Red Wireframe Geometric Crystal SVG Backdrop */}
-              <div aria-hidden className="absolute -inset-10 flex items-center justify-center pointer-events-none -z-10">
+              <div aria-hidden className="absolute -inset-8 flex items-center justify-center pointer-events-none -z-10">
                 <svg
-                  width="480"
-                  height="480"
+                  width="400"
+                  height="400"
                   viewBox="0 0 200 200"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   className="w-full h-full opacity-65 animate-pulse"
-                  style={{ filter: "drop-shadow(0 0 20px rgba(204, 0, 0, 0.4))" }}
+                  style={{ filter: "drop-shadow(0 0 16px rgba(204, 0, 0, 0.4))" }}
                 >
                   <polygon points="100,20 170,60 170,140 100,180 30,140 30,60" stroke="#CC0000" strokeWidth="1" strokeDasharray="3 3" />
                   <polygon points="100,35 155,67 155,133 100,165 45,133 45,67" stroke="#FF3333" strokeWidth="0.75" />
@@ -305,18 +305,18 @@ export default function Hero() {
 
               {/* Main Sleek Mobile Device Container */}
               <div
-                className="relative overflow-hidden bg-[#09090b] border-[9px] border-[#18181b] shadow-2xl w-full"
+                className="relative overflow-hidden bg-[#09090b] border-[8px] border-[#18181b] shadow-2xl w-full"
                 style={{
-                  borderRadius: "3rem",
-                  boxShadow: "0 32px 80px -16px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.12)",
+                  borderRadius: "2.75rem",
+                  boxShadow: "0 25px 60px -16px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.12)",
                   aspectRatio: "9/18",
                 }}
               >
                 {/* Dynamic Island / Camera Bar */}
-                <div className="absolute top-0 inset-x-0 h-6 z-30 flex justify-center items-center pointer-events-none">
-                  <div className="w-24 h-4 bg-[#18181b] rounded-b-xl flex justify-center items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#09090b]" />
-                    <div className="w-8 h-1.5 rounded-full bg-[#09090b]" />
+                <div className="absolute top-0 inset-x-0 h-5 z-30 flex justify-center items-center pointer-events-none">
+                  <div className="w-20 h-3.5 bg-[#18181b] rounded-b-xl flex justify-center items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-[#09090b]" />
+                    <div className="w-6 h-1 rounded-full bg-[#09090b]" />
                   </div>
                 </div>
 
@@ -329,22 +329,10 @@ export default function Hero() {
 
                 {/* Bottom Home Indicator */}
                 <div className="absolute bottom-2 inset-x-0 h-4 flex justify-center items-center z-30 pointer-events-none">
-                  <div className="w-32 h-1 bg-white/40 rounded-full" />
+                  <div className="w-28 h-1 bg-white/40 rounded-full" />
                 </div>
               </div>
             </motion.div>
-
-            {/* Store Download Badges below Phone */}
-            <div className="mt-8 flex items-center gap-3 justify-center z-20">
-              <Link href="/join" className="btn btn-primary rounded-xl px-5 py-2.5 text-xs font-bold uppercase tracking-wider shadow-lg">
-                GET STARTED
-              </Link>
-              <div className="flex items-center gap-2 bg-black/60 border border-white/10 px-3 py-2 rounded-xl text-[10px] text-stone-300">
-                <span>📱 App Store</span>
-                <span className="opacity-40">|</span>
-                <span>🤖 Google Play</span>
-              </div>
-            </div>
           </div>
 
         </div>
