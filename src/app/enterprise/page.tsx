@@ -65,11 +65,11 @@ export default function EnterprisePage() {
                 const Icon = b.icon;
                 return (
                   <div key={i} className="card p-8 flex gap-6 items-start">
-                    <div className="p-3 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex-shrink-0">
+                    <div className="p-3 rounded-xl bg-[var(--surface-2)] text-blue-600 flex-shrink-0">
                       <Icon size={20} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold mb-2 font-display text-stone-900 dark:text-stone-50">{b.title}</h3>
+                      <h3 className="text-lg font-bold mb-2 font-display text-[var(--text-primary)] dark:text-stone-50">{b.title}</h3>
                       <p className="text-sm text-[--text-secondary] leading-relaxed">{b.desc}</p>
                     </div>
                   </div>
@@ -85,7 +85,7 @@ export default function EnterprisePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-3">For IT & Security Teams</span>
-                <h3 className="text-3xl font-bold mb-5 font-display text-stone-900 dark:text-stone-50">
+                <h3 className="text-3xl font-bold mb-5 font-display text-[var(--text-primary)] dark:text-stone-50">
                   Integration Roadmap & SSO
                 </h3>
                 <p className="text-sm text-[--text-secondary] leading-relaxed mb-4">
@@ -96,8 +96,8 @@ export default function EnterprisePage() {
                 </p>
               </div>
 
-              <div className="bg-stone-50 dark:bg-stone-900 p-8 rounded-3xl border border-[--border] flex flex-col gap-4">
-                <h4 className="font-bold text-lg font-display text-stone-900 dark:text-stone-50">Enterprise Features</h4>
+              <div className="bg-[var(--surface)] p-8 rounded-3xl border border-[--border] flex flex-col gap-4">
+                <h4 className="font-bold text-lg font-display text-[var(--text-primary)] dark:text-stone-50">Enterprise Features</h4>
                 {[
                   "Multi-campus support architecture",
                   "Single Sign-On (SAML/OAuth) - Coming Soon",
@@ -117,10 +117,10 @@ export default function EnterprisePage() {
         </section>
 
         {/* Contact sales CTA */}
-        <section className="bg-stone-100 dark:bg-stone-900 py-16 border-t border-[--border]">
+        <section className="section-py bg-[var(--surface-2)] dark:bg-[var(--surface-3)] border-t border-[--border]">
           <div className="section-max px-6 text-center flex flex-col items-center">
             <h3 className="text-2xl font-bold mb-4 font-display text-center">Start your integration</h3>
-            <p className="text-stone-600 dark:text-stone-400 max-w-md mx-auto mb-6 text-sm text-center">
+            <p className="text-[var(--text-secondary)] dark:text-[var(--text-muted)] max-w-md mx-auto mb-6 text-sm text-center">
               Speak with our onboarding team to discuss pricing, custom features, data integrations, and campus security.
             </p>
             <div className="flex gap-4 justify-center">

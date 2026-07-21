@@ -65,11 +65,11 @@ export default function CampusMapPage() {
                 const Icon = feat.icon;
                 return (
                   <div key={i} className="card p-8 flex gap-6 items-start">
-                    <div className="p-3 rounded-xl bg-stone-100 dark:bg-stone-800 text-[#CC0000] flex-shrink-0">
+                    <div className="p-3 rounded-xl bg-[var(--surface-2)] text-[#CC0000] flex-shrink-0">
                       <Icon size={20} />
                     </div>
                     <div>
-                      <h2 className="text-lg font-bold mb-2 font-display text-stone-900 dark:text-stone-50">
+                      <h2 className="text-lg font-bold mb-2 font-display text-[var(--text-primary)] dark:text-stone-50">
                         {feat.title}
                       </h2>
                       <p className="text-sm text-[--text-secondary] leading-relaxed">
@@ -84,8 +84,8 @@ export default function CampusMapPage() {
             {/* Map Preview Screenshots */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
               {/* Outdoor Navigation */}
-              <div className="card overflow-hidden bg-stone-900 border border-[--border] rounded-3xl shadow-xl flex flex-col">
-                <div className="bg-stone-950 text-white px-5 py-3 rounded-t-2xl flex items-center justify-between border-b border-stone-800">
+              <div className="card overflow-hidden bg-[var(--surface-3)] border border-[--border] rounded-3xl shadow-xl flex flex-col">
+                <div className="bg-[var(--surface-3)] text-[var(--text-inverse)] px-5 py-3 rounded-t-2xl flex items-center justify-between border-b border-[var(--border)]">
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
                     <span className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
@@ -100,8 +100,8 @@ export default function CampusMapPage() {
               </div>
 
               {/* Indoor Navigation */}
-              <div className="card overflow-hidden bg-stone-900 border border-[--border] rounded-3xl shadow-xl flex flex-col">
-                <div className="bg-stone-950 text-white px-5 py-3 rounded-t-2xl flex items-center justify-between border-b border-stone-800">
+              <div className="card overflow-hidden bg-[var(--surface-3)] border border-[--border] rounded-3xl shadow-xl flex flex-col">
+                <div className="bg-[var(--surface-3)] text-[var(--text-inverse)] px-5 py-3 rounded-t-2xl flex items-center justify-between border-b border-[var(--border)]">
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
                     <span className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
@@ -119,10 +119,10 @@ export default function CampusMapPage() {
         </section>
 
         {/* Action CTA */}
-        <section className="bg-stone-100 dark:bg-stone-900 py-16 border-t border-[--border]">
+        <section className="section-py bg-[var(--surface-2)] dark:bg-[var(--surface-3)] border-t border-[--border]">
           <div className="section-max px-6 text-center flex flex-col items-center">
             <h3 className="text-2xl font-bold mb-4 font-display text-center">Need custom campus maps?</h3>
-            <p className="text-stone-600 dark:text-stone-400 max-w-md mx-auto mb-6 text-sm text-center">
+            <p className="text-[var(--text-secondary)] dark:text-[var(--text-muted)] max-w-md mx-auto mb-6 text-sm text-center">
               We can map and digitize your entire campus, parking lots, and building floor plans in days.
             </p>
             <div className="flex gap-4 justify-center">

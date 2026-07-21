@@ -7,7 +7,7 @@ export default function JoinBeta() {
   return (
     <section
       className="section-py"
-      style={{ background: "#1C1917" }}
+      style={{ background: "var(--text-primary)" }}
     >
       <div className="section-max px-6">
         <motion.div
@@ -33,7 +33,7 @@ export default function JoinBeta() {
               fontFamily: "var(--font-display)",
               letterSpacing: "-0.03em",
               lineHeight: 1.1,
-              color: "#FAFAF9",
+              color: "var(--background)",
             }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold max-w-3xl"
           >
@@ -58,8 +58,8 @@ export default function JoinBeta() {
                 gap: 8,
                 padding: "14px 32px",
                 borderRadius: 999,
-                background: "#FAFAF9",
-                color: "#1C1917",
+                background: "var(--background)",
+                color: "var(--text-primary)",
                 fontWeight: 600,
                 fontSize: "0.95rem",
                 fontFamily: "var(--font-display)",
@@ -70,7 +70,7 @@ export default function JoinBeta() {
                 (e.currentTarget as HTMLElement).style.background = "#fff";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "#FAFAF9";
+                (e.currentTarget as HTMLElement).style.background = "var(--background)";
               }}
             >
               Get Early Access
@@ -96,7 +96,7 @@ export default function JoinBeta() {
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLElement;
                 el.style.borderColor = "#6B6966";
-                el.style.color = "#FAFAF9";
+                el.style.color = "var(--background)";
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLElement;

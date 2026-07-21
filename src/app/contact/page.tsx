@@ -102,11 +102,11 @@ export default function ContactPage() {
             {/* Contact details */}
             <div className="flex flex-col gap-6">
               <div className="card p-6 flex gap-4 items-start">
-                <div className="p-2.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex-shrink-0">
+                <div className="p-2.5 rounded-xl bg-[var(--surface-2)] text-blue-600 flex-shrink-0">
                   <Mail size={18} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm font-display text-stone-900 dark:text-stone-50">General Support</h3>
+                  <h3 className="font-bold text-sm font-display text-[var(--text-primary)] dark:text-stone-50">General Support</h3>
                   <a href="mailto:hello@lumisync.app" className="text-xs text-[--text-secondary] hover:text-blue-600 mt-0.5 block">
                     hello@lumisync.app
                   </a>
@@ -114,11 +114,11 @@ export default function ContactPage() {
               </div>
 
               <div className="card p-6 flex gap-4 items-start">
-                <div className="p-2.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex-shrink-0">
+                <div className="p-2.5 rounded-xl bg-[var(--surface-2)] text-blue-600 flex-shrink-0">
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm font-display text-stone-900 dark:text-stone-50">Headquarters</h3>
+                  <h3 className="font-bold text-sm font-display text-[var(--text-primary)] dark:text-stone-50">Headquarters</h3>
                   <p className="text-xs text-[--text-secondary] mt-0.5">
                     Lubbock, Texas
                   </p>
@@ -126,11 +126,11 @@ export default function ContactPage() {
               </div>
 
               <div className="card p-6 flex gap-4 items-start">
-                <div className="p-2.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex-shrink-0">
+                <div className="p-2.5 rounded-xl bg-[var(--surface-2)] text-blue-600 flex-shrink-0">
                   <Globe size={18} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-sm font-display text-stone-900 dark:text-stone-50">Open Source</h3>
+                  <h3 className="font-bold text-sm font-display text-[var(--text-primary)] dark:text-stone-50">Open Source</h3>
                   <a
                     href="https://github.com/ompatil0305/lumisync"
                     target="_blank"
@@ -144,11 +144,11 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="col-span-2 card p-8 bg-white dark:bg-stone-900 border border-[--border]">
+            <div className="col-span-2 card p-8 bg-white dark:bg-[var(--surface-3)] border border-[--border]">
               {status === "success" ? (
                 <div className="flex flex-col items-center text-center py-10">
                   <CheckCircle2 size={48} className="text-green-600 mb-4" />
-                  <h3 className="text-xl font-bold font-display text-stone-900 dark:text-stone-50 mb-2">Message Sent!</h3>
+                  <h3 className="text-xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mb-2">Message Sent!</h3>
                   <p className="text-xs text-[--text-secondary] max-w-sm">
                     Thank you for reaching out. We have sent a confirmation email to you, and our support team will respond shortly.
                   </p>
@@ -182,7 +182,7 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-xs font-bold text-stone-600 dark:text-stone-400 uppercase mb-2">
+                      <label htmlFor="name" className="block text-xs font-bold text-[var(--text-secondary)] dark:text-[var(--text-muted)] uppercase mb-2">
                         Your Name <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -197,7 +197,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-xs font-bold text-stone-600 dark:text-stone-400 uppercase mb-2">
+                      <label htmlFor="email" className="block text-xs font-bold text-[var(--text-secondary)] dark:text-[var(--text-muted)] uppercase mb-2">
                         Email Address <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -215,8 +215,8 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="university" className="block text-xs font-bold text-stone-600 dark:text-stone-400 uppercase mb-2">
-                        University <span className="text-stone-400 text-[10px] lowercase font-normal">(optional)</span>
+                      <label htmlFor="university" className="block text-xs font-bold text-[var(--text-secondary)] dark:text-[var(--text-muted)] uppercase mb-2">
+                        University <span className="text-[var(--text-muted)] text-[10px] lowercase font-normal">(optional)</span>
                       </label>
                       <input
                         type="text"
@@ -229,7 +229,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="role" className="block text-xs font-bold text-stone-600 dark:text-stone-400 uppercase mb-2">
+                      <label htmlFor="role" className="block text-xs font-bold text-[var(--text-secondary)] dark:text-[var(--text-muted)] uppercase mb-2">
                         Your Role <span className="text-red-500">*</span>
                       </label>
                       <select
@@ -238,7 +238,7 @@ export default function ContactPage() {
                         required
                         value={formData.role}
                         onChange={handleChange}
-                        className="input select bg-white dark:bg-stone-900"
+                        className="input select bg-white dark:bg-[var(--surface-3)]"
                       >
                         <option value="student">Student</option>
                         <option value="faculty">Faculty Member</option>
@@ -251,7 +251,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-xs font-bold text-stone-600 dark:text-stone-400 uppercase mb-2">
+                    <label htmlFor="subject" className="block text-xs font-bold text-[var(--text-secondary)] dark:text-[var(--text-muted)] uppercase mb-2">
                       Subject <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -267,7 +267,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-xs font-bold text-stone-600 dark:text-stone-400 uppercase mb-2">
+                    <label htmlFor="message" className="block text-xs font-bold text-[var(--text-secondary)] dark:text-[var(--text-muted)] uppercase mb-2">
                       Message <span className="text-red-500">*</span>
                     </label>
                     <textarea

@@ -134,31 +134,31 @@ export async function POST(req: Request) {
           <h1 style="margin: 0; font-size: 24px; letter-spacing: -0.02em;">Lumisync Contact</h1>
           <p style="margin: 4px 0 0 0; font-size: 14px; opacity: 0.8;">New Form Submission</p>
         </div>
-        <div style="padding: 24px; background-color: #FAFAF9;">
+        <div style="padding: 24px; background-color: var(--background);">
           <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
             <tr>
               <td style="padding: 8px 0; font-size: 13px; font-weight: bold; color: #57534E; width: 120px;">Name:</td>
-              <td style="padding: 8px 0; font-size: 13px; color: #1C1917;">${name}</td>
+              <td style="padding: 8px 0; font-size: 13px; color: var(--text-primary);">${name}</td>
             </tr>
             <tr>
               <td style="padding: 8px 0; font-size: 13px; font-weight: bold; color: #57534E;">Email:</td>
-              <td style="padding: 8px 0; font-size: 13px; color: #1C1917;"><a href="mailto:${email}" style="color: #CC0000; text-decoration: none;">${email}</a></td>
+              <td style="padding: 8px 0; font-size: 13px; color: var(--text-primary);"><a href="mailto:${email}" style="color: #CC0000; text-decoration: none;">${email}</a></td>
             </tr>
             <tr>
               <td style="padding: 8px 0; font-size: 13px; font-weight: bold; color: #57534E;">University:</td>
-              <td style="padding: 8px 0; font-size: 13px; color: #1C1917;">${university || "Not Specified"}</td>
+              <td style="padding: 8px 0; font-size: 13px; color: var(--text-primary);">${university || "Not Specified"}</td>
             </tr>
             <tr>
               <td style="padding: 8px 0; font-size: 13px; font-weight: bold; color: #57534E;">Role:</td>
-              <td style="padding: 8px 0; font-size: 13px; color: #1C1917; text-transform: capitalize;">${role}</td>
+              <td style="padding: 8px 0; font-size: 13px; color: var(--text-primary); text-transform: capitalize;">${role}</td>
             </tr>
             <tr>
               <td style="padding: 8px 0; font-size: 13px; font-weight: bold; color: #57534E;">Subject:</td>
-              <td style="padding: 8px 0; font-size: 13px; color: #1C1917;">${subject}</td>
+              <td style="padding: 8px 0; font-size: 13px; color: var(--text-primary);">${subject}</td>
             </tr>
           </table>
           
-          <div style="background-color: #ffffff; border: 1px solid #E7E5E4; border-radius: 8px; padding: 16px; font-size: 13px; line-height: 1.6; color: #1C1917; white-space: pre-wrap;">
+          <div style="background-color: #ffffff; border: 1px solid #E7E5E4; border-radius: 8px; padding: 16px; font-size: 13px; line-height: 1.6; color: var(--text-primary); white-space: pre-wrap;">
             ${message}
           </div>
         </div>
@@ -171,11 +171,11 @@ export async function POST(req: Request) {
     // Email 2: Confirmation to User
     const userEmailHtml = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #E7E5E4; border-radius: 12px; overflow: hidden;">
-        <div style="background-color: #1C1917; color: #ffffff; padding: 24px; text-align: center;">
+        <div style="background-color: var(--text-primary); color: #ffffff; padding: 24px; text-align: center;">
           <h1 style="margin: 0; font-size: 24px; letter-spacing: -0.02em;">Lumisync</h1>
           <p style="margin: 4px 0 0 0; font-size: 14px; opacity: 0.8;">Thank you for contacting us</p>
         </div>
-        <div style="padding: 24px; background-color: #FAFAF9; color: #1C1917; font-size: 13px; line-height: 1.6;">
+        <div style="padding: 24px; background-color: var(--background); color: var(--text-primary); font-size: 13px; line-height: 1.6;">
           <p>Hi ${name},</p>
           <p>Thanks for reaching out to the Lumisync team! We have received your message regarding: <strong>"${subject}"</strong>.</p>
           <p>Lumisync is built to simplify campus life for students, faculty, and IT departments. Our team is reviewing your message, and we will get back to you within 2 to 3 business days.</p>

@@ -90,10 +90,10 @@ export default function CareersPage() {
                 const Icon = item.icon;
                 return (
                   <div key={i} className="card p-8 flex flex-col gap-5">
-                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex items-center justify-center border border-stone-200/20 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-[var(--surface-2)] text-blue-600 flex items-center justify-center border border-[var(--border)]/20 flex-shrink-0">
                       <Icon size={18} />
                     </div>
-                    <h3 className="font-bold text-lg font-display text-stone-900 dark:text-stone-50">{item.title}</h3>
+                    <h3 className="font-bold text-lg font-display text-[var(--text-primary)] dark:text-stone-50">{item.title}</h3>
                     <p className="text-sm text-[--text-secondary] leading-relaxed">{item.desc}</p>
                   </div>
                 );
@@ -117,15 +117,15 @@ export default function CareersPage() {
                 <div key={i} className="card p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 relative">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xs font-semibold text-stone-400 dark:text-stone-500 uppercase tracking-wider">{pos.dept}</span>
+                      <span className="text-xs font-semibold text-[var(--text-muted)] dark:text-[var(--text-muted)] uppercase tracking-wider">{pos.dept}</span>
                       <span className="w-1 h-1 rounded-full bg-stone-300 dark:bg-stone-700" />
-                      <span className="text-xs text-stone-500 dark:text-stone-400">{pos.location}</span>
+                      <span className="text-xs text-[var(--text-muted)] dark:text-[var(--text-muted)]">{pos.location}</span>
                     </div>
-                    <h3 className="text-lg font-bold font-display text-stone-900 dark:text-stone-50">{pos.title}</h3>
+                    <h3 className="text-lg font-bold font-display text-[var(--text-primary)] dark:text-stone-50">{pos.title}</h3>
                     <p className="text-xs text-[--text-secondary] mt-2 leading-relaxed max-w-xl">{pos.desc}</p>
                   </div>
 
-                  <span className="px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest bg-stone-150 text-stone-600 dark:bg-stone-800 dark:text-stone-350 rounded-full border border-stone-200/20">
+                  <span className="px-3.5 py-1 text-[10px] font-bold uppercase tracking-widest bg-stone-150 text-[var(--text-secondary)] dark:bg-[var(--surface-3)] dark:text-stone-350 rounded-full border border-[var(--border)]/20">
                     Coming Soon
                   </span>
                 </div>

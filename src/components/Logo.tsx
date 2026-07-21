@@ -12,7 +12,7 @@ export default function Logo({
   light = false,
 }: LogoProps) {
   const blueColor = "rgb(var(--lumi-primary, 204 0 0))";
-  const stoneColor = light ? "#FAFAF9" : "#1C1917";
+  const stoneColor = light ? "var(--background)" : "var(--text-primary)";
 
   const icon = (
     <svg
@@ -60,7 +60,7 @@ export default function Logo({
           fontWeight: 700,
           letterSpacing: "-0.03em",
         }}
-        className={light ? "text-white" : "text-stone-900 dark:text-stone-50"}
+        className={light ? "text-[var(--text-inverse)]" : "text-[var(--text-primary)] dark:text-stone-50"}
       >
         Lumisync
       </span>

@@ -73,10 +73,10 @@ export default function DocsPage() {
                 return (
                   <div key={i} className="card p-8 flex flex-col justify-between min-h-[300px]">
                     <div>
-                      <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex items-center justify-center border border-stone-200/20 mb-5 flex-shrink-0">
+                      <div className="w-10 h-10 rounded-xl bg-[var(--surface-2)] text-blue-600 flex items-center justify-center border border-[var(--border)]/20 mb-5 flex-shrink-0">
                         <Icon size={18} />
                       </div>
-                      <h3 className="font-bold text-lg font-display text-stone-900 dark:text-stone-50 mb-2">{sec.title}</h3>
+                      <h3 className="font-bold text-lg font-display text-[var(--text-primary)] dark:text-stone-50 mb-2">{sec.title}</h3>
                       <p className="text-xs text-[--text-secondary] leading-relaxed mb-6">{sec.desc}</p>
                     </div>
 
@@ -98,7 +98,7 @@ export default function DocsPage() {
         <section className="section-py">
           <div className="section-max px-6 max-w-3xl">
             <div className="prose mx-auto">
-              <h2 id="introduction" className="text-3xl font-bold font-display text-stone-900 dark:text-stone-50 mb-6">Introduction to Lumisync</h2>
+              <h2 id="introduction" className="text-3xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mb-6">Introduction to Lumisync</h2>
               <p className="text-sm leading-relaxed mb-4">
                 Lumisync is built to serve as the single interface shell for university students. Rather than replacing existing student records, LMS tools, or dining software, we simply overlay a unified client on top of them.
               </p>
@@ -106,12 +106,12 @@ export default function DocsPage() {
                 Students access all resources, including real-time menus, map wayfinding, and calendar schedules, from a single client screen, reducing cognitive friction and IT support tickets.
               </p>
 
-              <h2 id="architecture" className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mt-10 mb-4">Provider Architecture</h2>
+              <h2 id="architecture" className="text-2xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mt-10 mb-4">Provider Architecture</h2>
               <p className="text-sm leading-relaxed mb-4">
                 Lumisync implements a modular <strong>Provider Pattern</strong>. Each university has a designated provider file, such as <code>texasTechProvider.ts</code>, which implements the interface matching the schema below:
               </p>
               
-              <pre className="bg-stone-50 dark:bg-stone-900 p-4 rounded-xl border border-[--border] overflow-x-auto text-[11px] leading-relaxed font-mono text-stone-700 dark:text-stone-300">
+              <pre className="bg-[var(--surface)] p-4 rounded-xl border border-[--border] overflow-x-auto text-[11px] leading-relaxed font-mono text-[var(--text-secondary)] dark:text-[var(--text-muted)]">
 {`interface UniversityDataProvider {
   getDiningHalls(): Promise<DiningHall[]>;
   getParkingLots(): Promise<ParkingLot[]>;
@@ -121,7 +121,7 @@ export default function DocsPage() {
 }`}
               </pre>
 
-              <h2 id="onboarding" className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mt-10 mb-4">Onboarding a Campus</h2>
+              <h2 id="onboarding" className="text-2xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mt-10 mb-4">Onboarding a Campus</h2>
               <p className="text-sm leading-relaxed mb-4">
                 To onboard a new university campus, follow this lifecycle:
               </p>
@@ -132,10 +132,10 @@ export default function DocsPage() {
                 <li>Verify build succeeds with <code>npm run build</code>.</li>
               </ol>
 
-              <div className="flex gap-4 p-5 rounded-2xl bg-stone-100 dark:bg-stone-900 border border-[--border] mt-10">
+              <div className="flex gap-4 p-8 rounded-2xl bg-[var(--surface-2)] border border-[--border] mt-10">
                 <ShieldAlert className="text-blue-600 w-5 h-5 flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-sm font-display text-stone-900 dark:text-stone-50 mb-1">Developer Notice</h4>
+                  <h4 className="font-bold text-sm font-display text-[var(--text-primary)] dark:text-stone-50 mb-1">Developer Notice</h4>
                   <p className="text-xs text-[--text-secondary] leading-relaxed">
                     We are currently refactoring API integrations to use standard REST routes. Sign up for the developer newsletter inside contact form if you want to get notified when public documentation releases.
                   </p>

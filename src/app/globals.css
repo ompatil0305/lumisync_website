@@ -118,6 +118,18 @@ body {
   overflow-x: hidden;
 }
 
+/* Base focus outline for accessibility */
+a:focus-visible, 
+button:focus-visible, 
+input:focus-visible, 
+textarea:focus-visible, 
+select:focus-visible, 
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: 2px solid rgba(204, 0, 0, 0.6);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display, 'Outfit', -apple-system, sans-serif);
   font-weight: 600;

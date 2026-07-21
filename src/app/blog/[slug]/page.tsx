@@ -122,7 +122,7 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Back link */}
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-400 dark:text-stone-500 hover:text-blue-600 transition-colors mb-8 group"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--text-muted)] dark:text-[var(--text-muted)] hover:text-blue-600 transition-colors mb-8 group"
           >
             <ArrowLeft size={14} className="group-hover:-translate-x-0.5 transition-transform" /> Back to Blog
           </Link>
@@ -133,27 +133,27 @@ export default async function BlogPostPage({ params }: Props) {
               <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border ${post.color}`}>
                 {post.category}
               </span>
-              <span className="text-stone-400 dark:text-stone-500 font-medium">{post.date}</span>
+              <span className="text-[var(--text-muted)] dark:text-[var(--text-muted)] font-medium">{post.date}</span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl font-bold font-display text-stone-900 dark:text-stone-50 leading-tight tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 leading-tight tracking-tight mb-6">
               {post.title}
             </h1>
 
             {/* Author info */}
             <div className="flex items-center gap-3 pb-8 border-b border-[--border] mb-8">
-              <div className="w-8 h-8 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center font-bold text-xs text-stone-600 dark:text-stone-400">
+              <div className="w-8 h-8 rounded-full bg-stone-200 dark:bg-[var(--surface-3)] flex items-center justify-center font-bold text-xs text-[var(--text-secondary)] dark:text-[var(--text-muted)]">
                 {fullPost.author[0]}
               </div>
               <div>
-                <p className="text-xs font-semibold text-stone-900 dark:text-stone-50">{fullPost.author}</p>
-                <p className="text-[10px] text-stone-400 dark:text-stone-500">{fullPost.authorRole}</p>
+                <p className="text-xs font-semibold text-[var(--text-primary)] dark:text-stone-50">{fullPost.author}</p>
+                <p className="text-[10px] text-[var(--text-muted)] dark:text-[var(--text-muted)]">{fullPost.authorRole}</p>
               </div>
             </div>
 
             {/* Content Body */}
             <div
-              className="text-stone-600 dark:text-stone-300 text-[14px] leading-relaxed space-y-5"
+              className="text-[var(--text-secondary)] dark:text-[var(--text-muted)] text-[14px] leading-relaxed space-y-5"
               dangerouslySetInnerHTML={{ __html: fullPost.contentHtml }}
             />
           </article>

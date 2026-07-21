@@ -77,14 +77,14 @@ export default function BlogPage() {
                   <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border ${featured.color}`}>
                     {featured.category}
                   </span>
-                  <span className="text-stone-400 dark:text-stone-500 font-medium flex items-center gap-1">
+                  <span className="text-[var(--text-muted)] dark:text-[var(--text-muted)] font-medium flex items-center gap-1">
                     <Calendar size={12} /> {featured.date}
                   </span>
-                  <span className="text-stone-400 dark:text-stone-500 font-medium flex items-center gap-1">
+                  <span className="text-[var(--text-muted)] dark:text-[var(--text-muted)] font-medium flex items-center gap-1">
                     <Clock size={12} /> {featured.readTime}
                   </span>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold font-display text-stone-900 dark:text-stone-50 mb-3 hover:text-blue-600 transition-colors">
+                <h2 className="text-2xl md:text-3xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mb-3 hover:text-blue-600 transition-colors">
                   <Link href={`/blog/${featured.slug}`}>{featured.title}</Link>
                 </h2>
                 <p className="text-sm text-[--text-secondary] leading-relaxed mb-6 max-w-2xl">
@@ -105,11 +105,11 @@ export default function BlogPage() {
                       <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border ${post.color}`}>
                         {post.category}
                       </span>
-                      <span className="text-stone-400 dark:text-stone-500 font-medium flex items-center gap-1">
+                      <span className="text-[var(--text-muted)] dark:text-[var(--text-muted)] font-medium flex items-center gap-1">
                         <Calendar size={12} /> {post.date}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold font-display text-stone-900 dark:text-stone-50 mb-2 hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mb-2 hover:text-blue-600 transition-colors">
                       <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                     </h3>
                     <p className="text-xs text-[--text-secondary] leading-relaxed mb-6">

@@ -206,7 +206,6 @@ export default function Hero() {
               animate="show"
               variants={fadeUp}
               className="flex flex-wrap items-center justify-center lg:justify-start gap-4 w-full"
-              style={{ marginBottom: "3.5rem" }}
             >
               <motion.div
                 onMouseMove={handleMagMouseMove}
@@ -225,9 +224,12 @@ export default function Hero() {
                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
                 className="btn btn-secondary btn-lg"
               >
-                See It Live
+                View the App
               </motion.a>
             </motion.div>
+
+            {/* Part 1 Fix: Clear 40px margin before divider */}
+            <div className="w-full mt-10 mb-0 border-t border-border/40" />
 
             {/* Stats */}
             <motion.div
@@ -235,8 +237,8 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-8 lg:gap-12 w-full border-t border-border/40"
-              style={{ paddingTop: "2.5rem", marginTop: "1rem" }}
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-8 lg:gap-12 w-full"
+              style={{ paddingTop: "2.5rem" }}
             >
               {stats.map((s, i) => (
                 <div key={i} className="flex flex-col items-center lg:items-start gap-0.5">
@@ -286,10 +288,10 @@ export default function Hero() {
               <div
                 style={{
                   borderRadius: "2.5rem",
-                  border: "10px solid #1C1917",
+                  border: "10px solid var(--text-primary)",
                   boxShadow:
                     "0 32px 80px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.08)",
-                  background: "#1C1917",
+                  background: "var(--text-primary)",
                   overflow: "hidden",
                   width: "100%",
                   height: "100%",
@@ -302,8 +304,8 @@ export default function Hero() {
                 {/* Visual Glass Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none flex flex-col justify-end p-6">
                   <span className="text-[10px] font-bold text-[#CC0000] uppercase tracking-widest mb-1.5">Lumisync App</span>
-                  <h3 className="text-white text-lg font-bold font-display leading-snug">Synced to Texas Tech University</h3>
-                  <p className="text-stone-300 text-xs mt-1">Live routing, Gemini Chat threads, and menus.</p>
+                  <h3 className="text-[var(--text-inverse)] text-lg font-bold font-display leading-snug">Synced to Texas Tech University</h3>
+                  <p className="text-[var(--text-muted)] text-xs mt-1">Live routing, Gemini Chat threads, and menus.</p>
                 </div>
               </div>
             </motion.div>

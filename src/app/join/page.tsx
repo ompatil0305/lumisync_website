@@ -79,7 +79,7 @@ export default function JoinBetaPage() {
             {/* Left Column copywriting */}
             <div>
               <span className="section-label mb-4 block">Early Access</span>
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight font-display mb-6 text-stone-900 dark:text-stone-50">
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight font-display mb-6 text-[var(--text-primary)] dark:text-stone-50">
                 Join the waitlist.
               </h1>
               <p className="text-[14px] text-[--text-secondary] leading-relaxed mb-6">
@@ -102,11 +102,11 @@ export default function JoinBetaPage() {
             </div>
 
             {/* Right Column Form */}
-            <div className="card p-8 bg-white dark:bg-stone-900 border border-[--border]">
+            <div className="card p-8 bg-white dark:bg-[var(--surface-3)] border border-[--border]">
               {status === "success" ? (
                 <div className="text-center py-10 flex flex-col items-center">
                   <CheckCircle2 size={48} className="text-green-600 mb-4" />
-                  <h3 className="text-xl font-bold font-display text-stone-900 dark:text-stone-50 mb-2">You're on the list!</h3>
+                  <h3 className="text-xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mb-2">You're on the list!</h3>
                   <p className="text-xs text-[--text-secondary] max-w-xs">
                     We have sent a confirmation email to you. We'll be in touch as soon as we open up the next wave of accounts.
                   </p>
@@ -141,7 +141,7 @@ export default function JoinBetaPage() {
                   />
 
                   <div>
-                    <label htmlFor="name" className="block text-xs font-bold text-stone-600 dark:text-stone-400 uppercase mb-2">
+                    <label htmlFor="name" className="block text-xs font-bold text-[var(--text-secondary)] dark:text-[var(--text-muted)] uppercase mb-2">
                       Full Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -157,7 +157,7 @@ export default function JoinBetaPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-xs font-bold text-stone-600 dark:text-stone-400 uppercase mb-2">
+                    <label htmlFor="email" className="block text-xs font-bold text-[var(--text-secondary)] dark:text-[var(--text-muted)] uppercase mb-2">
                       Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -173,7 +173,7 @@ export default function JoinBetaPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="university" className="block text-xs font-bold text-stone-600 dark:text-stone-400 uppercase mb-2">
+                    <label htmlFor="university" className="block text-xs font-bold text-[var(--text-secondary)] dark:text-[var(--text-muted)] uppercase mb-2">
                       University <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -189,7 +189,7 @@ export default function JoinBetaPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="year" className="block text-xs font-bold text-stone-600 dark:text-stone-400 uppercase mb-2">
+                    <label htmlFor="year" className="block text-xs font-bold text-[var(--text-secondary)] dark:text-[var(--text-muted)] uppercase mb-2">
                       Current Year <span className="text-red-500">*</span>
                     </label>
                     <select
@@ -198,7 +198,7 @@ export default function JoinBetaPage() {
                       required
                       value={formData.year}
                       onChange={handleChange}
-                      className="input select bg-white dark:bg-stone-900"
+                      className="input select bg-white dark:bg-[var(--surface-3)]"
                     >
                       <option value="freshman">Freshman</option>
                       <option value="sophomore">Sophomore</option>

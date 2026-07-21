@@ -63,13 +63,13 @@ export default function UniversitiesPage() {
                   }`}
                 >
                   <div>
-                    <h3 className="font-bold text-base font-display text-stone-900 dark:text-stone-50">{uni.name}</h3>
-                    <p className="text-xs text-stone-400 font-medium">{uni.state}</p>
+                    <h3 className="font-bold text-base font-display text-[var(--text-primary)] dark:text-stone-50">{uni.name}</h3>
+                    <p className="text-xs text-[var(--text-muted)] font-medium">{uni.state}</p>
                   </div>
                   <div className="mt-6 flex items-center justify-between">
                     <span
                       className={`text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full ${
-                        uni.active ? "bg-green-50 text-green-700 border border-green-200" : "bg-stone-100 text-stone-600 border border-stone-200 dark:bg-stone-800 dark:text-stone-350 dark:border-stone-700"
+                        uni.active ? "bg-green-50 text-green-700 border border-green-200" : "bg-stone-100 text-[var(--text-secondary)] border border-[var(--border)] dark:bg-[var(--surface-3)] dark:text-stone-350 dark:border-[var(--border)]"
                       }`}
                     >
                       {uni.status}
@@ -88,7 +88,7 @@ export default function UniversitiesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-3">Architectural Scalability</span>
-                <h3 className="text-3xl font-bold mb-5 font-display text-stone-900 dark:text-stone-50">
+                <h3 className="text-3xl font-bold mb-5 font-display text-[var(--text-primary)] dark:text-stone-50">
                   How the Provider Model works
                 </h3>
                 <p className="text-sm text-[--text-secondary] leading-relaxed mb-4">
@@ -120,11 +120,11 @@ export default function UniversitiesPage() {
                   const Icon = item.icon;
                   return (
                     <div key={j} className="card p-6 flex gap-4 items-start">
-                      <div className="p-2.5 rounded-lg bg-stone-100 dark:bg-stone-800 text-blue-600 flex-shrink-0">
+                      <div className="p-2.5 rounded-lg bg-[var(--surface-2)] text-blue-600 flex-shrink-0">
                         <Icon size={18} />
                       </div>
                       <div>
-                        <h4 className="font-bold text-sm mb-1 font-display text-stone-900 dark:text-stone-50">{item.title}</h4>
+                        <h4 className="font-bold text-sm mb-1 font-display text-[var(--text-primary)] dark:text-stone-50">{item.title}</h4>
                         <p className="text-xs text-[--text-secondary] leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
@@ -136,10 +136,10 @@ export default function UniversitiesPage() {
         </section>
 
         {/* IT administrator contact */}
-        <section className="bg-stone-100 dark:bg-stone-900 py-16 border-t border-[--border]">
+        <section className="section-py bg-[var(--surface-2)] dark:bg-[var(--surface-3)] border-t border-[--border]">
           <div className="section-max px-6 text-center">
             <h3 className="text-2xl font-bold mb-4 font-display">University IT & Administrators</h3>
-            <p className="text-stone-600 dark:text-stone-400 max-w-lg mx-auto mb-6 text-sm">
+            <p className="text-[var(--text-secondary)] dark:text-[var(--text-muted)] max-w-lg mx-auto mb-6 text-sm">
               Learn how easy it is to onboard your campus, integrate with student affairs data, and provide a unified mobile experience for your student body.
             </p>
             <div className="flex gap-4 justify-center">

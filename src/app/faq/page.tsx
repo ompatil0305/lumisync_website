@@ -110,7 +110,7 @@ export default function FAQPage() {
             <div className="flex flex-col gap-12">
               {faqGroups.map((group, gIndex) => (
                 <div key={gIndex}>
-                  <h2 className="text-xl font-bold font-display text-stone-900 dark:text-stone-50 mb-6 border-b border-[--border] pb-3">
+                  <h2 className="text-xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mb-6 border-b border-[--border] pb-3">
                     {group.title}
                   </h2>
                   <div className="flex flex-col gap-3">
@@ -127,7 +127,7 @@ export default function FAQPage() {
                         >
                           <button
                             onClick={() => toggleItem(id)}
-                            className="w-full text-left p-6 flex items-center justify-between gap-4 font-semibold text-sm text-stone-900 dark:text-stone-100 font-display transition-colors"
+                            className="w-full text-left p-6 flex items-center justify-between gap-4 font-semibold text-sm text-[var(--text-primary)] dark:text-stone-100 font-display transition-colors"
                           >
                             <span className="flex items-center gap-3">
                               <HelpCircle size={16} className="text-blue-600 flex-shrink-0" />
@@ -135,7 +135,7 @@ export default function FAQPage() {
                             </span>
                             <ChevronDown
                               size={16}
-                              className={`text-stone-400 flex-shrink-0 transition-transform duration-200 ${
+                              className={`text-[var(--text-muted)] flex-shrink-0 transition-transform duration-200 ${
                                 isOpen ? "rotate-180" : ""
                               }`}
                             />
@@ -160,10 +160,10 @@ export default function FAQPage() {
         </section>
 
         {/* CTA Footer */}
-        <section className="bg-stone-100 dark:bg-stone-900 py-16 border-t border-[--border]">
+        <section className="section-py bg-[var(--surface-2)] dark:bg-[var(--surface-3)] border-t border-[--border]">
           <div className="section-max px-6 text-center">
             <h3 className="text-2xl font-bold mb-4 font-display">Still have questions?</h3>
-            <p className="text-stone-600 dark:text-stone-400 max-w-md mx-auto mb-6 text-sm">
+            <p className="text-[var(--text-secondary)] dark:text-[var(--text-muted)] max-w-md mx-auto mb-6 text-sm">
               We're here to help. Reach out directly to our support team and we will get back to you shortly.
             </p>
             <Link href="/contact" className="btn btn-primary rounded-full px-8">

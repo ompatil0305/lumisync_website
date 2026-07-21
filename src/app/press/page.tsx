@@ -37,12 +37,12 @@ export default function PressKitPage() {
         <section className="section-py border-b border-[--border]">
           <div className="section-max px-6 max-w-3xl">
             <div className="prose mx-auto">
-              <h2 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mb-4">About Lumisync</h2>
+              <h2 className="text-2xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mb-4">About Lumisync</h2>
               <p className="text-sm leading-relaxed mb-6">
                 Lumisync is a digital campus operating system that consolidates scattered college resources, including dining menus, campus maps, parking lot directories, events calendars, and faculty office coordinates, into a single web client and conversational helper (Lumi). By unifying directories and services under a clean interface layer, we remove friction from campus navigation and increase student engagement.
               </p>
 
-              <h2 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mt-10 mb-4">Key Facts</h2>
+              <h2 className="text-2xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mt-10 mb-4">Key Facts</h2>
               <ul className="list-disc pl-6 text-sm text-[--text-secondary] space-y-2 mb-6">
                 <li><strong>Founded:</strong> 2025</li>
                 <li><strong>Founder:</strong> Om Patil (Texas Tech University student)</li>
@@ -51,15 +51,15 @@ export default function PressKitPage() {
                 <li><strong>Platform Stack:</strong> React, Next.js, Tailwind CSS, Google Gemini APIs</li>
               </ul>
 
-              <h2 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mt-10 mb-4">Brand Guidelines</h2>
+              <h2 className="text-2xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mt-10 mb-4">Brand Guidelines</h2>
               <p className="text-sm leading-relaxed mb-4">
-                The Lumisync logo uses our standard Texas Tech Red (<code>#CC0000</code>) accent paired with Charcoal (<code>#1C1917</code>) text. When writing or referencing the brand name, format it as <strong>Lumisync</strong> (with a capital L, no space).
+                The Lumisync logo uses our standard Texas Tech Red (<code>#CC0000</code>) accent paired with Charcoal (<code>var(--text-primary)</code>) text. When writing or referencing the brand name, format it as <strong>Lumisync</strong> (with a capital L, no space).
               </p>
               <p className="text-sm leading-relaxed mb-6">
                 Avoid applying heavy gradients, rotating the symbol, or altering brand spacing. The Outfit display font is preferred for headlines, paired with Inter for body text.
               </p>
 
-              <h2 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mt-10 mb-4">Media Contact</h2>
+              <h2 className="text-2xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mt-10 mb-4">Media Contact</h2>
               <p className="text-sm leading-relaxed">
                 For interviews, custom asset requests, or media inquiries, reach out to our team at{" "}
                 <a href="mailto:press@lumisync.app" className="text-[#CC0000] hover:text-[#990000] font-semibold underline">

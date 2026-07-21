@@ -117,11 +117,11 @@ export default function LumiAIPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {capabilities.map((c, i) => (
                 <div key={i} className="card p-8 flex gap-6 items-start">
-                  <div className="p-3 rounded-xl bg-stone-100 dark:bg-stone-800 text-[#CC0000] flex-shrink-0">
+                  <div className="p-3 rounded-xl bg-[var(--surface-2)] text-[#CC0000] flex-shrink-0">
                     <MessageSquare size={20} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold mb-1 font-display text-stone-900 dark:text-stone-50">
+                    <h3 className="text-lg font-bold mb-1 font-display text-[var(--text-primary)] dark:text-stone-50">
                       {c.title}
                     </h3>
                     <p className="text-xs font-semibold text-[#CC0000] mb-3 italic font-mono">
@@ -138,7 +138,7 @@ export default function LumiAIPage() {
         </section>
 
         {/* Trust & Privacy */}
-        <section className="section-py bg-stone-100 dark:bg-stone-900 border-t border-[--border]">
+        <section className="section-py bg-[var(--surface-2)] dark:bg-[var(--surface-3)] border-t border-[--border]">
           <div className="section-max px-6 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
               <div className="col-span-2">
@@ -151,16 +151,16 @@ export default function LumiAIPage() {
                   Lumi is designed with strict student privacy guidelines. We do not store personal student IDs or sell conversation histories. Information requested from Gemini is processed securely.
                 </p>
               </div>
-              <div className="bg-white dark:bg-stone-800 p-6 rounded-2xl border border-[--border] flex flex-col gap-3">
-                <div className="flex gap-2.5 items-center text-xs text-stone-700 dark:text-stone-300 font-semibold">
+              <div className="bg-white dark:bg-[var(--surface-3)] p-8 rounded-2xl border border-[--border] flex flex-col gap-3">
+                <div className="flex gap-2.5 items-center text-xs text-[var(--text-secondary)] dark:text-[var(--text-muted)] font-semibold">
                   <Check className="text-green-600 w-4 h-4" />
                   Encrypted data transfer
                 </div>
-                <div className="flex gap-2.5 items-center text-xs text-stone-700 dark:text-stone-300 font-semibold">
+                <div className="flex gap-2.5 items-center text-xs text-[var(--text-secondary)] dark:text-[var(--text-muted)] font-semibold">
                   <Check className="text-green-600 w-4 h-4" />
                   Secure API processing
                 </div>
-                <div className="flex gap-2.5 items-center text-xs text-stone-700 dark:text-stone-300 font-semibold">
+                <div className="flex gap-2.5 items-center text-xs text-[var(--text-secondary)] dark:text-[var(--text-muted)] font-semibold">
                   <Check className="text-green-600 w-4 h-4" />
                   FERPA-aware design
                 </div>

@@ -20,11 +20,11 @@ export default function SectionHeader({
   return (
     <div className={`flex flex-col ${isCenter ? "items-center text-center" : "items-start text-left"} ${className}`}>
       {label && <span className="section-label mb-4">{label}</span>}
-      <h2 className="text-3xl font-bold font-display text-stone-900 dark:text-stone-50 leading-tight">
+      <h2 className="text-3xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 leading-tight">
         {title}
       </h2>
       {subtext && (
-        <p className={`text-stone-500 dark:text-stone-400 mt-3 text-sm max-w-xl ${isCenter ? "mx-auto text-center" : "mr-auto text-left"}`}>
+        <p className={`text-[var(--text-muted)] dark:text-[var(--text-muted)] mt-3 text-sm max-w-xl ${isCenter ? "mx-auto text-center" : "mr-auto text-left"}`}>
           {subtext}
         </p>
       )}

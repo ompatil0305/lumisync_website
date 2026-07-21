@@ -56,7 +56,7 @@ export default function AboutPage() {
         <section className="section-py border-b border-[--border]">
           <div className="section-max px-6 max-w-3xl">
             <div className="prose mx-auto">
-              <h2 className="text-3xl font-bold font-display text-stone-900 dark:text-stone-50 mb-6">Why Lumisync Exists</h2>
+              <h2 className="text-3xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mb-6">Why Lumisync Exists</h2>
               <p className="text-sm leading-relaxed mb-6">
                 Universities have massive, fragmented technology footprints. To answer simple daily questions, like finding what dining halls are open, where a professor's office is, how to get parking permit zones, or where club meetings are held, students must bounce between 10+ different outdated sites and portals.
               </p>
@@ -64,7 +64,7 @@ export default function AboutPage() {
                 Lumisync changes that. We unify all campus data streams into a single, clean user interface and conversational assistant (Lumi) so you can get immediate, verified updates in a fraction of a second.
               </p>
 
-              <h2 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mt-10 mb-4">The Founder Story</h2>
+              <h2 className="text-2xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mt-10 mb-4">The Founder Story</h2>
               <p className="text-sm leading-relaxed mb-4">
                 Lumisync was started by <strong>Om Patil</strong>, a student at Texas Tech University. Frustrated by the daily friction of hunting down meal schedules and classroom office codes across confusing administrative sites, he built the prototype to solve his own problems.
               </p>
@@ -90,10 +90,10 @@ export default function AboutPage() {
                 const Icon = v.icon;
                 return (
                   <div key={i} className="card p-8 flex flex-col gap-5">
-                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex items-center justify-center border border-stone-200/20 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-[var(--surface-2)] text-blue-600 flex items-center justify-center border border-[var(--border)]/20 flex-shrink-0">
                       <Icon size={18} />
                     </div>
-                    <h3 className="font-bold text-lg font-display text-stone-900 dark:text-stone-50">{v.title}</h3>
+                    <h3 className="font-bold text-lg font-display text-[var(--text-primary)] dark:text-stone-50">{v.title}</h3>
                     <p className="text-sm text-[--text-secondary] leading-relaxed">{v.desc}</p>
                   </div>
                 );

@@ -101,8 +101,8 @@ export default function RoadmapPage() {
               {items.map((item, i) => (
                 <div key={i} className={`card p-8 border-l-4 ${item.color} flex flex-col md:flex-row gap-6 justify-between`}>
                   <div className="md:w-1/3 flex-shrink-0">
-                    <span className="text-xs font-bold text-stone-400 dark:text-stone-500 uppercase tracking-widest">{item.phase}</span>
-                    <h3 className="text-xl font-bold font-display text-stone-900 dark:text-stone-50 mt-1">{item.title}</h3>
+                    <span className="text-xs font-bold text-[var(--text-muted)] dark:text-[var(--text-muted)] uppercase tracking-widest">{item.phase}</span>
+                    <h3 className="text-xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mt-1">{item.title}</h3>
                     <p className="text-xs text-[--text-secondary] mt-2 leading-relaxed">{item.desc}</p>
                   </div>
 

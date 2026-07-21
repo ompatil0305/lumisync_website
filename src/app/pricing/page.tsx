@@ -42,10 +42,10 @@ export default function PricingPage() {
               <div className="card p-8 flex flex-col justify-between min-h-[400px]">
                 <div>
                   <span className="text-xs font-bold text-red-600 dark:text-red-500 uppercase tracking-widest block mb-2">For Students</span>
-                  <h3 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mb-1">Student Access</h3>
+                  <h3 className="text-2xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mb-1">Student Access</h3>
                   <div className="flex items-baseline gap-1 mt-4 mb-6">
-                    <span className="text-4xl font-bold font-display text-stone-900 dark:text-stone-50">$0</span>
-                    <span className="text-xs text-stone-400 font-semibold uppercase tracking-wider">forever</span>
+                    <span className="text-4xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50">$0</span>
+                    <span className="text-xs text-[var(--text-muted)] font-semibold uppercase tracking-wider">forever</span>
                   </div>
                   <p className="text-sm text-[--text-secondary] leading-relaxed mb-6">
                     Get full access to the Lumisync web client, mapping, dining lists, events feeds, parking lot views, and the Lumi conversational AI helper.
@@ -73,16 +73,16 @@ export default function PricingPage() {
 
               {/* University Tier */}
               <div className="card p-8 flex flex-col justify-between min-h-[400px] border-2 border-red-600 dark:border-red-500 relative">
-                <span className="absolute -top-3.5 left-6 bg-red-600 dark:bg-red-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full flex items-center gap-1">
+                <span className="absolute -top-3.5 left-6 bg-red-600 dark:bg-red-500 text-[var(--text-inverse)] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full flex items-center gap-1">
                   <Sparkles size={10} />
                   Coming Soon
                 </span>
 
                 <div>
                   <span className="text-xs font-bold text-red-600 dark:text-red-500 uppercase tracking-widest block mb-2">For Administrators</span>
-                  <h3 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mb-1">University Partner</h3>
+                  <h3 className="text-2xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mb-1">University Partner</h3>
                   <div className="flex items-baseline gap-1 mt-4 mb-6">
-                    <span className="text-3xl font-bold font-display text-stone-900 dark:text-stone-50">Custom Quote</span>
+                    <span className="text-3xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50">Custom Quote</span>
                   </div>
                   <p className="text-sm text-[--text-secondary] leading-relaxed mb-6">
                     Deploy a custom branding layer for your campus. Includes SSO integrations, secure private databases mapping, departmental dashboards, and operations analytics.

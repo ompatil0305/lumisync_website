@@ -45,7 +45,7 @@ export default function Problem() {
               >
                 Why students struggle
               </h2>
-              <p className="text-sm text-stone-500 mt-2">
+              <p className="text-sm text-[var(--text-muted)] mt-2">
                 University information systems are fragmented and outdated.
               </p>
             </div>
@@ -125,7 +125,7 @@ export default function Problem() {
               {/* Soft overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6">
                 <span className="text-[10px] font-bold text-[#CC0000] uppercase tracking-widest mb-1">Campus Grounding</span>
-                <p className="text-white text-sm font-semibold">Bridging the gap between physical campus spaces and digital systems.</p>
+                <p className="text-[var(--text-inverse)] text-sm font-semibold">Bridging the gap between physical campus spaces and digital systems.</p>
               </div>
             </motion.div>
 

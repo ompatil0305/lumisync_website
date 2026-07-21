@@ -58,11 +58,11 @@ export default function FacultyStaffPage() {
                 const Icon = item.icon;
                 return (
                   <div key={i} className="card p-8 flex flex-col gap-5">
-                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex items-center justify-center border border-stone-200/20 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-[var(--surface-2)] text-blue-600 flex items-center justify-center border border-[var(--border)]/20 flex-shrink-0">
                       <Icon size={18} />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg mb-2 font-display text-stone-900 dark:text-stone-50">{item.title}</h3>
+                      <h3 className="font-bold text-lg mb-2 font-display text-[var(--text-primary)] dark:text-stone-50">{item.title}</h3>
                       <p className="text-sm text-[--text-secondary] leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -78,7 +78,7 @@ export default function FacultyStaffPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-3">For Department Administrators</span>
-                <h3 className="text-3xl font-bold mb-5 font-display text-stone-900 dark:text-stone-50">
+                <h3 className="text-3xl font-bold mb-5 font-display text-[var(--text-primary)] dark:text-stone-50">
                   Keep directories up to date.
                 </h3>
                 <p className="text-sm text-[--text-secondary] leading-relaxed mb-4">
@@ -89,8 +89,8 @@ export default function FacultyStaffPage() {
                 </p>
               </div>
 
-              <div className="bg-stone-50 dark:bg-stone-900 p-8 rounded-3xl border border-[--border] flex flex-col gap-4">
-                <h4 className="font-bold text-lg font-display text-stone-900 dark:text-stone-50">Features at a Glance</h4>
+              <div className="bg-[var(--surface)] p-8 rounded-3xl border border-[--border] flex flex-col gap-4">
+                <h4 className="font-bold text-lg font-display text-[var(--text-primary)] dark:text-stone-50">Features at a Glance</h4>
                 {[
                   "Fuzzy name and department search",
                   "Verified office hours mapping",
@@ -110,10 +110,10 @@ export default function FacultyStaffPage() {
         </section>
 
         {/* Call to action */}
-        <section className="bg-stone-100 dark:bg-stone-900 py-16 border-t border-[--border]">
+        <section className="section-py bg-[var(--surface-2)] dark:bg-[var(--surface-3)] border-t border-[--border]">
           <div className="section-max px-6 text-center flex flex-col items-center">
             <h3 className="text-2xl font-bold mb-4 font-display text-center">Onboard your department</h3>
-            <p className="text-stone-600 dark:text-stone-400 max-w-md mx-auto mb-6 text-sm text-center">
+            <p className="text-[var(--text-secondary)] dark:text-[var(--text-muted)] max-w-md mx-auto mb-6 text-sm text-center">
               Contact us to verify your directory listings, update office hours, or request integration details.
             </p>
             <div className="flex gap-4 justify-center">

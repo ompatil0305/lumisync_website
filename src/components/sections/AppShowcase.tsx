@@ -59,7 +59,7 @@ export default function AppShowcase() {
         >
           <SectionHeader
             title="Every screen. Crafted with care."
-            subtext="Explore every corner of Lumisync — from your daily dashboard to AI-powered campus search."
+            subtext="Explore every screen of Lumisync."
             label="App Preview"
             align="center"
           />
@@ -144,7 +144,7 @@ export default function AppShowcase() {
             })}
           </motion.div>
 
-          {/* Phone Frame */}
+          {/* App Screenshot */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -155,41 +155,24 @@ export default function AppShowcase() {
             <div
               style={{
                 width: 320,
-                height: 640,
-                borderRadius: "2.5rem",
-                border: "10px solid #1C1917",
-                background: "#1C1917",
-                boxShadow: "0 24px 80px rgba(0,0,0,0.20)",
+                height: 693, /* Approx aspect ratio for screenshots */
+                borderRadius: "2rem",
+                boxShadow: "0 24px 80px rgba(0,0,0,0.15)",
                 overflow: "hidden",
                 position: "relative",
               }}
             >
-              {/* Notch */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  width: 100,
-                  height: 24,
-                  background: "#1C1917",
-                  borderBottomLeftRadius: 14,
-                  borderBottomRightRadius: 14,
-                  zIndex: 10,
-                }}
-              />
-              <motion.div
+              <motion.img
                 key={activeTab.id}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
+                src={activeTab.image}
+                alt={activeTab.label}
                 style={{
                   width: "100%",
                   height: "100%",
-                  backgroundImage: `url(${activeTab.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
+                  objectFit: "cover",
                   display: "block",
                 }}
               />

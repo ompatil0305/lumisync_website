@@ -57,10 +57,10 @@ export default function SecurityPage() {
                 const Icon = item.icon;
                 return (
                   <div key={i} className="card p-8 flex flex-col gap-5">
-                    <div className="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 text-blue-600 flex items-center justify-center border border-stone-200/20 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-[var(--surface-2)] text-blue-600 flex items-center justify-center border border-[var(--border)]/20 flex-shrink-0">
                       <Icon size={18} />
                     </div>
-                    <h3 className="font-bold text-lg font-display text-stone-900 dark:text-stone-50">{item.title}</h3>
+                    <h3 className="font-bold text-lg font-display text-[var(--text-primary)] dark:text-stone-50">{item.title}</h3>
                     <p className="text-sm text-[--text-secondary] leading-relaxed">{item.desc}</p>
                   </div>
                 );
@@ -73,22 +73,22 @@ export default function SecurityPage() {
         <section className="section-py">
           <div className="section-max px-6 max-w-3xl">
             <div className="prose mx-auto">
-              <h2 className="text-3xl font-bold font-display text-stone-900 dark:text-stone-50 mb-6">Compliance & FERPA</h2>
+              <h2 className="text-3xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mb-6">Compliance & FERPA</h2>
               <p className="text-sm leading-relaxed mb-6">
                 The Family Educational Rights and Privacy Act (FERPA) protects the privacy of student education records. Lumisync is built specifically to operate without needing access to student grades, transcripts, or financial details.
               </p>
               
-              <div className="flex gap-4 p-5 rounded-2xl bg-stone-100 dark:bg-stone-900 border border-[--border] mb-8">
+              <div className="flex gap-4 p-8 rounded-2xl bg-[var(--surface-2)] border border-[--border] mb-8">
                 <AlertCircle className="text-blue-600 w-5 h-5 flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-sm font-display text-stone-900 dark:text-stone-50 mb-1">FERPA Awareness Statement</h4>
+                  <h4 className="font-bold text-sm font-display text-[var(--text-primary)] dark:text-stone-50 mb-1">FERPA Awareness Statement</h4>
                   <p className="text-xs text-[--text-secondary] leading-relaxed">
                     Lumisync only displays public campus directories, menu listings, parking guidelines, and calendar schedules. We do not store or process personally identifiable educational records (PII).
                   </p>
                 </div>
               </div>
 
-              <h2 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mt-10 mb-4">SSO Authentication</h2>
+              <h2 className="text-2xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mt-10 mb-4">SSO Authentication</h2>
               <p className="text-sm leading-relaxed mb-4">
                 To support secure features such as saving dining favorites, joining student club chats, or applying to on-campus jobs, Lumisync utilizes university Identity Providers (IdP).
               </p>
@@ -96,7 +96,7 @@ export default function SecurityPage() {
                 Authentication flows follow standard OAuth 2.0 and SAML protocols, allowing universities to keep full control over user credentials, password policies, and multi-factor authentication (MFA).
               </p>
 
-              <h2 className="text-2xl font-bold font-display text-stone-900 dark:text-stone-50 mt-10 mb-4">Responsible AI & Gemini</h2>
+              <h2 className="text-2xl font-bold font-display text-[var(--text-primary)] dark:text-stone-50 mt-10 mb-4">Responsible AI & Gemini</h2>
               <p className="text-sm leading-relaxed mb-6">
                 Lumi AI leverages state-of-the-art models via Google Gemini APIs. Our data pipelines use structured schemas to feed correct local context (like dining hours or maps) to the model. We strictly follow Google's Responsible AI guidelines and verify search responses before presenting them to students.
               </p>

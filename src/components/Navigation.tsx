@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Sparkles, Map, Compass, Calendar, Users, Building, Shield, FileText, HelpCircle, Mail, BookOpen, Clock, Briefcase, GraduationCap } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 
 const navGroups = [
@@ -89,8 +90,8 @@ export default function Navigation() {
                 <button
                   className={`flex items-center gap-1 px-3.5 py-2 text-[14px] font-medium rounded-full transition-colors ${
                     activeDropdown === group.label
-                      ? "bg-stone-200/50 dark:bg-stone-800/50 text-stone-900 dark:text-stone-50"
-                      : "text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-50"
+                      ? "bg-stone-200/50 dark:bg-[var(--surface-3)]/50 text-[var(--text-primary)] dark:text-stone-50"
+                      : "text-[var(--text-secondary)] dark:text-[var(--text-muted)] hover:text-[var(--text-primary)] dark:hover:text-stone-50"
                   }`}
                 >
                   {group.label}
@@ -104,23 +105,23 @@ export default function Navigation() {
 
                 {/* Dropdown Menu */}
                 {activeDropdown === group.label && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-80 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl shadow-xl p-3 grid gap-1.5 animate-scale-in">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-80 bg-white dark:bg-[var(--surface-3)] border border-[var(--border)] dark:border-[var(--border)] rounded-2xl shadow-xl p-3 grid gap-1.5 animate-scale-in">
                     {group.items.map((item) => {
                       const Icon = item.icon;
                       return (
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-stone-100/70 dark:hover:bg-stone-800/70 transition-colors group"
+                          className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-stone-100/70 dark:hover:bg-[var(--surface-3)]/70 transition-colors group"
                         >
-                          <div className="p-2 rounded-lg bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 group-hover:bg-blue-50 dark:group-hover:bg-blue-950/30 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                          <div className="p-2 rounded-lg bg-[var(--surface-2)] text-[var(--text-secondary)] dark:text-[var(--text-muted)] group-hover:bg-blue-50 dark:group-hover:bg-blue-950/30 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             <Icon size={16} />
                           </div>
                           <div>
-                            <div className="text-[13px] font-semibold text-stone-900 dark:text-stone-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            <div className="text-[13px] font-semibold text-[var(--text-primary)] dark:text-stone-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                               {item.label}
                             </div>
-                            <div className="text-[11px] text-stone-500 dark:text-stone-400 mt-0.5 leading-normal">
+                            <div className="text-[11px] text-[var(--text-muted)] dark:text-[var(--text-muted)] mt-0.5 leading-normal">
                               {item.desc}
                             </div>
                           </div>
@@ -146,7 +147,7 @@ export default function Navigation() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300 transition-colors"
+            className="md:hidden p-2 rounded-full hover:bg-stone-100 dark:hover:bg-[var(--surface-3)] text-[var(--text-secondary)] dark:text-[var(--text-muted)] transition-colors"
             onClick={() => setOpen(!open)}
             aria-label={open ? "Close menu" : "Open menu"}
             id="mobile-menu-toggle"
@@ -157,53 +158,61 @@ export default function Navigation() {
       </header>
 
       {/* Mobile Drawer */}
-      {open && (
-        <div className="fixed inset-0 z-40 md:hidden bg-background">
-          <div className="flex flex-col h-full pt-[68px] overflow-y-auto px-6 pb-8">
-            <div className="grid gap-6 mt-6">
-              {navGroups.map((group) => (
-                <div key={group.label} className="grid gap-2.5">
-                  <div className="text-[11px] font-bold text-stone-400 dark:text-stone-500 uppercase tracking-widest px-2">
-                    {group.label}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 md:hidden bg-background"
+          >
+            <div className="flex flex-col h-full pt-[68px] overflow-y-auto px-6 pb-8">
+              <div className="grid gap-6 mt-6">
+                {navGroups.map((group) => (
+                  <div key={group.label} className="grid gap-2.5">
+                    <div className="text-[11px] font-bold text-[var(--text-muted)] dark:text-[var(--text-muted)] uppercase tracking-widest px-2">
+                      {group.label}
+                    </div>
+                    <div className="grid gap-1">
+                      {group.items.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="flex items-center gap-3 py-2.5 px-2.5 rounded-xl hover:bg-stone-100 dark:hover:bg-[var(--surface-3)] text-[14px] font-medium text-[var(--text-secondary)] dark:text-[var(--text-muted)]"
+                          >
+                            <Icon size={16} className="text-[var(--text-muted)]" />
+                            {item.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
-                  <div className="grid gap-1">
-                    {group.items.map((item) => {
-                      const Icon = item.icon;
-                      return (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className="flex items-center gap-3 py-2.5 px-2.5 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-800 text-[14px] font-medium text-stone-700 dark:text-stone-300"
-                        >
-                          <Icon size={16} className="text-stone-400" />
-                          {item.label}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
 
-            <div className="mt-auto pt-8 border-t border-stone-200 dark:border-stone-800 grid gap-3">
-              <Link
-                href="/join"
-                className="btn btn-primary w-full text-center py-3 rounded-full"
-              >
-                Get Early Access
-              </Link>
-              <a
-                href="https://lumisync.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary w-full text-center py-3 rounded-full"
-              >
-                Open Application
-              </a>
+              <div className="mt-auto pt-8 border-t border-[var(--border)] dark:border-[var(--border)] grid gap-3">
+                <Link
+                  href="/join"
+                  className="btn btn-primary w-full text-center py-3 rounded-full"
+                >
+                  Get Early Access
+                </Link>
+                <a
+                  href="https://lumisync.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary w-full text-center py-3 rounded-full"
+                >
+                  Open Application
+                </a>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

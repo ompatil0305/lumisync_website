@@ -48,7 +48,7 @@ const featureDetails = [
     tagline: "Save time finding a spot.",
     desc: "Explore commuter lots, residence parking, visitor garages, and transit options. Access details on permit requirements, parking regulations, and navigate directly to any lot or garage on campus.",
     benefits: ["Categorized parking zones (Commuter, Residence, etc.)", "Direct mapping and navigation links", "SSO integration planned for permit management"],
-    color: "text-stone-600",
+    color: "text-[var(--text-secondary)]",
   },
   {
     icon: Calendar,
@@ -64,7 +64,7 @@ const featureDetails = [
     tagline: "Connect with professors and staff easily.",
     desc: "Quickly locate any faculty member, view their department, role, official office room number, office hours, and email. Integrated directly with the campus map so you can route straight to their door.",
     benefits: ["Exact office room lookup and location mapping", "Verified office hours and contact info", "Filter by department or research interest"],
-    color: "text-stone-600",
+    color: "text-[var(--text-secondary)]",
   },
   {
     icon: Briefcase,
@@ -119,15 +119,15 @@ export default function FeaturesPage() {
                   <div key={i} className="card p-8 flex flex-col justify-between min-h-[380px]">
                     <div>
                       {/* Icon */}
-                      <div className="w-12 h-12 rounded-xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center border border-stone-200/20 mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-[var(--surface-2)] flex items-center justify-center border border-[var(--border)]/20 mb-6">
                         <Icon className={`w-6 h-6 ${f.color}`} />
                       </div>
                       
                       {/* Title */}
-                      <h2 className="text-xl font-bold text-stone-900 dark:text-stone-50 mb-1 font-display">
+                      <h2 className="text-xl font-bold text-[var(--text-primary)] dark:text-stone-50 mb-1 font-display">
                         {f.title}
                       </h2>
-                      <p className="text-xs text-stone-400 font-medium tracking-wide uppercase mb-4">
+                      <p className="text-xs text-[var(--text-muted)] font-medium tracking-wide uppercase mb-4">
                         {f.tagline}
                       </p>
                       
@@ -156,10 +156,10 @@ export default function FeaturesPage() {
         </section>
 
         {/* CTA Footer */}
-        <section className="bg-stone-100 dark:bg-stone-900 py-16 border-t border-[--border]">
+        <section className="section-py bg-[var(--surface-2)] dark:bg-[var(--surface-3)] border-t border-[--border]">
           <div className="section-max px-6 text-center flex flex-col items-center">
             <h3 className="text-2xl font-bold mb-4 font-display text-center">Ready to streamline your campus?</h3>
-            <p className="text-stone-600 dark:text-stone-400 max-w-md mx-auto mb-6 text-sm text-center">
+            <p className="text-[var(--text-secondary)] dark:text-[var(--text-muted)] max-w-md mx-auto mb-6 text-sm text-center">
               Join the beta waitlist to get early access to all Lumisync features for your university.
             </p>
             <div className="flex gap-4 justify-center">
