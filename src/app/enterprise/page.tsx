@@ -118,9 +118,9 @@ export default function EnterprisePage() {
 
         {/* Contact sales CTA */}
         <section className="bg-stone-100 dark:bg-stone-900 py-16 border-t border-[--border]">
-          <div className="section-max px-6 text-center">
-            <h3 className="text-2xl font-bold mb-4 font-display">Start your integration</h3>
-            <p className="text-stone-600 dark:text-stone-400 max-w-md mx-auto mb-6 text-sm">
+          <div className="section-max px-6 text-center flex flex-col items-center">
+            <h3 className="text-2xl font-bold mb-4 font-display text-center">Start your integration</h3>
+            <p className="text-stone-600 dark:text-stone-400 max-w-md mx-auto mb-6 text-sm text-center">
               Speak with our onboarding team to discuss pricing, custom features, data integrations, and campus security.
             </p>
             <div className="flex gap-4 justify-center">

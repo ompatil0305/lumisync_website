@@ -157,9 +157,9 @@ export default function FeaturesPage() {
 
         {/* CTA Footer */}
         <section className="bg-stone-100 dark:bg-stone-900 py-16 border-t border-[--border]">
-          <div className="section-max px-6 text-center">
-            <h3 className="text-2xl font-bold mb-4 font-display">Ready to streamline your campus?</h3>
-            <p className="text-stone-600 dark:text-stone-400 max-w-md mx-auto mb-6 text-sm">
+          <div className="section-max px-6 text-center flex flex-col items-center">
+            <h3 className="text-2xl font-bold mb-4 font-display text-center">Ready to streamline your campus?</h3>
+            <p className="text-stone-600 dark:text-stone-400 max-w-md mx-auto mb-6 text-sm text-center">
               Join the beta waitlist to get early access to all Lumisync features for your university.
             </p>
             <div className="flex gap-4 justify-center">

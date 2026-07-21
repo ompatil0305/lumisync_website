@@ -10,35 +10,35 @@ const tabs = [
     id: "home",
     label: "Home Dashboard",
     icon: Home,
-    path: "/",
+    image: "/app_home_screenshot.jpg",
     desc: "Your personalized campus hub at a glance",
   },
   {
     id: "map",
     label: "Campus Map",
     icon: Map,
-    path: "/map",
+    image: "/app_map_screenshot.jpg",
     desc: "Interactive indoor & outdoor navigation",
   },
   {
     id: "lumi",
     label: "Lumi AI",
     icon: Sparkles,
-    path: "/lumi",
+    image: "/app_chat_screenshot.jpg",
     desc: "Natural language campus assistant",
   },
   {
     id: "explore",
     label: "Explore",
     icon: Compass,
-    path: "/explore",
+    image: "/app_home_screenshot.jpg",
     desc: "Discover dining, events, jobs and more",
   },
   {
     id: "faculty",
     label: "Faculty",
     icon: Users,
-    path: "/faculty",
+    image: "/app_chat_screenshot.jpg",
     desc: "Find professors, offices and office hours",
   },
 ];
@@ -179,20 +179,19 @@ export default function AppShowcase() {
                   zIndex: 10,
                 }}
               />
-              <motion.iframe
+              <motion.div
                 key={activeTab.id}
-                src={`https://lumisync.vercel.app${activeTab.path}`}
-                title={`Lumisync ${activeTab.label}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3 }}
                 style={{
                   width: "100%",
                   height: "100%",
-                  border: "none",
+                  backgroundImage: `url(${activeTab.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
                   display: "block",
                 }}
-                loading="lazy"
               />
             </div>
           </motion.div>

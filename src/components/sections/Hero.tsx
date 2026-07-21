@@ -205,7 +205,8 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-20 w-full"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 w-full"
+              style={{ marginBottom: "3.5rem" }}
             >
               <motion.div
                 onMouseMove={handleMagMouseMove}
@@ -234,7 +235,8 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-8 lg:gap-12 w-full pt-10 border-t border-border/40"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-8 lg:gap-12 w-full border-t border-border/40"
+              style={{ paddingTop: "2.5rem", marginTop: "1rem" }}
             >
               {stats.map((s, i) => (
                 <div key={i} className="flex flex-col items-center lg:items-start gap-0.5">

@@ -109,9 +109,9 @@ export default function CampusMapPage() {
 
         {/* Action CTA */}
         <section className="bg-stone-100 dark:bg-stone-900 py-16 border-t border-[--border]">
-          <div className="section-max px-6 text-center">
-            <h3 className="text-2xl font-bold mb-4 font-display">Need custom campus maps?</h3>
-            <p className="text-stone-600 dark:text-stone-400 max-w-md mx-auto mb-6 text-sm">
+          <div className="section-max px-6 text-center flex flex-col items-center">
+            <h3 className="text-2xl font-bold mb-4 font-display text-center">Need custom campus maps?</h3>
+            <p className="text-stone-600 dark:text-stone-400 max-w-md mx-auto mb-6 text-sm text-center">
               We can map and digitize your entire campus, parking lots, and building floor plans in days.
             </p>
             <div className="flex gap-4 justify-center">

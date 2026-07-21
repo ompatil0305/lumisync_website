@@ -214,7 +214,7 @@ export default function LumiDemo() {
                   display: "flex",
                   flexDirection: "column",
                   gap: 12,
-                  background: "#FAFAF9",
+                  background: "var(--background)",
                 }}
               >
                 <AnimatePresence>
@@ -239,7 +239,7 @@ export default function LumiDemo() {
                               ? "18px 18px 4px 18px"
                               : "18px 18px 18px 4px",
                           background:
-                            msg.role === "user" ? "#CC0000" : "#fff",
+                            msg.role === "user" ? "#CC0000" : "var(--surface)",
                           color: msg.role === "user" ? "#fff" : "var(--text-primary)",
                           fontSize: "0.875rem",
                           lineHeight: 1.5,
@@ -268,7 +268,7 @@ export default function LumiDemo() {
                     <div style={{
                       padding: "10px 16px",
                       borderRadius: "18px 18px 18px 4px",
-                      background: "#fff",
+                      background: "var(--surface)",
                       border: "1px solid var(--border)",
                       display: "flex",
                       gap: 5,
@@ -301,13 +301,13 @@ export default function LumiDemo() {
                   display: "flex",
                   gap: 10,
                   alignItems: "center",
-                  background: "#fff",
+                  background: "var(--surface)",
                 }}
               >
                 <input
                   readOnly
                   placeholder="Ask Lumi anything…"
-                  className="input flex-1 text-sm"
+                  className="input flex-1 text-sm bg-[--background] text-[--text-primary] border border-[--border] rounded-lg"
                   style={{ padding: "10px 14px", fontSize: "0.875rem" }}
                 />
                 <button
