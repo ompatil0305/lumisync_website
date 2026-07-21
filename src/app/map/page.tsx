@@ -81,78 +81,87 @@ export default function CampusMapPage() {
               })}
             </div>
 
-            {/* Map Preview Screenshots: Dual Mobile Mockups */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto mb-16 items-center justify-items-center">
-              {/* Card 1: Vector GIS Campus Map */}
-              <div className="flex flex-col items-center text-center w-full">
-                <div className="mb-4">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#CC0000] bg-red-500/10 px-3 py-1 rounded-full border border-red-500/20">
-                    Live Campus Engine
-                  </span>
-                  <h3 className="text-xl font-bold font-display mt-2 text-[var(--text-primary)]">
-                    Vector Footprints & Location Pin
-                  </h3>
-                  <p className="text-xs text-[var(--text-secondary)] mt-1 max-w-xs">
-                    Precise building contours with active GPS positioning and category filters.
-                  </p>
-                </div>
-                
-                {/* Mobile Phone Mockup */}
-                <div 
-                  className="relative overflow-hidden bg-black border-[8px] border-[#18181b] rounded-[2.8rem] shadow-2xl transition-transform duration-300 hover:scale-[1.02]"
-                  style={{
-                    width: 290,
-                    height: 590,
-                    boxShadow: "0 25px 60px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.08)",
-                  }}
-                >
-                  <div className="absolute top-0 inset-x-0 h-5 z-30 flex justify-center items-center pointer-events-none">
-                    <div className="w-20 h-3.5 bg-[#18181b] rounded-b-lg" />
-                  </div>
-                  <img
-                    src="/app_map_screenshot.jpg"
-                    alt="Campus Map Vector Footprints"
-                    className="w-full h-full object-cover object-top"
-                  />
-                  <div className="absolute bottom-2 inset-x-0 h-3 flex justify-center items-center z-30 pointer-events-none">
-                    <div className="w-28 h-1 bg-white/40 rounded-full" />
-                  </div>
-                </div>
+            {/* Map Preview Screenshots: Dual Mobile Mockups with Equalized Alignment */}
+            <div className="pt-8 border-t border-[--border]">
+              <div className="text-center max-w-2xl mx-auto mb-12">
+                <span className="section-label mb-3 inline-block">Real App Preview</span>
+                <h2 className="text-3xl font-bold font-display text-[var(--text-primary)]">
+                  Designed for instantaneous campus orientation
+                </h2>
               </div>
 
-              {/* Card 2: Building Detail & Access */}
-              <div className="flex flex-col items-center text-center w-full">
-                <div className="mb-4">
-                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-                    Inclusive Navigation
-                  </span>
-                  <h3 className="text-xl font-bold font-display mt-2 text-[var(--text-primary)]">
-                    Indoor Access & Directions
-                  </h3>
-                  <p className="text-xs text-[var(--text-secondary)] mt-1 max-w-xs">
-                    Restrooms, elevators, bike racks, and walking/cycling route modes.
-                  </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto items-start justify-items-center">
+                {/* Card 1: Vector GIS Campus Map */}
+                <div className="flex flex-col items-center text-center w-full">
+                  <div className="min-h-[110px] flex flex-col items-center justify-end mb-6">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#CC0000] bg-red-500/10 px-3 py-1 rounded-full border border-red-500/20 mb-2">
+                      Live Campus Engine
+                    </span>
+                    <h3 className="text-xl font-bold font-display text-[var(--text-primary)]">
+                      Vector Footprints & Location Pin
+                    </h3>
+                    <p className="text-xs text-[var(--text-secondary)] mt-1 max-w-xs">
+                      Precise building contours with active GPS positioning and category filters.
+                    </p>
+                  </div>
+                  
+                  {/* Mobile Phone Mockup */}
+                  <div 
+                    className="relative overflow-hidden bg-black border-[8px] border-[#18181b] rounded-[2.8rem] shadow-2xl transition-transform duration-300 hover:scale-[1.02]"
+                    style={{
+                      width: 290,
+                      height: 590,
+                      boxShadow: "0 25px 60px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    <div className="absolute top-0 inset-x-0 h-5 z-30 flex justify-center items-center pointer-events-none">
+                      <div className="w-20 h-3.5 bg-[#18181b] rounded-b-lg" />
+                    </div>
+                    <img
+                      src="/app_map_screenshot.jpg"
+                      alt="Campus Map Vector Footprints"
+                      className="w-full h-full object-cover object-top"
+                    />
+                    <div className="absolute bottom-2 inset-x-0 h-3 flex justify-center items-center z-30 pointer-events-none">
+                      <div className="w-28 h-1 bg-white/40 rounded-full" />
+                    </div>
+                  </div>
                 </div>
 
-                {/* Mobile Phone Mockup */}
-                <div 
-                  className="relative overflow-hidden bg-black border-[8px] border-[#18181b] rounded-[2.8rem] shadow-2xl transition-transform duration-300 hover:scale-[1.02]"
-                  style={{
-                    width: 290,
-                    height: 590,
-                    boxShadow: "0 25px 60px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.08)",
-                  }}
-                >
-                  <div className="absolute top-0 inset-x-0 h-5 z-30 flex justify-center items-center pointer-events-none">
-                    <div className="w-20 h-3.5 bg-[#18181b] rounded-b-lg" />
+                {/* Card 2: Building Detail & Access */}
+                <div className="flex flex-col items-center text-center w-full">
+                  <div className="min-h-[110px] flex flex-col items-center justify-end mb-6">
+                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 mb-2">
+                      Inclusive Navigation
+                    </span>
+                    <h3 className="text-xl font-bold font-display text-[var(--text-primary)]">
+                      Indoor Access & Directions
+                    </h3>
+                    <p className="text-xs text-[var(--text-secondary)] mt-1 max-w-xs">
+                      Restrooms, elevators, bike racks, and walking/cycling route modes.
+                    </p>
                   </div>
-                  <img
-                    src="/app_map_detail_screenshot.jpg"
-                    alt="Building Details and Restroom Locations"
-                    className="w-full h-full object-cover object-top"
-                  />
-                  <div className="absolute bottom-2 inset-x-0 h-3 flex justify-center items-center z-30 pointer-events-none">
-                    <div className="w-28 h-1 bg-white/40 rounded-full" />
+
+                  {/* Mobile Phone Mockup */}
+                  <div 
+                    className="relative overflow-hidden bg-black border-[8px] border-[#18181b] rounded-[2.8rem] shadow-2xl transition-transform duration-300 hover:scale-[1.02]"
+                    style={{
+                      width: 290,
+                      height: 590,
+                      boxShadow: "0 25px 60px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    <div className="absolute top-0 inset-x-0 h-5 z-30 flex justify-center items-center pointer-events-none">
+                      <div className="w-20 h-3.5 bg-[#18181b] rounded-b-lg" />
+                    </div>
+                    <img
+                      src="/app_map_detail_screenshot.jpg"
+                      alt="Building Details and Restroom Locations"
+                      className="w-full h-full object-cover object-top"
+                    />
+                    <div className="absolute bottom-2 inset-x-0 h-3 flex justify-center items-center z-30 pointer-events-none">
+                      <div className="w-28 h-1 bg-white/40 rounded-full" />
+                    </div>
                   </div>
                 </div>
               </div>

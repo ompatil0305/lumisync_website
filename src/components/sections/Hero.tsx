@@ -205,7 +205,7 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 w-full"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 w-full mb-8"
             >
               <motion.div
                 onMouseMove={handleMagMouseMove}
@@ -228,8 +228,8 @@ export default function Hero() {
               </motion.a>
             </motion.div>
 
-            {/* Part 1 Fix: Clear 40px margin before divider */}
-            <div className="w-full mt-16 mb-0 border-t border-border/40" />
+            {/* Balanced Divider Line */}
+            <div className="w-full my-6 border-t border-[var(--border)] opacity-60" />
 
             {/* Stats */}
             <motion.div
@@ -237,8 +237,7 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-8 lg:gap-12 w-full"
-              style={{ paddingTop: "2.5rem" }}
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-8 lg:gap-12 w-full mt-4"
             >
               {stats.map((s, i) => (
                 <div key={i} className="flex flex-col items-center lg:items-start gap-0.5">
@@ -259,8 +258,8 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Column: Multi-Layered Interactive 3D Phone & Parallax Floating Glass Badges */}
-          <div className="lg:col-span-5 flex items-center justify-center w-full relative py-8">
+          {/* Right Column: Multi-Layered Interactive 3D Phone & Red Geometric Crystal Wireframe */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center w-full relative py-6">
             <motion.div
               ref={cardRef}
               onMouseMove={handleCardMouseMove}
@@ -278,19 +277,38 @@ export default function Hero() {
                 perspective: 1200,
                 transformStyle: "preserve-3d",
               }}
-              className="w-full max-w-[360px] relative group cursor-pointer"
+              className="w-full max-w-[370px] relative group cursor-pointer flex flex-col items-center"
             >
-              {/* Vibrant Ambient Glow Backdrop */}
+              {/* Glowing Red Wireframe Geometric Crystal SVG Backdrop */}
+              <div aria-hidden className="absolute -inset-10 flex items-center justify-center pointer-events-none -z-10">
+                <svg
+                  width="480"
+                  height="480"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-full h-full opacity-65 animate-pulse"
+                  style={{ filter: "drop-shadow(0 0 20px rgba(204, 0, 0, 0.4))" }}
+                >
+                  <polygon points="100,20 170,60 170,140 100,180 30,140 30,60" stroke="#CC0000" strokeWidth="1" strokeDasharray="3 3" />
+                  <polygon points="100,35 155,67 155,133 100,165 45,133 45,67" stroke="#FF3333" strokeWidth="0.75" />
+                  <line x1="100" y1="20" x2="100" y2="180" stroke="#CC0000" strokeWidth="0.5" opacity="0.4" />
+                  <line x1="30" y1="60" x2="170" y2="140" stroke="#CC0000" strokeWidth="0.5" opacity="0.4" />
+                  <line x1="30" y1="140" x2="170" y2="60" stroke="#CC0000" strokeWidth="0.5" opacity="0.4" />
+                </svg>
+              </div>
+
+              {/* Ambient Glow Backdrop */}
               <div 
                 className="absolute inset-0 bg-gradient-to-tr from-[#CC0000]/30 via-red-500/10 to-transparent rounded-[3.5rem] blur-3xl -z-10 group-hover:scale-110 transition-transform duration-500"
               />
 
               {/* Main Sleek Mobile Device Container */}
               <div
-                className="relative overflow-hidden bg-[#09090b] border-[9px] border-[#18181b] shadow-2xl"
+                className="relative overflow-hidden bg-[#09090b] border-[9px] border-[#18181b] shadow-2xl w-full"
                 style={{
                   borderRadius: "3rem",
-                  boxShadow: "0 32px 80px -16px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,255,255,0.1)",
+                  boxShadow: "0 32px 80px -16px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.12)",
                   aspectRatio: "9/18",
                 }}
               >
@@ -314,48 +332,19 @@ export default function Hero() {
                   <div className="w-32 h-1 bg-white/40 rounded-full" />
                 </div>
               </div>
-
-              {/* Floating Parallax Glass Badge 1: Top-Left Live Status */}
-              <motion.div
-                animate={prefersReducedMotion ? {} : {
-                  y: [0, -6, 0],
-                  rotateX: prefersReducedMotion ? 0 : -tilt.x * 0.8,
-                  rotateY: prefersReducedMotion ? 0 : -tilt.y * 0.8,
-                }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                style={{ transformStyle: "preserve-3d", translateZ: 40 }}
-                className="absolute -top-4 -left-6 bg-black/80 backdrop-blur-md border border-white/15 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 z-30"
-              >
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#CC0000]" />
-                </span>
-                <div>
-                  <p className="text-[10px] font-bold text-white uppercase tracking-wider">Live Campus Engine</p>
-                  <p className="text-[9px] text-stone-400">Indoor & Outdoor GIS</p>
-                </div>
-              </motion.div>
-
-              {/* Floating Parallax Glass Badge 2: Bottom-Right Faculty Status */}
-              <motion.div
-                animate={prefersReducedMotion ? {} : {
-                  y: [0, 6, 0],
-                  rotateX: prefersReducedMotion ? 0 : tilt.x * 0.8,
-                  rotateY: prefersReducedMotion ? 0 : tilt.y * 0.8,
-                }}
-                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                style={{ transformStyle: "preserve-3d", translateZ: 50 }}
-                className="absolute -bottom-4 -right-6 bg-black/85 backdrop-blur-md border border-white/15 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 z-30"
-              >
-                <div className="w-7 h-7 rounded-xl bg-red-500/20 text-[#CC0000] flex items-center justify-center font-bold text-xs">
-                  ⚡
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold text-white uppercase tracking-wider">Gemini 3.1 Flash-Lite</p>
-                  <p className="text-[9px] text-stone-400">66 Faculty Loaded</p>
-                </div>
-              </motion.div>
             </motion.div>
+
+            {/* Store Download Badges below Phone */}
+            <div className="mt-8 flex items-center gap-3 justify-center z-20">
+              <Link href="/join" className="btn btn-primary rounded-xl px-5 py-2.5 text-xs font-bold uppercase tracking-wider shadow-lg">
+                GET STARTED
+              </Link>
+              <div className="flex items-center gap-2 bg-black/60 border border-white/10 px-3 py-2 rounded-xl text-[10px] text-stone-300">
+                <span>📱 App Store</span>
+                <span className="opacity-40">|</span>
+                <span>🤖 Google Play</span>
+              </div>
+            </div>
           </div>
 
         </div>
