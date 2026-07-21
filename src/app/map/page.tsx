@@ -81,29 +81,40 @@ export default function CampusMapPage() {
               })}
             </div>
 
-            {/* Embedded Live Map Section */}
-            <div className="card p-4 bg-stone-50 border border-[--border] rounded-3xl shadow-xl max-w-4xl mx-auto overflow-hidden">
-              <div className="bg-stone-900 text-white px-5 py-3 rounded-t-2xl flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-red-500" />
-                  <span className="w-3 h-3 rounded-full bg-yellow-500" />
-                  <span className="w-3 h-3 rounded-full bg-green-500" />
+            {/* Map Preview Screenshots */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+              {/* Outdoor Navigation */}
+              <div className="card overflow-hidden bg-stone-900 border border-[--border] rounded-3xl shadow-xl flex flex-col">
+                <div className="bg-stone-950 text-white px-5 py-3 rounded-t-2xl flex items-center justify-between border-b border-stone-800">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
+                  </div>
+                  <span className="text-[10px] font-bold tracking-wider opacity-85 uppercase">Outdoor Navigation</span>
                 </div>
-                <span className="text-xs font-semibold tracking-wider opacity-85">MAP MODULE LIVE</span>
-                <span className="text-xs opacity-50">lumisync.app/map</span>
+                <div 
+                  className="w-full aspect-[9/16] max-h-[480px] bg-cover bg-center rounded-b-2xl"
+                  style={{ backgroundImage: "url('/app_map_screenshot.jpg')" }}
+                />
               </div>
-              <div className="w-full aspect-video min-h-[380px] bg-white rounded-b-2xl overflow-hidden relative">
-                <iframe
-                  src="https://lumisync.vercel.app/map"
-                  title="Embedded Live Map"
-                  className="w-full h-full border-none"
-                  loading="lazy"
+
+              {/* Indoor Navigation */}
+              <div className="card overflow-hidden bg-stone-900 border border-[--border] rounded-3xl shadow-xl flex flex-col">
+                <div className="bg-stone-950 text-white px-5 py-3 rounded-t-2xl flex items-center justify-between border-b border-stone-800">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
+                  </div>
+                  <span className="text-[10px] font-bold tracking-wider opacity-85 uppercase">Indoor Floor Plans</span>
+                </div>
+                <div 
+                  className="w-full aspect-[9/16] max-h-[480px] bg-cover bg-center rounded-b-2xl"
+                  style={{ backgroundImage: "url('/app_map_indoor.jpg')" }}
                 />
               </div>
             </div>
-            <p className="text-center text-[10px] text-stone-500 dark:text-stone-400 mt-3 font-medium">
-              Map rendering and routing powered by Leaflet, OpenStreetMap, and OSRM project. © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-700 dark:hover:text-stone-300">OpenStreetMap contributors</a>.
-            </p>
           </div>
         </section>
 

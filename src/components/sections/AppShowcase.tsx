@@ -31,14 +31,14 @@ const tabs = [
     id: "explore",
     label: "Explore",
     icon: Compass,
-    image: "/app_home_screenshot.jpg",
+    image: "/app_dining_screenshot.jpg",
     desc: "Discover dining, events, jobs and more",
   },
   {
     id: "faculty",
     label: "Faculty",
     icon: Users,
-    image: "/app_chat_screenshot.jpg",
+    image: "/app_faculty_screenshot.jpg",
     desc: "Find professors, offices and office hours",
   },
 ];
